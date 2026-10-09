@@ -5,5 +5,5 @@
     {"name": "BBC News Русская служба", "url": "https://feeds.bbci.co.uk/russian/rss.xml"}
   ],
   "max_age_hours": 12,
-  "max_items_per_run": 10
+  "max_items_per_run": 5
 }
