@@ -1,18 +1,9 @@
 {
-“sources”: [
-{
-“name”: “РИА Новости”,
-“url”: “https://ria.ru/export/rss2/archive/index.xml”
-},
-{
-“name”: “ТАСС”,
-“url”: “https://tass.ru/rss/v2.xml”
-},
-{
-“name”: “BBC News Русская служба”,
-“url”: “https://feeds.bbci.co.uk/russian/rss.xml”
-}
-],
-“max_age_hours”: 12,
-“max_items_per_run”: 10
+  "sources": [
+    {"name": "РИА Новости", "url": "https://ria.ru/export/rss2/archive/index.xml"},
+    {"name": "ТАСС", "url": "https://tass.ru/rss/v2.xml"},
+    {"name": "BBC News Русская служба", "url": "https://feeds.bbci.co.uk/russian/rss.xml"}
+  ],
+  "max_age_hours": 12,
+  "max_items_per_run": 10
 }
