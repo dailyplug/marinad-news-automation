@@ -3,7 +3,6 @@ name: Marinad News Collector
 on:
   workflow_dispatch:
   schedule:
-    # Runs every two hours at minute 17 (UTC).
     - cron: "17 */2 * * *"
 
 permissions:
@@ -37,7 +36,6 @@ jobs:
           ADMIN_CHAT_ID: ${{ secrets.ADMIN_CHAT_ID }}
         run: python news_collector.py
 
-      # Commit state even if collection fails after sending some drafts.
       - name: Save processed news IDs
         if: always() && steps.checkout.outcome == 'success'
         run: |
