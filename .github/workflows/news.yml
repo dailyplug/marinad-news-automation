@@ -1,0 +1,31 @@
+name: MARINAD News Automation
+
+on:
+workflow_dispatch:
+schedule:
+- cron: “17 * * * *”
+
+permissions:
+contents: write
+
+concurrency:
+group: marinad-news
+cancel-in-progress: false
+
+jobs:
+collect-news:
+runs-on: ubuntu-latest
+timeout-minutes: 5
+
+steps:
+  - name: Get repository
+    uses: actions/checkout@v4
+  - name: Set up Python
+    uses: actions/setup-python@v5
+    with:
+      python-version: "3.12"
+  - name: Run news collector
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      ADMIN_CHAT_ID: ${{ secrets.ADMIN_CHAT_ID }}
+    run: python news_collector.py
