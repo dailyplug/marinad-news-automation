@@ -1,1 +1,52 @@
+name: Marinad News Collector
 
+on:
+  workflow_dispatch:
+  schedule:
+    # Runs every two hours at minute 17 (UTC).
+    - cron: "17 */2 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: marinad-news-collector
+  cancel-in-progress: false
+
+jobs:
+  collect-news:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        id: checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Collect and send drafts
+        id: collector
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          ADMIN_CHAT_ID: ${{ secrets.ADMIN_CHAT_ID }}
+        run: python news_collector.py
+
+      # Commit state even if collection fails after sending some drafts.
+      - name: Save processed news IDs
+        if: always() && steps.checkout.outcome == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/seen.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update processed news IDs"
+            git push
+          else
+            echo "No history changes to commit."
+          fi
