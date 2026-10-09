@@ -1,13 +1,6 @@
 #!/usr/bin/env python3
 """Collect recent RSS items and send source-linked drafts to a private Telegram chat."""
-import json
-import os
-import re
-import sys
-import time
-import urllib.error
-import urllib.parse
-import urllib.request
+import json, os, re, sys, time, urllib.error, urllib.parse, urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
@@ -17,8 +10,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 CONFIG_PATH = ROOT / "news_sources.json"
 SEEN_PATH = ROOT / "data" / "seen.json"
-USER_AGENT = "MarinadNewsBot/1.0 (+RSS reader)"
+USER_AGENT = "MarinadNewsBot/1.1 (+RSS reader)"
 MAX_DESCRIPTION_CHARS = 650
+MAX_SEEN_IDS = 5000
 
 
 def clean_text(value):
@@ -48,15 +42,15 @@ def parse_date(raw):
             if dt.tzinfo is None:
                 dt = dt.replace(tzinfo=timezone.utc)
             return dt.astimezone(timezone.utc)
-        except ValueError:
+        except (TypeError, ValueError, OverflowError):
             return None
 
 
 def fetch_feed(url):
-    request = urllib.request.Request(
-        url,
-        headers={"User-Agent": USER_AGENT, "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml"},
-    )
+    request = urllib.request.Request(url, headers={
+        "User-Agent": USER_AGENT,
+        "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml",
+    })
     with urllib.request.urlopen(request, timeout=20) as response:
         return response.read(4_000_000)
 
@@ -72,8 +66,9 @@ def parse_feed(xml_bytes, source_name):
         if not link:
             for child in list(node):
                 if child.tag.rsplit("}", 1)[-1].lower() == "link":
-                    link = child.attrib.get("href", "")
-                    if link:
+                    rel, candidate = child.attrib.get("rel", "alternate"), child.attrib.get("href", "")
+                    if candidate and rel in ("alternate", ""):
+                        link = candidate
                         break
         description = clean_text(child_text(node, ("description", "summary", "content", "encoded")))
         raw_date = child_text(node, ("pubdate", "published", "updated", "date", "issued"))
@@ -81,10 +76,8 @@ def parse_feed(xml_bytes, source_name):
         if title and link.startswith(("https://", "http://")):
             identifier = child_text(node, ("guid", "id")) or link
             results.append({
-                "id": f"{source_name}:{identifier}",
-                "source": source_name,
-                "title": title,
-                "link": link,
+                "id": f"{source_name}:{identifier}", "source": source_name,
+                "title": title, "link": link,
                 "description": description[:MAX_DESCRIPTION_CHARS],
                 "published": published.isoformat() if published else "",
                 "_published_dt": published,
@@ -99,10 +92,27 @@ def load_json(path, default):
         return default
 
 
-def telegram_send(token, chat_id, text):
+def load_seen_state():
+    """Accept legacy [] as well as current {\"seen\": []} history format."""
+    raw = load_json(SEEN_PATH, {"seen": []})
+    ids = raw if isinstance(raw, list) else raw.get("seen", []) if isinstance(raw, dict) else []
+    if not isinstance(ids, list):
+        ids = []
+    ids = list(dict.fromkeys(x for x in ids if isinstance(x, str) and x))
+    return {"seen": ids[-MAX_SEEN_IDS:]}
+
+
+def save_seen_state(state):
+    SEEN_PATH.parent.mkdir(parents=True, exist_ok=True)
+    temp_path = SEEN_PATH.with_suffix(".json.tmp")
+    temp_path.write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    temp_path.replace(SEEN_PATH)
+
+
+def telegram_send(token, chat_id, message):
     url = f"https://api.telegram.org/bot{token}/sendMessage"
     payload = urllib.parse.urlencode({
-        "chat_id": chat_id, "text": text, "disable_web_page_preview": "true"
+        "chat_id": chat_id, "text": message, "disable_web_page_preview": "true"
     }).encode()
     request = urllib.request.Request(url, data=payload, method="POST")
     try:
@@ -124,38 +134,44 @@ def format_draft(item):
         try:
             dt = datetime.fromisoformat(item["published"]).astimezone(timezone.utc)
             time_line = f"🕒 {dt.strftime('%d.%m.%Y %H:%M UTC')}\n"
-        except ValueError:
+        except (TypeError, ValueError):
             pass
-    return (
-        "⚡ ЧЕРНОВИК МАРИНАД\n\n"
-        f"{item['title']}\n\n{description}"
-        f"Источник: {item['source']}\n{time_line}"
-        f"Оригинал: {item['link']}\n\n"
-        "Проверь факты и формулировку перед публикацией."
-    )
+    return ("⚡ ЧЕРНОВИК МАРИНАД\n\n" f"{item['title']}\n\n{description}"
+            f"Источник: {item['source']}\n{time_line}" f"Оригинал: {item['link']}\n\n"
+            "Проверь факты и формулировку перед публикацией.")
 
 
 def main():
-    token = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
-    chat_id = os.getenv("ADMIN_CHAT_ID", "").strip()
+    token, chat_id = os.getenv("TELEGRAM_BOT_TOKEN", "").strip(), os.getenv("ADMIN_CHAT_ID", "").strip()
     if not token or not chat_id:
         print("ERROR: set TELEGRAM_BOT_TOKEN and ADMIN_CHAT_ID in GitHub Actions secrets.")
         return 2
 
     config = load_json(CONFIG_PATH, {})
+    if not isinstance(config, dict):
+        print("ERROR: news_sources.json must contain a JSON object.")
+        return 2
     sources = config.get("sources", [])
-    if not sources:
+    if not isinstance(sources, list) or not sources:
         print("ERROR: no sources configured in news_sources.json.")
         return 2
-    max_age_hours = max(1, int(config.get("max_age_hours", 12)))
-    max_items = max(1, min(20, int(config.get("max_items_per_run", 10))))
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=max_age_hours)
-    state = load_json(SEEN_PATH, {"seen": []})
-    seen = set(state.get("seen", []))
-    collected = []
+    try:
+        max_age_hours = max(1, int(config.get("max_age_hours", 12)))
+        max_items = max(1, min(20, int(config.get("max_items_per_run", 10))))
+    except (TypeError, ValueError):
+        print("ERROR: max_age_hours and max_items_per_run must be integers.")
+        return 2
 
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=max_age_hours)
+    state = load_seen_state()
+    seen = set(state["seen"])
+    collected = []
     for source in sources:
-        name, url = str(source.get("name", "Источник")), str(source.get("url", ""))
+        if not isinstance(source, dict):
+            print("WARN: skipping invalid source entry (expected an object).")
+            continue
+        name = str(source.get("name", "Источник")).strip() or "Источник"
+        url = str(source.get("url", "")).strip()
         if not url.startswith("https://"):
             print(f"SKIP {name}: only HTTPS RSS URLs are allowed.")
             continue
@@ -166,9 +182,13 @@ def main():
                 if item["id"] in seen:
                     continue
                 published = item.pop("_published_dt", None)
-                if published and published < cutoff:
+                # Skip undated entries because their freshness cannot be verified.
+                if published is None:
+                    print(f"SKIP undated item: {item['title']}")
                     continue
-                item["_sort"] = published or datetime.min.replace(tzinfo=timezone.utc)
+                if published < cutoff:
+                    continue
+                item["_sort"] = published
                 collected.append(item)
         except Exception as exc:
             print(f"WARN {name}: {type(exc).__name__}: {exc}")
@@ -176,25 +196,32 @@ def main():
     collected.sort(key=lambda item: item["_sort"], reverse=True)
     selected = collected[:max_items]
     if not selected:
-        print("No new recent items to send.")
+        print("No new recent dated items to send.")
         return 0
 
-    sent_ids = []
+    sent_count = 0
     for item in selected:
         item.pop("_sort", None)
         try:
             telegram_send(token, chat_id, format_draft(item))
-            sent_ids.append(item["id"])
-            print(f"SENT: {item['source']} — {item['title']}")
-            time.sleep(0.4)
         except Exception as exc:
-            print(f"ERROR sending item {item.get('id')}: {exc}")
+            print(f"ERROR sending item {item.get('id')}: {type(exc).__name__}: {exc}")
+            print(f"Stopped after sending {sent_count} draft(s).")
             return 1
+        # Save each successful delivery immediately to avoid repeats after later failures.
+        state["seen"].append(item["id"])
+        state["seen"] = list(dict.fromkeys(state["seen"]))[-MAX_SEEN_IDS:]
+        seen.add(item["id"])
+        try:
+            save_seen_state(state)
+        except OSError as exc:
+            print(f"CRITICAL: sent a draft but could not save seen.json: {exc}")
+            return 1
+        sent_count += 1
+        print(f"SENT: {item['source']} — {item['title']}")
+        time.sleep(0.4)
 
-    SEEN_PATH.parent.mkdir(parents=True, exist_ok=True)
-    updated = list(dict.fromkeys(state.get("seen", []) + sent_ids))[-5000:]
-    SEEN_PATH.write_text(json.dumps({"seen": updated}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Finished. Sent {len(sent_ids)} draft(s).")
+    print(f"Finished. Sent {sent_count} draft(s).")
     return 0
 
 
