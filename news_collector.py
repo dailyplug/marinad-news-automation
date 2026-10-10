@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Marinad News Collector v2.3: event-aware deduplication and editorial signals."""
+"""Marinad News Collector v2.4: event-aware deduplication and editorial signals."""
 import difflib
 import json
 import os
@@ -19,7 +19,7 @@ ROOT = Path(__file__).resolve().parent
 CONFIG_PATH = ROOT / "news_sources.json"
 FILTER_PATH = ROOT / "news_filters.json"
 SEEN_PATH = ROOT / "data" / "seen.json"
-USER_AGENT = "MarinadNewsBot/2.3 (+RSS reader)"
+USER_AGENT = "MarinadNewsBot/2.4 (+RSS reader)"
 MAX_DESCRIPTION_CHARS = 900
 MAX_SEEN_IDS = 5000
 
@@ -85,7 +85,8 @@ GENERIC_LOW_SIGNAL = {"впервые", "президент", "россия", "�
     "сообщает", "названа", "рассказал", "стало известно", "по словам"}
 LOW_PRIORITY_DEFAULT = ["гороскоп", "рецепт дня", "афиша", "фестиваль",
     "билеты на концерт", "премьера спектакля", "откроется выставка",
-    "модный образ", "выбрал костюм", "в чем вышел"]
+    "модный образ", "выбрал костюм", "в чем вышел", "народные приметы",
+    "приметы погоды", "что расскажет погода", "лунный календарь"]
 
 def clean_text(value):
     value = unescape(value or "")
@@ -276,9 +277,15 @@ INCIDENT_TYPES = {
 LOCATION_RE = re.compile(
     r"\b([а-яё-]+\s+(?:крае|области|республике|округе|районе))\b", re.I
 )
+CITY_RE = re.compile(
+    r"\b(?:в|во|на)\s+(?:городском округе\s+|городе\s+|поселке\s+|посёлке\s+)?([а-яё-]{4,}(?:\s+[а-яё-]{4,})?)",
+    re.I,
+)
 GENERIC_LOCATIONS = {
     "россии", "россия", "стране", "регионе", "регионов", "мире", "сша",
-    "европе", "украине", "страны", "области", "крае", "городе"
+    "европе", "украине", "страны", "области", "крае", "городе", "результате",
+    "случае", "связи", "рамках", "ходе", "время", "субботу", "понедельник",
+    "вторник", "среду", "четверг", "пятницу", "сегодня", "вчера", "октябре"
 }
 
 def event_signature(item):
@@ -291,8 +298,25 @@ def event_signature(item):
         phrase = normalize_keyword(match.group(1))
         words = [w for w in phrase.split() if w not in GENERIC_LOCATIONS]
         if words and words[0] not in GENERIC_LOCATIONS and len(words[0]) > 3:
-            locations.append(" ".join(words))
+            locations.append(" ".join(_stem_location_word(w) for w in words))
+    # City names often appear in different grammatical forms across publishers:
+    # e.g. «в Мытищах» and «в городском округе Мытищи».
+    for match in CITY_RE.finditer(text):
+        words = [w for w in normalize_keyword(match.group(1)).split()
+                 if w not in GENERIC_LOCATIONS and w not in {"городском", "округе", "город", "поселке", "посёлке"}]
+        if words and len(words[0]) > 4:
+            locations.append(" ".join(_stem_location_word(w) for w in words))
     return set(kinds), set(locations)
+
+def _stem_location_word(word):
+    """Very conservative ending normalization for Russian place-name cases."""
+    word = normalize_keyword(word)
+    for suffix in ("ами", "ями", "ого", "ему", "ому", "ыми", "ими", "ах", "ях",
+                   "ов", "ев", "ей", "ам", "ям", "ом", "ем", "ой", "ей", "ью",
+                   "ия", "ии", "ья", "ье", "и", "ы", "а", "я", "е", "у"):
+        if len(word) - len(suffix) >= 4 and word.endswith(suffix):
+            return word[:-len(suffix)]
+    return word
 
 def same_event(a, b):
     """Only merge cross-source items with a shared event type and location."""
@@ -306,25 +330,42 @@ def same_event(a, b):
     return True
 
 def virality_score(item):
-    """Heuristic engagement potential; it is not a truth or reliability score."""
-    title = normalize_keyword(item.get("title", ""))
+    """Heuristic share/discussion potential, not a reach forecast or truth score."""
+    raw_title = item.get("title", "")
+    title = normalize_keyword(raw_title)
     body = normalize_keyword(item.get("description", ""))
     text = f"{title} {body}"
-    score = 20
-    strong = ["погибли", "теракт", "шок", "скандал", "разоблач", "запретили",
-              "неожиданно", "впервые", "рекорд", "миллион", "вирус", "обрушил",
-              "поймали на лжи", "признался", "запрет", "массов"]
-    if any(term in title for term in strong):
-        score += 20
-    elif any(term in body for term in strong):
-        score += 8
-    if "?" in item.get("title", "") or "!" in item.get("title", ""):
-        score += 5
-    if any(term in text for term in ["видео", "на видео", "очевидцы", "пользователи сети",
-                                     "соцсет", "обсуждают", "мем"]):
+    score = 18
+
+    # Strong event or conflict signals; match stems to cover inflected Russian forms.
+    high_impact = ["погиб", "погибл", "теракт", "массовая стрельба", "взрыв",
+                   "скандал", "разоблач", "запретил", "отменил", "обрушил",
+                   "рекорд", "миллион", "миллиард", "утечка данных", "слив данных",
+                   "арестовал", "задержал", "признался", "неожиданно", "шок"]
+    medium_impact = ["штраф", "подорожал", "подешевел", "закрылся", "уволил",
+                     "исчез", "спас", "победил", "провал", "новый закон", "запустил"]
+    if any(term in title for term in high_impact):
+        score += 24
+    elif any(term in body for term in high_impact):
         score += 10
-    if any(term in title for term in ["погода", "прогноз погоды", "курс валют"]):
-        score -= 8
+    if any(term in title for term in medium_impact):
+        score += 12
+    elif any(term in body for term in medium_impact):
+        score += 5
+
+    social_signals = ["видео", "на видео", "очевидцы", "пользователи сети",
+                      "соцсет", "обсуждают", "мем", "вирусн", "разошлось по сети"]
+    if any(term in text for term in social_signals):
+        score += 10
+    if "?" in raw_title or "!" in raw_title:
+        score += 4
+    if re.search(r"\b\d{2,}\b", title):
+        score += 4
+    # Routine service/lifestyle items should not look viral merely because they are fresh.
+    low_interest = ["народные приметы", "гороскоп", "рецепт дня", "афиша",
+                    "прогноз погоды", "что расскажет погода", "курс валют"]
+    if any(term in title for term in low_interest):
+        score -= 14
     return max(0, min(100, score))
 
 def source_type(source):
