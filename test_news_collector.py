@@ -89,5 +89,20 @@ class FeedAndStateTests(unittest.TestCase):
         self.assertIn("Проверь факты", message)
         self.assertIn("https://example.com", message)
 
+
+class DiversityTests(unittest.TestCase):
+    def test_selection_caps_category_at_three(self):
+        items = [
+            {"title": f"Accident {i}", "score": 80-i, "virality_score": 30,
+             "category": "происшествия"} for i in range(6)
+        ] + [
+            {"title": "Major economy story", "score": 60, "virality_score": 20,
+             "category": "экономика"}
+        ]
+        selected = nc.diverse_select(items, 7)
+        incidents = sum(1 for item in selected if item["category"] == "происшествия")
+        self.assertEqual(incidents, 3)
+        self.assertEqual(len(selected), 4)
+
 if __name__ == "__main__":
     unittest.main()
