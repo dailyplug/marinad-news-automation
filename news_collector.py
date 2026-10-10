@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Marinad News Collector v2.5: event-aware deduplication and editorial signals."""
+"""Marinad News Collector v2.6: safer feed health and publication-date validation."""
 import difflib
 import json
 import os
@@ -19,7 +19,7 @@ ROOT = Path(__file__).resolve().parent
 CONFIG_PATH = ROOT / "news_sources.json"
 FILTER_PATH = ROOT / "news_filters.json"
 SEEN_PATH = ROOT / "data" / "seen.json"
-USER_AGENT = "MarinadNewsBot/2.4 (+RSS reader)"
+USER_AGENT = "MarinadNewsBot/2.6 (+RSS reader)"
 MAX_DESCRIPTION_CHARS = 900
 MAX_SEEN_IDS = 5000
 
@@ -121,6 +121,18 @@ def fetch_feed(url):
         "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml"})
     with urllib.request.urlopen(req, timeout=20) as response:
         return response.read(4_000_000)
+
+
+
+def is_future_dated(published, now=None, tolerance_minutes=15):
+    """Return True only when a publication timestamp is implausibly in the future."""
+    if published is None:
+        return False
+    now = now or datetime.now(timezone.utc)
+    if published.tzinfo is None:
+        published = published.replace(tzinfo=timezone.utc)
+    return published > now + timedelta(minutes=tolerance_minutes)
+
 
 def parse_feed(xml_bytes, source_name):
     root = ET.fromstring(xml_bytes)
@@ -486,9 +498,13 @@ def main():
     except (TypeError, ValueError):
         print("ERROR: invalid numeric configuration.")
         return 2
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=max_age)
+    now = datetime.now(timezone.utc)
+    cutoff = now - timedelta(hours=max_age)
+    # Allow a small clock-skew tolerance, but never accept clearly future-dated items.
+    future_tolerance = timedelta(minutes=15)
     state, collected = load_seen_state(), []
     seen, skipped_score = set(), 0
+    successful_sources, failed_sources, future_dated = 0, 0, 0
     seen = set(state["seen"])
     for source in sources:
         if not isinstance(source, dict):
@@ -501,6 +517,7 @@ def main():
             continue
         try:
             entries = parse_feed(fetch_feed(url), name)
+            successful_sources += 1
             print(f"OK {name}: fetched {len(entries)} entries")
             for item in entries:
                 if item["id"] in seen:
@@ -508,6 +525,10 @@ def main():
                 published = item.pop("_published_dt", None)
                 if published is None:
                     print(f"SKIP undated item: {item['title']}")
+                    continue
+                if is_future_dated(published, now, int(future_tolerance.total_seconds() // 60)):
+                    future_dated += 1
+                    print(f"SKIP future-dated item: {item['title']} ({published.isoformat()})")
                     continue
                 if published < cutoff:
                     continue
@@ -522,7 +543,13 @@ def main():
                 item["_sort"] = published
                 collected.append(item)
         except Exception as exc:
+            failed_sources += 1
             print(f"WARN {name}: {type(exc).__name__}: {exc}")
+    print(f"SOURCE SUMMARY: configured={len(sources)}, successful={successful_sources}, "
+          f"failed={failed_sources}, future_dated_skipped={future_dated}")
+    if successful_sources == 0:
+        print("ERROR: all RSS sources failed; refusing to report a successful collection.")
+        return 1
     collected.sort(key=lambda x: (ranking_score(x), x["score"], x["_sort"]), reverse=True)
     unique = deduplicate(collected, similarity_limit)
     for item in unique:
