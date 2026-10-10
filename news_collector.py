@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Marinad News Collector v2.1: rank RSS items and send review drafts to Telegram."""
+"""Marinad News Collector v2.3: event-aware deduplication and editorial signals."""
 import difflib
 import json
 import os
@@ -19,7 +19,7 @@ ROOT = Path(__file__).resolve().parent
 CONFIG_PATH = ROOT / "news_sources.json"
 FILTER_PATH = ROOT / "news_filters.json"
 SEEN_PATH = ROOT / "data" / "seen.json"
-USER_AGENT = "MarinadNewsBot/2.1 (+RSS reader)"
+USER_AGENT = "MarinadNewsBot/2.3 (+RSS reader)"
 MAX_DESCRIPTION_CHARS = 900
 MAX_SEEN_IDS = 5000
 
@@ -264,12 +264,92 @@ def similarity(a, b):
     jaccard = len(wa & wb) / max(1, len(wa | wb))
     return max(seq, jaccard)
 
+
+INCIDENT_TYPES = {
+    "дтп": ["дтп", "столкновен", "авария", "сбил", "наезд", "погиб под колесами"],
+    "беспилотники": ["бпла", "беспилотник", "дрон", "атака беспилот"],
+    "пожар": ["пожар", "загорел", "возгорание"],
+    "взрыв": ["взрыв", "взорвал"],
+    "погода": ["шторм", "ураган", "снегопад", "наводнение", "паводок"],
+    "уголовное": ["задержан", "арестован", "обвиняется", "подозреваемый"],
+}
+LOCATION_RE = re.compile(
+    r"\b([а-яё-]+\s+(?:крае|области|республике|округе|районе))\b", re.I
+)
+GENERIC_LOCATIONS = {
+    "россии", "россия", "стране", "регионе", "регионов", "мире", "сша",
+    "европе", "украине", "страны", "области", "крае", "городе"
+}
+
+def event_signature(item):
+    """Conservative event fingerprint: incident type + specific location phrase."""
+    text = normalize_keyword(f"{item.get('title', '')} {item.get('description', '')}")
+    kinds = [kind for kind, terms in INCIDENT_TYPES.items()
+             if any(normalize_keyword(term) in text for term in terms)]
+    locations = []
+    for match in LOCATION_RE.finditer(text):
+        phrase = normalize_keyword(match.group(1))
+        words = [w for w in phrase.split() if w not in GENERIC_LOCATIONS]
+        if words and words[0] not in GENERIC_LOCATIONS and len(words[0]) > 3:
+            locations.append(" ".join(words))
+    return set(kinds), set(locations)
+
+def same_event(a, b):
+    """Only merge cross-source items with a shared event type and location."""
+    kinds_a, loc_a = event_signature(a)
+    kinds_b, loc_b = event_signature(b)
+    if not (kinds_a & kinds_b and loc_a & loc_b):
+        return False
+    da, db = a.get("_published_dt"), b.get("_published_dt")
+    if da and db and abs((da - db).total_seconds()) > 8 * 3600:
+        return False
+    return True
+
+def virality_score(item):
+    """Heuristic engagement potential; it is not a truth or reliability score."""
+    title = normalize_keyword(item.get("title", ""))
+    body = normalize_keyword(item.get("description", ""))
+    text = f"{title} {body}"
+    score = 20
+    strong = ["погибли", "теракт", "шок", "скандал", "разоблач", "запретили",
+              "неожиданно", "впервые", "рекорд", "миллион", "вирус", "обрушил",
+              "поймали на лжи", "признался", "запрет", "массов"]
+    if any(term in title for term in strong):
+        score += 20
+    elif any(term in body for term in strong):
+        score += 8
+    if "?" in item.get("title", "") or "!" in item.get("title", ""):
+        score += 5
+    if any(term in text for term in ["видео", "на видео", "очевидцы", "пользователи сети",
+                                     "соцсет", "обсуждают", "мем"]):
+        score += 10
+    if any(term in title for term in ["погода", "прогноз погоды", "курс валют"]):
+        score -= 8
+    return max(0, min(100, score))
+
+def source_type(source):
+    """Publisher class only; it does not verify a particular claim."""
+    name = normalize_keyword(source)
+    official = ["министерство", "правительство", "мчс", "полиция", "росстат", "мэрия"]
+    established = ["риа новости", "тасс", "интерфакс", "российская газета",
+                   "коммерсант", "известия", "лента.ру", "москва 24", "мк"]
+    if any(term in name for term in official):
+        return "официальный источник"
+    if any(term in name for term in established):
+        return "редакционное СМИ"
+    return "тип источника не классифицирован"
+
+
 def deduplicate(items, threshold):
     kept = []
     for item in items:
-        if any(similarity(item["title"], prev["title"]) >= threshold for prev in kept):
-            continue
-        kept.append(item)
+        duplicate = False
+        for prev in kept:
+            if similarity(item["title"], prev["title"]) >= threshold or same_event(item, prev):
+                duplicate = True
+                break
+        if not duplicate:
+            kept.append(item)
     return kept
 
 def diverse_select(items, max_items):
@@ -314,9 +394,13 @@ def format_draft(item):
         except (TypeError, ValueError):
             pass
     reasons = "; ".join(item.get("score_reasons", []))
+    viral = item.get("virality_score", virality_score(item))
+    reliability = source_type(item.get("source", ""))
     return ("⚡ ЧЕРНОВИК МАРИНАД\n\n" f"{item['title']}\n\n"
         f"Категория: {item.get('category', 'прочее')}\n"
-        f"Приоритет: {item.get('score', 20)}/100\n"
+        f"Редакционный приоритет: {item.get('score', 20)}/100\n"
+        f"Вирусный потенциал: {viral}/100 (эвристическая оценка)\n"
+        f"Источник: {reliability}; фактчек новости не выполнен\n"
         f"Причина: {reasons}\n\n" f"{description}"
         f"Источник: {item['source']}\n" f"{time_line}"
         f"Оригинал: {item['link']}\n\n"
@@ -377,6 +461,7 @@ def main():
                     continue
                 item["_published_dt"] = published
                 item["score"], item["score_reasons"] = score_news(item, rules)
+                item["virality_score"] = virality_score(item)
                 item["category"] = classify_news(item["title"], item["description"])[0]
                 if item["score"] < min_score:
                     skipped_score += 1
