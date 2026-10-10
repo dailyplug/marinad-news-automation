@@ -13,12 +13,12 @@
       "url": "https://feeds.bbci.co.uk/russian/rss.xml"
     },
     {
-      "name": "Коммерсантъ",
-      "url": "https://www.kommersant.ru/rss/news.xml"
+      "name": "NEWSru.com — главные новости",
+      "url": "https://rss.newsru.com/top/big/"
     },
     {
-      "name": "Известия",
-      "url": "https://iz.ru/xml/rss/all.xml"
+      "name": "Meduza",
+      "url": "https://meduza.io/rss/all"
     },
     {
       "name": "Интерфакс",
@@ -61,24 +61,24 @@
       "url": "https://www.m24.ru/rss.xml"
     },
     {
-      "name": "Фонтанка",
-      "url": "https://www.fontanka.ru/fontanka.rss"
+      "name": "Правительство Свердловской области",
+      "url": "https://midural.ru/rss"
     },
     {
-      "name": "E1.RU",
-      "url": "https://www.e1.ru/export/rss.xml"
+      "name": "Правительство Новосибирской области",
+      "url": "https://www.nso.ru/rss"
     },
     {
-      "name": "NSK.ru",
-      "url": "https://nsk.ru/rss"
+      "name": "NEWSru.com — все новости",
+      "url": "https://rss.newsru.com/all/big/"
     },
     {
-      "name": "Правительство Москвы",
-      "url": "https://www.mos.ru/news/rss.xml"
+      "name": "Правительство РФ",
+      "url": "http://government.ru/all/rss/"
     },
     {
-      "name": "Правительство Санкт-Петербурга",
-      "url": "https://www.gov.spb.ru/rss/"
+      "name": "Минздрав России",
+      "url": "https://minzdrav.gov.ru/news/feed"
     }
   ],
   "max_age_hours": 24,
