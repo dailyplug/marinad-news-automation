@@ -1,5 +1,6 @@
+
 #!/usr/bin/env python3
-"""Collect, score and send recent RSS news as Telegram drafts."""
+"""Collect, rank and send recent RSS news as Telegram drafts."""
 
 import difflib
 import json
@@ -21,7 +22,7 @@ CONFIG_PATH = ROOT / "news_sources.json"
 FILTER_PATH = ROOT / "news_filters.json"
 SEEN_PATH = ROOT / "data" / "seen.json"
 
-USER_AGENT = "MarinadNewsBot/1.3 (+RSS reader)"
+USER_AGENT = "MarinadNewsBot/1.4 (+RSS reader)"
 MAX_DESCRIPTION_CHARS = 650
 MAX_SEEN_IDS = 5000
 
@@ -43,6 +44,7 @@ def child_text(element, names):
 def parse_date(raw):
     if not raw:
         return None
+
     try:
         dt = parsedate_to_datetime(raw.strip())
         if dt.tzinfo is None:
@@ -50,7 +52,9 @@ def parse_date(raw):
         return dt.astimezone(timezone.utc)
     except (TypeError, ValueError, OverflowError):
         try:
-            dt = datetime.fromisoformat(raw.strip().replace("Z", "+00:00"))
+            dt = datetime.fromisoformat(
+                raw.strip().replace("Z", "+00:00")
+            )
             if dt.tzinfo is None:
                 dt = dt.replace(tzinfo=timezone.utc)
             return dt.astimezone(timezone.utc)
@@ -96,10 +100,15 @@ def parse_feed(xml_bytes, source_name):
                         break
 
         description = clean_text(
-            child_text(node, ("description", "summary", "content", "encoded"))
+            child_text(
+                node,
+                ("description", "summary", "content", "encoded"),
+            )
         )
+
         raw_date = child_text(
-            node, ("pubdate", "published", "updated", "date", "issued")
+            node,
+            ("pubdate", "published", "updated", "date", "issued"),
         )
         published = parse_date(raw_date)
 
@@ -142,7 +151,8 @@ def load_seen_state():
 
     clean_ids = list(
         dict.fromkeys(
-            value for value in ids if isinstance(value, str) and value
+            value for value in ids
+            if isinstance(value, str) and value
         )
     )
     return {"seen": clean_ids[-MAX_SEEN_IDS:]}
@@ -195,55 +205,136 @@ def matched_keywords(text, keywords):
 def score_news(item, rules):
     title = normalize_keyword(item.get("title", ""))
     description = normalize_keyword(item.get("description", ""))
-    full_text = f"{title} {description}".strip()
 
     high_keywords = rules.get("high_priority_keywords", [])
     medium_keywords = rules.get("medium_priority_keywords", [])
     low_keywords = rules.get("low_priority_keywords", [])
 
     high_title = matched_keywords(title, high_keywords)
-    high_body = matched_keywords(full_text, high_keywords)
+    high_body = matched_keywords(description, high_keywords)
     medium_title = matched_keywords(title, medium_keywords)
-    medium_body = matched_keywords(full_text, medium_keywords)
+    medium_body = matched_keywords(description, medium_keywords)
     low_title = matched_keywords(title, low_keywords)
 
     score = 20
     reasons = []
 
-    # Strong topics in the headline receive the largest bonus.
+    # Event categories reward concrete signals in the headline.
+    event_groups = {
+        "происшествия": [
+            "погибли",
+            "погиб",
+            "массовая стрельба",
+            "теракт",
+            "ракетный удар",
+            "обрушение",
+            "крупная авария",
+            "массовая эвакуация",
+            "режим чрезвычайной ситуации",
+            "много пострадавших",
+        ],
+        "экономика": [
+            "ключевая ставка",
+            "обвал рынка",
+            "рекордное падение",
+            "резкое падение рубля",
+            "индекс мосбиржи",
+            "курс рубля",
+            "центробанк",
+            "инфляция",
+        ],
+        "политика": [
+            "результаты выборов",
+            "объявил об отставке",
+            "экстренное заседание",
+            "законопроект",
+            "решение суда",
+            "объявлена мобилизация",
+        ],
+        "технологии": [
+            "массовый сбой",
+            "утечка персональных данных",
+            "кибератака",
+            "искусственный интеллект",
+            "кибербезопасность",
+            "научное открытие",
+        ],
+    }
+
+    for group, keywords in event_groups.items():
+        title_matches = matched_keywords(title, keywords)
+        body_matches = matched_keywords(description, keywords)
+
+        if title_matches:
+            score += 22
+            reasons.append(
+                f"событие: {group} — "
+                + ", ".join(title_matches[:2])
+            )
+        elif body_matches:
+            score += 6
+            reasons.append(
+                f"событие по теме «{group}» упомянуто в описании"
+            )
+
+    # High-priority terms are stronger when they appear in the headline.
     if high_title:
-        bonus = min(45, 30 + (len(high_title) - 1) * 5)
-        score += bonus
+        score += min(25, 18 + 3 * (len(high_title) - 1))
         reasons.append(
-            "важная тема в заголовке: " + ", ".join(high_title[:3])
+            "важный сигнал в заголовке: "
+            + ", ".join(high_title[:3])
         )
     elif high_body:
-        score += 18
+        score += 8
         reasons.append(
-            "важная тема в описании: " + ", ".join(high_body[:3])
+            "важный сигнал в описании: "
+            + ", ".join(high_body[:2])
         )
 
-    # A headline match matters more than a mention in the description.
-    if medium_title:
-        bonus = min(18, 10 + (len(medium_title) - 1) * 3)
-        score += bonus
+    # A name or broad topic alone should not dominate the ranking.
+    generic_terms = {
+        "президент россии",
+        "президент сша",
+        "правительство",
+        "переговоры",
+        "госдума",
+        "государственная дума",
+        "санкции",
+        "индекс мосбиржи",
+        "мосбиржа",
+        "курс рубля",
+        "центробанк",
+        "инфляция",
+        "ключевая ставка",
+        "атака",
+        "нападение",
+        "пожар",
+        "взрыв",
+        "кибератака",
+        "искусственный интеллект",
+        "кибербезопасность",
+        "сборная россии",
+        "финал турнира",
+    }
+
+    meaningful_medium = [
+        keyword for keyword in medium_title
+        if normalize_keyword(keyword) not in generic_terms
+    ]
+
+    if meaningful_medium:
+        score += min(10, 6 + 2 * (len(meaningful_medium) - 1))
         reasons.append(
-            "актуальная тема в заголовке: "
-            + ", ".join(medium_title[:3])
+            "дополнительная тема в заголовке: "
+            + ", ".join(meaningful_medium[:3])
         )
+    elif medium_title:
+        reasons.append("общее тематическое упоминание в заголовке")
     elif medium_body:
-        score += 5
-        reasons.append(
-            "актуальная тема в описании: "
-            + ", ".join(medium_body[:3])
-        )
+        score += 2
+        reasons.append("тематическое упоминание в описании")
 
-    # Reduce the score for clearly low-priority headline topics.
-    if low_title:
-        penalty = min(30, 18 + (len(low_title) - 1) * 4)
-        score -= penalty
-        reasons.append("низкий приоритет: " + ", ".join(low_title[:3]))
-
+    # Freshness helps, but cannot outweigh the topic by itself.
     published = item.get("_published_dt")
     if published:
         age_hours = (
@@ -251,11 +342,19 @@ def score_news(item, rules):
         ).total_seconds() / 3600
 
         if 0 <= age_hours <= 2:
-            score += 8
+            score += 5
             reasons.append("опубликовано не более 2 часов назад")
         elif 2 < age_hours <= 6:
-            score += 4
+            score += 3
             reasons.append("опубликовано не более 6 часов назад")
+
+    # Deprioritize lifestyle and entertainment headlines when configured.
+    if low_title:
+        penalty = min(25, 12 + 4 * (len(low_title) - 1))
+        score -= penalty
+        reasons.append(
+            "понижен приоритет: " + ", ".join(low_title[:3])
+        )
 
     score = max(0, min(100, score))
     return score, reasons or ["нет совпадений с ключевыми темами"]
@@ -365,7 +464,6 @@ def main():
             rules.get("max_similar_title_ratio", 0.88)
         )
         similarity_limit = max(0.5, min(1.0, similarity_limit))
-
     except (TypeError, ValueError):
         print("ERROR: invalid numeric configuration.")
         return 2
