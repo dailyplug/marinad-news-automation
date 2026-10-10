@@ -1,7 +1,5 @@
-
 #!/usr/bin/env python3
-"""Collect, rank and send recent RSS news as Telegram drafts."""
-
+"""Marinad News Collector v2.0: rank RSS items and send review drafts to Telegram."""
 import difflib
 import json
 import os
@@ -21,30 +19,88 @@ ROOT = Path(__file__).resolve().parent
 CONFIG_PATH = ROOT / "news_sources.json"
 FILTER_PATH = ROOT / "news_filters.json"
 SEEN_PATH = ROOT / "data" / "seen.json"
-
-USER_AGENT = "MarinadNewsBot/1.4 (+RSS reader)"
-MAX_DESCRIPTION_CHARS = 650
+USER_AGENT = "MarinadNewsBot/2.0 (+RSS reader)"
+MAX_DESCRIPTION_CHARS = 900
 MAX_SEEN_IDS = 5000
 
+# Rule-based signals. These prioritize topics but do not verify facts.
+EVENT_RULES = {
+    "происшествия": {
+        "critical": ["погибли", "погиб", "теракт", "массовая стрельба",
+            "ракетный удар", "обрушение", "крупная авария", "массовая эвакуация",
+            "много пострадавших", "режим чрезвычайной ситуации",
+            "угроза атаки бпла", "опасность атаки бпла",
+            "атака беспилотников", "объявили опасность атаки", "массовое отравление"],
+        "strong": ["пожар", "взрыв", "нападение", "авария", "беспилотник",
+            "бпла", "эвакуация", "пострадали", "экстренные службы",
+            "чрезвычайное происшествие"]},
+    "экономика": {
+        "critical": ["экстренное повышение ставки", "обвал рынка",
+            "рекордное падение рубля", "резкое падение рубля",
+            "резкое повышение цен", "банк лишился лицензии", "дефолт",
+            "биржа приостановила торги"],
+        "strong": ["ключевая ставка", "индекс мосбиржи", "курс рубля",
+            "центробанк", "инфляция", "цены на бензин", "санкции",
+            "рост цен", "падение акций", "безработица", "зарплата",
+            "пенсия", "налоги", "экономический прогноз"]},
+    "политика": {
+        "critical": ["объявил об отставке", "подал в отставку",
+            "результаты выборов", "объявлена мобилизация",
+            "досрочные выборы", "правительство распущено"],
+        "strong": ["выборы", "госдума", "государственная дума", "законопроект",
+            "решение суда", "переговоры", "правительство", "президент россии",
+            "президент сша", "министр", "дипломат", "посол", "санкции"]},
+    "международные события": {
+        "critical": ["началась война", "объявление войны",
+            "перемирие вступило в силу", "разрыв дипломатических отношений"],
+        "strong": ["международный конфликт", "саммит", "нато", "евросоюз",
+            "оон", "посол", "граница", "военная операция", "удар по", "переговоры"]},
+    "здоровье": {
+        "critical": ["введен карантин", "вспышка опасной инфекции",
+            "чрезвычайная ситуация в здравоохранении"],
+        "strong": ["грипп", "эпидемия", "инфекция", "вакцина", "минздрав",
+            "заболеваемость", "больница", "лекарство", "медицинское исследование"]},
+    "технологии": {
+        "critical": ["массовая утечка данных", "массовый сбой",
+            "утечка персональных данных", "крупная кибератака"],
+        "strong": ["искусственный интеллект", "кибербезопасность", "кибератака",
+            "сбой сервиса", "смартфон", "научное открытие", "технология", "робот"]},
+    "общество": {
+        "critical": ["массовая эвакуация", "режим чрезвычайной ситуации",
+            "крупное отключение электричества"],
+        "strong": ["общественный транспорт", "отключение электричества", "школа",
+            "университет", "жилье", "коммунальные услуги", "погода", "наводнение", "шторм"]},
+    "спорт": {
+        "critical": ["выиграла чемпионат мира", "установил мировой рекорд",
+            "завоевал олимпийское золото"],
+        "strong": ["сборная россии", "финал турнира", "чемпионат", "олимпиада",
+            "футбол", "хоккей"]},
+    "развлечения": {
+        "critical": [],
+        "strong": ["фестиваль", "премьера", "афиша", "билеты на концерт",
+            "модный образ", "выбрал костюм", "гороскоп", "рецепт дня",
+            "откроется выставка"]},
+}
+GENERIC_LOW_SIGNAL = {"впервые", "президент", "россия", "заявил",
+    "сообщает", "названа", "рассказал", "стало известно", "по словам"}
+LOW_PRIORITY_DEFAULT = ["гороскоп", "рецепт дня", "афиша", "фестиваль",
+    "билеты на концерт", "премьера спектакля", "откроется выставка",
+    "модный образ", "выбрал костюм", "в чем вышел"]
 
 def clean_text(value):
     value = unescape(value or "")
     value = re.sub(r"<[^>]+>", " ", value)
-    return re.sub(r"\s+", " ", value).strip()
-
+    return re.sub(r"\\s+", " ", value).strip()
 
 def child_text(element, names):
     for child in list(element):
-        tag = child.tag.rsplit("}", 1)[-1].lower()
-        if tag in names and child.text:
+        if child.tag.rsplit("}", 1)[-1].lower() in names and child.text:
             return child.text.strip()
     return ""
-
 
 def parse_date(raw):
     if not raw:
         return None
-
     try:
         dt = parsedate_to_datetime(raw.strip())
         if dt.tzinfo is None:
@@ -52,82 +108,42 @@ def parse_date(raw):
         return dt.astimezone(timezone.utc)
     except (TypeError, ValueError, OverflowError):
         try:
-            dt = datetime.fromisoformat(
-                raw.strip().replace("Z", "+00:00")
-            )
+            dt = datetime.fromisoformat(raw.strip().replace("Z", "+00:00"))
             if dt.tzinfo is None:
                 dt = dt.replace(tzinfo=timezone.utc)
             return dt.astimezone(timezone.utc)
         except (TypeError, ValueError, OverflowError):
             return None
 
-
 def fetch_feed(url):
-    request = urllib.request.Request(
-        url,
-        headers={
-            "User-Agent": USER_AGENT,
-            "Accept": (
-                "application/rss+xml, application/atom+xml, "
-                "application/xml, text/xml"
-            ),
-        },
-    )
-    with urllib.request.urlopen(request, timeout=20) as response:
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT,
+        "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml"})
+    with urllib.request.urlopen(req, timeout=20) as response:
         return response.read(4_000_000)
-
 
 def parse_feed(xml_bytes, source_name):
     root = ET.fromstring(xml_bytes)
     results = []
-
     for node in root.iter():
-        tag = node.tag.rsplit("}", 1)[-1].lower()
-        if tag not in ("item", "entry"):
+        if node.tag.rsplit("}", 1)[-1].lower() not in ("item", "entry"):
             continue
-
         title = clean_text(child_text(node, ("title",)))
         link = child_text(node, ("link",))
-
         if not link:
             for child in list(node):
-                child_tag = child.tag.rsplit("}", 1)[-1].lower()
-                if child_tag == "link":
-                    rel = child.attrib.get("rel", "alternate")
-                    candidate = child.attrib.get("href", "")
+                if child.tag.rsplit("}", 1)[-1].lower() == "link":
+                    rel, candidate = child.attrib.get("rel", "alternate"), child.attrib.get("href", "")
                     if candidate and rel in ("alternate", ""):
                         link = candidate
                         break
-
-        description = clean_text(
-            child_text(
-                node,
-                ("description", "summary", "content", "encoded"),
-            )
-        )
-
-        raw_date = child_text(
-            node,
-            ("pubdate", "published", "updated", "date", "issued"),
-        )
-        published = parse_date(raw_date)
-
+        description = clean_text(child_text(node, ("description", "summary", "content", "encoded")))
+        published = parse_date(child_text(node, ("pubdate", "published", "updated", "date", "issued")))
         if title and link.startswith(("https://", "http://")):
             identifier = child_text(node, ("guid", "id")) or link
-            results.append(
-                {
-                    "id": f"{source_name}:{identifier}",
-                    "source": source_name,
-                    "title": title,
-                    "link": link,
-                    "description": description[:MAX_DESCRIPTION_CHARS],
-                    "published": published.isoformat() if published else "",
-                    "_published_dt": published,
-                }
-            )
-
+            results.append({"id": f"{source_name}:{identifier}", "source": source_name,
+                "title": title, "link": link, "description": description[:MAX_DESCRIPTION_CHARS],
+                "published": published.isoformat() if published else "", "_published_dt": published})
     return results
-
 
 def load_json(path, default):
     try:
@@ -135,471 +151,270 @@ def load_json(path, default):
     except (OSError, json.JSONDecodeError):
         return default
 
-
 def load_seen_state():
     raw = load_json(SEEN_PATH, {"seen": []})
-
-    if isinstance(raw, list):
-        ids = raw
-    elif isinstance(raw, dict):
-        ids = raw.get("seen", [])
-    else:
-        ids = []
-
+    ids = raw if isinstance(raw, list) else raw.get("seen", []) if isinstance(raw, dict) else []
     if not isinstance(ids, list):
         ids = []
-
-    clean_ids = list(
-        dict.fromkeys(
-            value for value in ids
-            if isinstance(value, str) and value
-        )
-    )
-    return {"seen": clean_ids[-MAX_SEEN_IDS:]}
-
+    return {"seen": list(dict.fromkeys(v for v in ids if isinstance(v, str) and v))[-MAX_SEEN_IDS:]}
 
 def save_seen_state(state):
     SEEN_PATH.parent.mkdir(parents=True, exist_ok=True)
-    temp_path = SEEN_PATH.with_suffix(".json.tmp")
-    temp_path.write_text(
-        json.dumps(state, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
-    )
-    temp_path.replace(SEEN_PATH)
-
+    temp = SEEN_PATH.with_suffix(".json.tmp")
+    temp.write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    temp.replace(SEEN_PATH)
 
 def normalize_title(title):
     title = title.lower().replace("ё", "е")
-    title = re.sub(r"https?://\S+", " ", title)
+    title = re.sub(r"https?://\\S+", " ", title)
     title = re.sub(r"[^a-zа-я0-9]+", " ", title)
-    return re.sub(r"\s+", " ", title).strip()
-
+    return re.sub(r"\\s+", " ", title).strip()
 
 def normalize_keyword(keyword):
-    keyword = str(keyword).lower().replace("ё", "е")
-    return re.sub(r"\s+", " ", keyword).strip()
-
+    return re.sub(r"\\s+", " ", str(keyword).lower().replace("ё", "е")).strip()
 
 def keyword_matches(text, keyword):
-    """Match a phrase without matching it inside a longer word."""
     keyword = normalize_keyword(keyword)
     if not keyword:
         return False
-
-    pattern = (
-        r"(?<![a-zа-я0-9])"
-        + re.escape(keyword)
-        + r"(?![a-zа-я0-9])"
-    )
-    return re.search(pattern, text) is not None
-
+    return re.search(r"(?<![a-zа-я0-9])" + re.escape(keyword) + r"(?![a-zа-я0-9])", text) is not None
 
 def matched_keywords(text, keywords):
-    matches = []
-    for keyword in keywords:
-        if keyword_matches(text, keyword):
-            matches.append(str(keyword))
-    return matches
+    return [str(k) for k in keywords if keyword_matches(text, k)]
 
+def classify_news(title, description=""):
+    title, description = normalize_keyword(title), normalize_keyword(description)
+    scores, evidence = {}, {}
+    for category, groups in EVENT_RULES.items():
+        critical = matched_keywords(title, groups["critical"])
+        strong_title = matched_keywords(title, groups["strong"])
+        strong_body = matched_keywords(description, groups["strong"])
+        value = (28 if critical else 0) + (min(18, 10 + 3 * (len(strong_title)-1)) if strong_title else 0)
+        if not strong_title and strong_body:
+            value += 4
+        if critical or strong_title or strong_body:
+            scores[category] = value
+            evidence[category] = {"critical": critical, "title": strong_title, "description": strong_body}
+    if not scores:
+        return "прочее", {}, {}
+    category = max(scores, key=scores.get)
+    return category, scores, evidence
 
 def score_news(item, rules):
     title = normalize_keyword(item.get("title", ""))
     description = normalize_keyword(item.get("description", ""))
-
-    high_keywords = rules.get("high_priority_keywords", [])
-    medium_keywords = rules.get("medium_priority_keywords", [])
-    low_keywords = rules.get("low_priority_keywords", [])
-
-    high_title = matched_keywords(title, high_keywords)
-    high_body = matched_keywords(description, high_keywords)
-    medium_title = matched_keywords(title, medium_keywords)
-    medium_body = matched_keywords(description, medium_keywords)
-    low_title = matched_keywords(title, low_keywords)
-
-    score = 20
-    reasons = []
-
-    # Event categories reward concrete signals in the headline.
-    event_groups = {
-        "происшествия": [
-            "погибли",
-            "погиб",
-            "массовая стрельба",
-            "теракт",
-            "ракетный удар",
-            "обрушение",
-            "крупная авария",
-            "массовая эвакуация",
-            "режим чрезвычайной ситуации",
-            "много пострадавших",
-        ],
-        "экономика": [
-            "ключевая ставка",
-            "обвал рынка",
-            "рекордное падение",
-            "резкое падение рубля",
-            "индекс мосбиржи",
-            "курс рубля",
-            "центробанк",
-            "инфляция",
-        ],
-        "политика": [
-            "результаты выборов",
-            "объявил об отставке",
-            "экстренное заседание",
-            "законопроект",
-            "решение суда",
-            "объявлена мобилизация",
-        ],
-        "технологии": [
-            "массовый сбой",
-            "утечка персональных данных",
-            "кибератака",
-            "искусственный интеллект",
-            "кибербезопасность",
-            "научное открытие",
-        ],
-    }
-
-    for group, keywords in event_groups.items():
-        title_matches = matched_keywords(title, keywords)
-        body_matches = matched_keywords(description, keywords)
-
-        if title_matches:
-            score += 22
-            reasons.append(
-                f"событие: {group} — "
-                + ", ".join(title_matches[:2])
-            )
-        elif body_matches:
-            score += 6
-            reasons.append(
-                f"событие по теме «{group}» упомянуто в описании"
-            )
-
-    # High-priority terms are stronger when they appear in the headline.
+    category, category_scores, evidence = classify_news(title, description)
+    score, reasons = 20, []
+    cat_score = category_scores.get(category, 0)
+    score += cat_score
+    if cat_score:
+        reasons.append(f"категория: {category}")
+        for field, label in (("critical", "сильный сигнал"), ("title", "сигнал в заголовке"),
+                             ("description", "сигнал в описании")):
+            matches = evidence.get(category, {}).get(field, [])
+            if matches:
+                reasons.append(f"{label}: {', '.join(matches[:2])}")
+    high = rules.get("high_priority_keywords", [])
+    medium = rules.get("medium_priority_keywords", [])
+    low = rules.get("low_priority_keywords", LOW_PRIORITY_DEFAULT)
+    high_title, high_body = matched_keywords(title, high), matched_keywords(description, high)
+    medium_title, medium_body = matched_keywords(title, medium), matched_keywords(description, medium)
+    low_title = matched_keywords(title, list(dict.fromkeys(list(low) + LOW_PRIORITY_DEFAULT)))
     if high_title:
-        score += min(25, 18 + 3 * (len(high_title) - 1))
-        reasons.append(
-            "важный сигнал в заголовке: "
-            + ", ".join(high_title[:3])
-        )
+        score += min(20, 14 + 2 * (len(high_title)-1))
+        reasons.append("важная тема: " + ", ".join(high_title[:3]))
     elif high_body:
-        score += 8
-        reasons.append(
-            "важный сигнал в описании: "
-            + ", ".join(high_body[:2])
-        )
-
-    # A name or broad topic alone should not dominate the ranking.
-    generic_terms = {
-        "президент россии",
-        "президент сша",
-        "правительство",
-        "переговоры",
-        "госдума",
-        "государственная дума",
-        "санкции",
-        "индекс мосбиржи",
-        "мосбиржа",
-        "курс рубля",
-        "центробанк",
-        "инфляция",
-        "ключевая ставка",
-        "атака",
-        "нападение",
-        "пожар",
-        "взрыв",
-        "кибератака",
-        "искусственный интеллект",
-        "кибербезопасность",
-        "сборная россии",
-        "финал турнира",
-    }
-
-    meaningful_medium = [
-        keyword for keyword in medium_title
-        if normalize_keyword(keyword) not in generic_terms
-    ]
-
-    if meaningful_medium:
-        score += min(10, 6 + 2 * (len(meaningful_medium) - 1))
-        reasons.append(
-            "дополнительная тема в заголовке: "
-            + ", ".join(meaningful_medium[:3])
-        )
-    elif medium_title:
-        reasons.append("общее тематическое упоминание в заголовке")
+        score += 5
+        reasons.append("важная тема в описании: " + ", ".join(high_body[:2]))
+    useful_medium = [w for w in medium_title if normalize_keyword(w) not in GENERIC_LOW_SIGNAL]
+    if useful_medium:
+        score += min(8, 4 + 2 * (len(useful_medium)-1))
+        reasons.append("дополнительная тема: " + ", ".join(useful_medium[:3]))
     elif medium_body:
-        score += 2
+        score += 1
         reasons.append("тематическое упоминание в описании")
-
-    # Freshness helps, but cannot outweigh the topic by itself.
+    if low_title:
+        score -= min(22, 12 + 4 * (len(low_title)-1))
+        reasons.append("низкий редакционный приоритет: " + ", ".join(low_title[:2]))
     published = item.get("_published_dt")
     if published:
-        age_hours = (
-            datetime.now(timezone.utc) - published
-        ).total_seconds() / 3600
-
-        if 0 <= age_hours <= 2:
+        age = (datetime.now(timezone.utc) - published).total_seconds() / 3600
+        if 0 <= age <= 2:
             score += 5
-            reasons.append("опубликовано не более 2 часов назад")
-        elif 2 < age_hours <= 6:
+            reasons.append("свежесть: до 2 часов")
+        elif 2 < age <= 6:
             score += 3
-            reasons.append("опубликовано не более 6 часов назад")
+            reasons.append("свежесть: до 6 часов")
+        elif 6 < age <= 12:
+            score += 1
+            reasons.append("свежесть: до 12 часов")
+    return max(0, min(100, score)), reasons or ["общих значимых сигналов не найдено"]
 
-    # Deprioritize lifestyle and entertainment headlines when configured.
-    if low_title:
-        penalty = min(25, 12 + 4 * (len(low_title) - 1))
-        score -= penalty
-        reasons.append(
-            "понижен приоритет: " + ", ".join(low_title[:3])
-        )
+def similarity(a, b):
+    na, nb = normalize_title(a), normalize_title(b)
+    if not na or not nb:
+        return 0.0
+    seq = difflib.SequenceMatcher(None, na, nb).ratio()
+    wa, wb = set(na.split()), set(nb.split())
+    jaccard = len(wa & wb) / max(1, len(wa | wb))
+    return max(seq, jaccard)
 
-    score = max(0, min(100, score))
-    return score, reasons or ["нет совпадений с ключевыми темами"]
+def deduplicate(items, threshold):
+    kept = []
+    for item in items:
+        if any(similarity(item["title"], prev["title"]) >= threshold for prev in kept):
+            continue
+        kept.append(item)
+    return kept
 
+def diverse_select(items, max_items):
+    selected, counts, remaining = [], {}, list(items)
+    while remaining and len(selected) < max_items:
+        idx, best = 0, None
+        for i, item in enumerate(remaining):
+            value = item["score"] - counts.get(item.get("category", "прочее"), 0) * 8
+            if best is None or value > best:
+                idx, best = i, value
+        item = remaining.pop(idx)
+        selected.append(item)
+        cat = item.get("category", "прочее")
+        counts[cat] = counts.get(cat, 0) + 1
+    return selected
 
 def telegram_send(token, chat_id, message):
     url = f"https://api.telegram.org/bot{token}/sendMessage"
-    payload = urllib.parse.urlencode(
-        {
-            "chat_id": chat_id,
-            "text": message,
-            "disable_web_page_preview": "true",
-        }
-    ).encode()
-
-    request = urllib.request.Request(url, data=payload, method="POST")
-
+    payload = urllib.parse.urlencode({"chat_id": chat_id, "text": message,
+        "disable_web_page_preview": "true"}).encode()
+    req = urllib.request.Request(url, data=payload, method="POST")
     try:
-        with urllib.request.urlopen(request, timeout=20) as response:
+        with urllib.request.urlopen(req, timeout=20) as response:
             result = json.loads(response.read().decode("utf-8"))
-
         if not result.get("ok"):
             raise RuntimeError("Telegram API rejected the message.")
-
     except urllib.error.HTTPError as exc:
         detail = exc.read().decode("utf-8", errors="replace")[:500]
-        raise RuntimeError(
-            f"Telegram HTTP {exc.code}: {detail}"
-        ) from exc
-
+        raise RuntimeError(f"Telegram HTTP {exc.code}: {detail}") from exc
 
 def format_draft(item):
     description = item.get("description", "")
     if description:
         description = description.rstrip() + "\n\n"
-
     time_line = ""
     if item.get("published"):
         try:
             dt = datetime.fromisoformat(item["published"])
             if dt.tzinfo is None:
                 dt = dt.replace(tzinfo=timezone.utc)
-            dt = dt.astimezone(timezone.utc)
-            time_line = f"🕒 {dt.strftime('%d.%m.%Y %H:%M UTC')}\n"
+            time_line = f"🕒 {dt.astimezone(timezone.utc).strftime('%d.%m.%Y %H:%M UTC')}\n"
         except (TypeError, ValueError):
             pass
-
-    reasons = ", ".join(item.get("score_reasons", []))
-
-    return (
-        "⚡ ЧЕРНОВИК МАРИНАД\n\n"
-        f"{item['title']}\n\n"
+    reasons = "; ".join(item.get("score_reasons", []))
+    return ("⚡ ЧЕРНОВИК МАРИНАД\n\n" f"{item['title']}\n\n"
+        f"Категория: {item.get('category', 'прочее')}\n"
         f"Приоритет: {item.get('score', 20)}/100\n"
-        f"Причина: {reasons}\n\n"
-        f"{description}"
-        f"Источник: {item['source']}\n"
-        f"{time_line}"
+        f"Причина: {reasons}\n\n" f"{description}"
+        f"Источник: {item['source']}\n" f"{time_line}"
         f"Оригинал: {item['link']}\n\n"
-        "Проверь факты и формулировку перед публикацией."
-    )
-
+        "Проверь факты и формулировку перед публикацией.")
 
 def main():
-    token = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
-    chat_id = os.getenv("ADMIN_CHAT_ID", "").strip()
-
+    token, chat_id = os.getenv("TELEGRAM_BOT_TOKEN", "").strip(), os.getenv("ADMIN_CHAT_ID", "").strip()
     if not token or not chat_id:
         print("ERROR: Telegram secrets are missing.")
         return 2
-
-    config = load_json(CONFIG_PATH, {})
-    rules = load_json(FILTER_PATH, None)
-
+    config, rules = load_json(CONFIG_PATH, {}), load_json(FILTER_PATH, None)
     if not isinstance(config, dict):
         print("ERROR: news_sources.json must be a JSON object.")
         return 2
-
     if not isinstance(rules, dict):
         print("ERROR: news_filters.json is missing or invalid.")
         return 2
-
     sources = config.get("sources", [])
     if not isinstance(sources, list) or not sources:
         print("ERROR: no RSS sources configured.")
         return 2
-
-    for key in (
-        "high_priority_keywords",
-        "medium_priority_keywords",
-        "low_priority_keywords",
-    ):
-        if not isinstance(rules.get(key, []), list):
+    for key in ("high_priority_keywords", "medium_priority_keywords", "low_priority_keywords"):
+        if key in rules and not isinstance(rules[key], list):
             print(f"ERROR: {key} must be a JSON array.")
             return 2
-
     try:
-        max_age_hours = max(
-            1, int(config.get("max_age_hours", 12))
-        )
-        max_items = max(
-            1, min(20, int(config.get("max_items_per_run", 5)))
-        )
-        min_score = max(
-            0, min(100, int(rules.get("min_score", 20)))
-        )
-        similarity_limit = float(
-            rules.get("max_similar_title_ratio", 0.88)
-        )
-        similarity_limit = max(0.5, min(1.0, similarity_limit))
+        max_age = max(1, int(config.get("max_age_hours", 12)))
+        max_items = max(1, min(20, int(config.get("max_items_per_run", 5))))
+        min_score = max(0, min(100, int(rules.get("min_score", 20))))
+        similarity_limit = max(0.5, min(1.0, float(rules.get("max_similar_title_ratio", 0.88))))
     except (TypeError, ValueError):
         print("ERROR: invalid numeric configuration.")
         return 2
-
-    cutoff = datetime.now(timezone.utc) - timedelta(
-        hours=max_age_hours
-    )
-    state = load_seen_state()
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=max_age)
+    state, collected = load_seen_state(), []
+    seen, skipped_score = set(), 0
     seen = set(state["seen"])
-    collected = []
-    skipped_score = 0
-    skipped_similar = 0
-
     for source in sources:
         if not isinstance(source, dict):
             print("WARN: skipping invalid source entry.")
             continue
-
         name = str(source.get("name", "Источник")).strip() or "Источник"
         url = str(source.get("url", "")).strip()
-
         if not url.startswith("https://"):
             print(f"SKIP {name}: only HTTPS RSS URLs are allowed.")
             continue
-
         try:
             entries = parse_feed(fetch_feed(url), name)
             print(f"OK {name}: fetched {len(entries)} entries")
-
             for item in entries:
                 if item["id"] in seen:
                     continue
-
                 published = item.pop("_published_dt", None)
                 if published is None:
                     print(f"SKIP undated item: {item['title']}")
                     continue
-
                 if published < cutoff:
                     continue
-
                 item["_published_dt"] = published
-                item["score"], item["score_reasons"] = score_news(
-                    item, rules
-                )
-
+                item["score"], item["score_reasons"] = score_news(item, rules)
+                item["category"] = classify_news(item["title"], item["description"])[0]
                 if item["score"] < min_score:
                     skipped_score += 1
-                    print(
-                        f"SKIP low score ({item['score']}): "
-                        f"{item['title']}"
-                    )
+                    print(f"SKIP low score ({item['score']}): {item['title']}")
                     continue
-
                 item["_sort"] = published
                 collected.append(item)
-
         except Exception as exc:
             print(f"WARN {name}: {type(exc).__name__}: {exc}")
-
-    collected.sort(
-        key=lambda item: (item["score"], item["_sort"]),
-        reverse=True,
-    )
-
-    unique_items = []
-    normalized_titles = []
-
-    for item in collected:
-        normalized = normalize_title(item["title"])
-        if not normalized:
-            continue
-
-        duplicate = any(
-            difflib.SequenceMatcher(
-                None, normalized, previous
-            ).ratio() >= similarity_limit
-            for previous in normalized_titles
-        )
-
-        if duplicate:
-            skipped_similar += 1
-            print(f"SKIP similar title: {item['title']}")
-            continue
-
-        normalized_titles.append(normalized)
-        unique_items.append(item)
-
-    selected = unique_items[:max_items]
-
-    print(
-        f"FILTER SUMMARY: accepted={len(unique_items)}, "
-        f"low_score={skipped_score}, similar={skipped_similar}"
-    )
-
+    collected.sort(key=lambda x: (x["score"], x["_sort"]), reverse=True)
+    unique = deduplicate(collected, similarity_limit)
+    for item in unique:
+        print(f"CANDIDATE score={item['score']} category={item['category']} "
+              f"reasons={'; '.join(item['score_reasons'])} — {item['title']}")
+    selected = diverse_select(unique, max_items)
+    print(f"FILTER SUMMARY: candidates={len(collected)}, low_score={skipped_score}, "
+          f"duplicates={len(collected)-len(unique)}, selected={len(selected)}")
     if not selected:
         print("No new items passed the filters.")
         return 0
-
-    sent_count = 0
-
+    sent = 0
     for item in selected:
         item.pop("_sort", None)
         item.pop("_published_dt", None)
-
         try:
             telegram_send(token, chat_id, format_draft(item))
         except Exception as exc:
-            print(
-                f"ERROR sending item {item.get('id')}: "
-                f"{type(exc).__name__}: {exc}"
-            )
-            print(f"Stopped after sending {sent_count} draft(s).")
+            print(f"ERROR sending item {item.get('id')}: {type(exc).__name__}: {exc}")
+            print(f"Stopped after sending {sent} draft(s).")
             return 1
-
         state["seen"].append(item["id"])
-        state["seen"] = list(
-            dict.fromkeys(state["seen"])
-        )[-MAX_SEEN_IDS:]
-
+        state["seen"] = list(dict.fromkeys(state["seen"]))[-MAX_SEEN_IDS:]
         try:
             save_seen_state(state)
         except OSError as exc:
             print(f"CRITICAL: could not save seen.json: {exc}")
             return 1
-
-        sent_count += 1
-        print(
-            f"SENT score={item['score']} "
-            f"{item['source']} — {item['title']}"
-        )
+        sent += 1
+        print(f"SENT score={item['score']} category={item['category']} "
+              f"{item['source']} — {item['title']}")
         time.sleep(0.4)
-
-    print(f"Finished. Sent {sent_count} draft(s).")
+    print(f"Finished. Sent {sent} draft(s).")
     return 0
-
 
 if __name__ == "__main__":
     sys.exit(main())
