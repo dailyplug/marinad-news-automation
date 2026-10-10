@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Marinad News Collector v2.4: event-aware deduplication and editorial signals."""
+"""Marinad News Collector v2.5: event-aware deduplication and editorial signals."""
 import difflib
 import json
 import os
