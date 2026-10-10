@@ -248,6 +248,11 @@ def score_news(item, rules):
         elif 6 < age <= 12:
             score += 1
             reasons.append("свежесть: до 12 часов")
+        elif 12 < age <= 24:
+            # Small bonus keeps eligible older stories in consideration without
+            # letting age outweigh relevance or reliability signals.
+            score += 1
+            reasons.append("свежесть: до 24 часов")
     return max(0, min(100, score)), reasons or ["общих значимых сигналов не найдено"]
 
 def similarity(a, b):
