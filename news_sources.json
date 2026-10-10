@@ -33,16 +33,12 @@
       "url": "https://lenta.ru/rss"
     },
     {
-      "name": "Вести.Ru",
+      "name": "Пятый канал",
       "url": "https://www.5-tv.ru/news/rss/"
     },
     {
       "name": "Газета.Ru",
       "url": "https://www.gazeta.ru/export/rss/first.xml"
-    },
-    {
-      "name": "Московский комсомолец",
-      "url": "https://www.mk.ru/rss/index.xml"
     },
     {
       "name": "RT",
@@ -59,28 +55,8 @@
     {
       "name": "Москва 24",
       "url": "https://www.m24.ru/rss.xml"
-    },
-    {
-      "name": "Правительство Свердловской области",
-      "url": "https://midural.ru/rss"
-    },
-    {
-      "name": "Правительство Новосибирской области",
-      "url": "https://www.nso.ru/rss"
-    },
-    {
-      "name": "NEWSru.com — все новости",
-      "url": "https://rss.newsru.com/all/big/"
-    },
-    {
-      "name": "Правительство РФ",
-      "url": "http://government.ru/all/rss/"
-    },
-    {
-      "name": "Минздрав России",
-      "url": "https://minzdrav.gov.ru/news/feed"
     }
   ],
-  "max_age_hours": 24,
-  "max_items_per_run": 10
+  "max_age_hours": 18,
+  "max_items_per_run": 7
 }
