@@ -1,9 +1,86 @@
 {
   "sources": [
-    {"name": "РИА Новости", "url": "https://ria.ru/export/rss2/archive/index.xml"},
-    {"name": "ТАСС", "url": "https://tass.ru/rss/v2.xml"},
-    {"name": "BBC News Русская служба", "url": "https://feeds.bbci.co.uk/russian/rss.xml"}
+    {
+      "name": "РИА Новости",
+      "url": "https://ria.ru/export/rss2/archive/index.xml"
+    },
+    {
+      "name": "ТАСС",
+      "url": "https://tass.ru/rss/v2.xml"
+    },
+    {
+      "name": "BBC News Русская служба",
+      "url": "https://feeds.bbci.co.uk/russian/rss.xml"
+    },
+    {
+      "name": "Коммерсантъ",
+      "url": "https://www.kommersant.ru/RSS/main.xml"
+    },
+    {
+      "name": "Известия",
+      "url": "https://iz.ru/xml/rss/all.xml"
+    },
+    {
+      "name": "Интерфакс",
+      "url": "https://www.interfax.ru/rss.asp"
+    },
+    {
+      "name": "Российская газета",
+      "url": "https://rg.ru/xml/index.xml"
+    },
+    {
+      "name": "Лента.ру",
+      "url": "https://lenta.ru/rss"
+    },
+    {
+      "name": "Вести.Ru",
+      "url": "https://www.vesti.ru/vesti.rss"
+    },
+    {
+      "name": "Газета.Ru",
+      "url": "https://www.gazeta.ru/export/rss/first.xml"
+    },
+    {
+      "name": "Московский комсомолец",
+      "url": "https://www.mk.ru/rss/index.xml"
+    },
+    {
+      "name": "RT",
+      "url": "https://www.rt.com/rss/"
+    },
+    {
+      "name": "Медиаzona",
+      "url": "https://zona.media/rss"
+    },
+    {
+      "name": "The Moscow Times",
+      "url": "https://www.themoscowtimes.com/rss/news"
+    },
+    {
+      "name": "Москва 24",
+      "url": "https://www.m24.ru/rss.xml"
+    },
+    {
+      "name": "Фонтанка",
+      "url": "https://www.fontanka.ru/fontanka.rss"
+    },
+    {
+      "name": "E1.RU",
+      "url": "https://www.e1.ru/export/rss.xml"
+    },
+    {
+      "name": "NSK.ru",
+      "url": "https://nsk.ru/rss"
+    },
+    {
+      "name": "Правительство Москвы",
+      "url": "https://www.mos.ru/news/rss.xml"
+    },
+    {
+      "name": "Правительство Санкт-Петербурга",
+      "url": "https://www.gov.spb.ru/rss/"
+    }
   ],
-  "max_age_hours": 12,
-  "max_items_per_run": 5
+  "max_age_hours": 24,
+  "max_items_per_run": 10
 }
