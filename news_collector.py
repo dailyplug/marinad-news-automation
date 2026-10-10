@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Marinad News Collector v2.0: rank RSS items and send review drafts to Telegram."""
+"""Marinad News Collector v2.1: rank RSS items and send review drafts to Telegram."""
 import difflib
 import json
 import os
@@ -19,7 +19,7 @@ ROOT = Path(__file__).resolve().parent
 CONFIG_PATH = ROOT / "news_sources.json"
 FILTER_PATH = ROOT / "news_filters.json"
 SEEN_PATH = ROOT / "data" / "seen.json"
-USER_AGENT = "MarinadNewsBot/2.0 (+RSS reader)"
+USER_AGENT = "MarinadNewsBot/2.1 (+RSS reader)"
 MAX_DESCRIPTION_CHARS = 900
 MAX_SEEN_IDS = 5000
 
@@ -90,7 +90,7 @@ LOW_PRIORITY_DEFAULT = ["гороскоп", "рецепт дня", "афиша",
 def clean_text(value):
     value = unescape(value or "")
     value = re.sub(r"<[^>]+>", " ", value)
-    return re.sub(r"\\s+", " ", value).strip()
+    return re.sub(r"\s+", " ", value).strip()
 
 def child_text(element, names):
     for child in list(element):
@@ -166,12 +166,12 @@ def save_seen_state(state):
 
 def normalize_title(title):
     title = title.lower().replace("ё", "е")
-    title = re.sub(r"https?://\\S+", " ", title)
+    title = re.sub(r"https?://\S+", " ", title)
     title = re.sub(r"[^a-zа-я0-9]+", " ", title)
-    return re.sub(r"\\s+", " ", title).strip()
+    return re.sub(r"\s+", " ", title).strip()
 
 def normalize_keyword(keyword):
-    return re.sub(r"\\s+", " ", str(keyword).lower().replace("ё", "е")).strip()
+    return re.sub(r"\s+", " ", str(keyword).lower().replace("ё", "е")).strip()
 
 def keyword_matches(text, keyword):
     keyword = normalize_keyword(keyword)
