@@ -14,11 +14,11 @@
     },
     {
       "name": "Коммерсантъ",
-      "url": "https://www.kommersant.ru/RSS/main.xml"
+      "url": "https://www.kommersant.ru/rss/news.xml"
     },
     {
       "name": "Известия",
-      "url": "https://iz.ru/xml/rss/all.xml"
+      "url": "https://iz.ru/xml/rss/news.xml"
     },
     {
       "name": "Интерфакс",
@@ -66,15 +66,15 @@
     },
     {
       "name": "E1.RU",
-      "url": "https://www.e1.ru/export/rss.xml"
+      "url": "https://midural.ru/rss"
     },
     {
       "name": "NSK.ru",
-      "url": "https://nsk.ru/rss"
+      "url": "https://www.nso.ru/rss"
     },
     {
       "name": "Правительство Москвы",
-      "url": "https://www.mos.ru/news/rss.xml"
+      "url": "https://www.mos.ru/rss"
     },
     {
       "name": "Правительство Санкт-Петербурга",
