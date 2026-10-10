@@ -393,12 +393,23 @@ def deduplicate(items, threshold):
             kept.append(item)
     return kept
 
+def ranking_score(item):
+    """Editorial-first ranking that also considers share/discussion potential.
+
+    The editorial score remains dominant (75%); virality is a secondary signal
+    (25%), never a measure of truth or a reason to skip fact-checking.
+    """
+    editorial = max(0, min(100, int(item.get("score", 20))))
+    viral = max(0, min(100, int(item.get("virality_score", virality_score(item)))))
+    return round(editorial * 0.75 + viral * 0.25)
+
+
 def diverse_select(items, max_items):
     selected, counts, remaining = [], {}, list(items)
     while remaining and len(selected) < max_items:
         idx, best = 0, None
         for i, item in enumerate(remaining):
-            value = item["score"] - counts.get(item.get("category", "прочее"), 0) * 8
+            value = ranking_score(item) - counts.get(item.get("category", "прочее"), 0) * 8
             if best is None or value > best:
                 idx, best = i, value
         item = remaining.pop(idx)
@@ -512,10 +523,11 @@ def main():
                 collected.append(item)
         except Exception as exc:
             print(f"WARN {name}: {type(exc).__name__}: {exc}")
-    collected.sort(key=lambda x: (x["score"], x["_sort"]), reverse=True)
+    collected.sort(key=lambda x: (ranking_score(x), x["score"], x["_sort"]), reverse=True)
     unique = deduplicate(collected, similarity_limit)
     for item in unique:
-        print(f"CANDIDATE score={item['score']} category={item['category']} "
+        print(f"CANDIDATE rank={ranking_score(item)} score={item['score']} "
+              f"viral={item.get('virality_score', 0)} category={item['category']} "
               f"reasons={'; '.join(item['score_reasons'])} — {item['title']}")
     selected = diverse_select(unique, max_items)
     print(f"FILTER SUMMARY: candidates={len(collected)}, low_score={skipped_score}, "
