@@ -608,6 +608,57 @@
       ],
       "virality_score": 18,
       "category": "спорт"
+    },
+    "e23ebd53b047614e": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/11/bolee-100-migrantov-pogibli-v-rezultate-krushenii-sudna-u-beregov-dzhibuti/",
+      "source": "Лента.ру",
+      "title": "Более 100 мигрантов погибли в результате крушения судна у берегов Джибути",
+      "link": "https://lenta.ru/news/2026/10/11/bolee-100-migrantov-pogibli-v-rezultate-krushenii-sudna-u-beregov-dzhibuti/",
+      "description": "",
+      "published": "2026-10-11T18:06:00+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 46,
+      "category": "происшествия"
+    },
+    "368c62f1bea5d0f4": {
+      "id": "ТАСС:https://tass.ru/proisshestviya/28203827",
+      "source": "ТАСС",
+      "title": "При атаке на аэропорт в Эр-Рияде погиб гражданин Индии",
+      "link": "https://tass.ru/proisshestviya/28203827",
+      "description": "Всего среди пострадавших при атаке было 11 индийских граждан",
+      "published": "2026-10-11T18:10:25+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "10e92c92198ea644": {
+      "id": "ТАСС:https://tass.ru/proisshestviya/28203809",
+      "source": "ТАСС",
+      "title": "В Татарстане при падении автомобиля с обрыва в воду погибли двое мужчин",
+      "link": "https://tass.ru/proisshestviya/28203809",
+      "description": "ЧП произошло вблизи улицы Набережная в деревне Макаровка",
+      "published": "2026-10-11T17:46:19+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
     }
   },
   "update_offset": 0,
