@@ -104,5 +104,24 @@ class DiversityTests(unittest.TestCase):
         self.assertEqual(incidents, 3)
         self.assertEqual(len(selected), 4)
 
+
+class EditorialWorkflowTests(unittest.TestCase):
+    def test_channel_post_keeps_source_and_link(self):
+        message = nc.format_channel_post({"title": "Важная новость", "description": "Коротко о событии",
+            "source": "Тестовое СМИ", "link": "https://example.com/story"})
+        self.assertIn("Важная новость", message)
+        self.assertIn("Источник: Тестовое СМИ", message)
+        self.assertIn("https://example.com/story", message)
+
+    def test_item_key_is_stable(self):
+        item = {"id": "source:123", "title": "Тест"}
+        self.assertEqual(nc.item_key(item), nc.item_key(item.copy()))
+        self.assertEqual(len(nc.item_key(item)), 16)
+
+    def test_channel_post_does_not_claim_fact_check(self):
+        message = nc.format_channel_post({"title": "Заголовок", "source": "Источник", "link": "https://example.com"})
+        self.assertNotIn("проверено", message.lower())
+
+
 if __name__ == "__main__":
     unittest.main()
