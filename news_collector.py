@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Marinad News Collector v2.7: stricter filtering and category diversity."""
 import difflib
+import hashlib
 import json
 import os
 import re
@@ -19,6 +20,7 @@ ROOT = Path(__file__).resolve().parent
 CONFIG_PATH = ROOT / "news_sources.json"
 FILTER_PATH = ROOT / "news_filters.json"
 SEEN_PATH = ROOT / "data" / "seen.json"
+QUEUE_PATH = ROOT / "data" / "editorial_queue.json"
 USER_AGENT = "MarinadNewsBot/2.4 (+RSS reader)"
 MAX_DESCRIPTION_CHARS = 900
 MAX_SEEN_IDS = 5000
@@ -429,19 +431,145 @@ def diverse_select(items, max_items, max_per_category=3):
         counts[cat] = counts.get(cat, 0) + 1
     return selected
 
-def telegram_send(token, chat_id, message):
-    url = f"https://api.telegram.org/bot{token}/sendMessage"
-    payload = urllib.parse.urlencode({"chat_id": chat_id, "text": message,
-        "disable_web_page_preview": "true"}).encode()
-    req = urllib.request.Request(url, data=payload, method="POST")
+def telegram_api(token, method, payload=None, timeout=20):
+    """Call Telegram Bot API and return the decoded result or raise a useful error."""
+    url = f"https://api.telegram.org/bot{token}/{method}"
+    data = urllib.parse.urlencode({k: json.dumps(v, ensure_ascii=False) if isinstance(v, (dict, list)) else str(v)
+                                   for k, v in (payload or {}).items()}).encode()
+    req = urllib.request.Request(url, data=data, method="POST")
     try:
-        with urllib.request.urlopen(req, timeout=20) as response:
+        with urllib.request.urlopen(req, timeout=timeout) as response:
             result = json.loads(response.read().decode("utf-8"))
         if not result.get("ok"):
-            raise RuntimeError("Telegram API rejected the message.")
+            raise RuntimeError(f"Telegram API {method} failed: {result}")
+        return result.get("result")
     except urllib.error.HTTPError as exc:
         detail = exc.read().decode("utf-8", errors="replace")[:500]
-        raise RuntimeError(f"Telegram HTTP {exc.code}: {detail}") from exc
+        raise RuntimeError(f"Telegram HTTP {exc.code} ({method}): {detail}") from exc
+
+
+def telegram_send(token, chat_id, message, reply_markup=None):
+    payload = {"chat_id": chat_id, "text": message, "disable_web_page_preview": "true"}
+    if reply_markup:
+        payload["reply_markup"] = reply_markup
+    return telegram_api(token, "sendMessage", payload)
+
+
+def load_queue():
+    raw = load_json(QUEUE_PATH, {"pending": {}, "update_offset": 0, "published": [], "rejected": []})
+    if not isinstance(raw, dict):
+        raw = {}
+    raw.setdefault("pending", {})
+    raw.setdefault("update_offset", 0)
+    raw.setdefault("published", [])
+    raw.setdefault("rejected", [])
+    return raw
+
+
+def save_queue(queue):
+    QUEUE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    temp = QUEUE_PATH.with_suffix(".json.tmp")
+    temp.write_text(json.dumps(queue, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    temp.replace(QUEUE_PATH)
+
+
+def item_key(item):
+    return hashlib.sha256(str(item.get("id", item.get("link", item.get("title", "")))).encode()).hexdigest()[:16]
+
+
+def format_channel_post(item):
+    """Publish a source-attributed short post; never claim an independent fact-check."""
+    title = clean_text(item.get("title", ""))
+    description = clean_text(item.get("description", ""))
+    if len(description) > 650:
+        description = description[:647].rsplit(" ", 1)[0] + "…"
+    body = f"🧂 {title}"
+    if description:
+        body += f"\n\n{description}"
+    body += f"\n\nИсточник: {item.get('source', 'не указан')}\n{item.get('link', '')}"
+    return body[:3900]
+
+
+def process_telegram_updates(token, admin_chat_id, channel_id, queue):
+    """Process admin commands and inline approval callbacks on each scheduled run."""
+    offset = int(queue.get("update_offset", 0) or 0)
+    try:
+        updates = telegram_api(token, "getUpdates", {"offset": offset, "timeout": 0, "allowed_updates": ["message", "callback_query"]}, timeout=25) or []
+    except Exception as exc:
+        print(f"WARN Telegram updates unavailable: {type(exc).__name__}: {exc}")
+        return
+    admin = str(admin_chat_id)
+    for update in updates:
+        queue["update_offset"] = max(int(queue.get("update_offset", 0)), int(update.get("update_id", 0)) + 1)
+        callback = update.get("callback_query")
+        if callback:
+            message = callback.get("message") or {}
+            chat_id = str((message.get("chat") or {}).get("id", ""))
+            data = str(callback.get("data", ""))
+            if chat_id != admin:
+                telegram_api(token, "answerCallbackQuery", {"callback_query_id": callback["id"], "text": "Нет доступа"})
+                continue
+            parts = data.split(":", 1)
+            action, key = (parts + [""])[:2]
+            item = queue["pending"].get(key)
+            if not item:
+                telegram_api(token, "answerCallbackQuery", {"callback_query_id": callback["id"], "text": "Материал уже обработан"})
+                continue
+            if action == "approve":
+                if not channel_id:
+                    telegram_api(token, "answerCallbackQuery", {"callback_query_id": callback["id"], "text": "Не задан TELEGRAM_CHANNEL_ID"})
+                    continue
+                try:
+                    telegram_send(token, channel_id, format_channel_post(item))
+                    queue["published"].append(key)
+                    queue["published"] = queue["published"][-1000:]
+                    queue["pending"].pop(key, None)
+                    telegram_api(token, "answerCallbackQuery", {"callback_query_id": callback["id"], "text": "Опубликовано"})
+                    try:
+                        telegram_api(token, "editMessageReplyMarkup", {"chat_id": admin_chat_id, "message_id": message.get("message_id"), "reply_markup": {"inline_keyboard": []}})
+                    except Exception:
+                        pass
+                    telegram_send(token, admin_chat_id, f"✅ Опубликовано в канале.\n{item.get('title', '')}")
+                except Exception as exc:
+                    telegram_api(token, "answerCallbackQuery", {"callback_query_id": callback["id"], "text": "Ошибка публикации; материал оставлен в очереди"})
+                    print(f"ERROR approval publish {key}: {type(exc).__name__}: {exc}")
+            elif action == "reject":
+                queue["rejected"].append(key)
+                queue["rejected"] = queue["rejected"][-1000:]
+                queue["pending"].pop(key, None)
+                telegram_api(token, "answerCallbackQuery", {"callback_query_id": callback["id"], "text": "Отклонено"})
+                try:
+                    telegram_api(token, "editMessageReplyMarkup", {"chat_id": admin_chat_id, "message_id": message.get("message_id"), "reply_markup": {"inline_keyboard": []}})
+                except Exception:
+                    pass
+            save_queue(queue)
+        else:
+            message = update.get("message") or {}
+            chat = message.get("chat") or {}
+            if str(chat.get("id", "")) != admin:
+                continue
+            text = str(message.get("text", "")).strip().split()[0].lower() if message.get("text") else ""
+            if text in ("/start", "/help"):
+                telegram_send(token, admin_chat_id,
+                    "🧂 МАРИНАД — управление\n\n"
+                    "/status — очередь и состояние\n"
+                    "/pending — список материалов на проверке\n"
+                    "Материалы публикуются только после нажатия «Опубликовать».\n"
+                    "Фильтр оценивает приоритет, но не подтверждает истинность фактов.")
+            elif text == "/status":
+                telegram_send(token, admin_chat_id,
+                    f"🧂 МАРИНАД\nВ очереди: {len(queue['pending'])}\n"
+                    f"Опубликовано через панель: {len(queue['published'])}\n"
+                    f"Отклонено: {len(queue['rejected'])}\n"
+                    f"Канал настроен: {'да' if channel_id else 'нет'}\n"
+                    "Автопубликация отключена; требуется ручное подтверждение.")
+            elif text == "/pending":
+                if not queue["pending"]:
+                    telegram_send(token, admin_chat_id, "Очередь пуста.")
+                else:
+                    lines = [f"• {v.get('title', 'Без заголовка')} [{k}]" for k, v in list(queue["pending"].items())[-20:]]
+                    telegram_send(token, admin_chat_id, "Материалы на проверке:\n\n" + "\n".join(lines))
+    save_queue(queue)
 
 def format_draft(item):
     description = item.get("description", "")
@@ -498,6 +626,9 @@ def main():
         print("ERROR: invalid numeric configuration.")
         return 2
     cutoff = datetime.now(timezone.utc) - timedelta(hours=max_age)
+    channel_id = os.getenv("TELEGRAM_CHANNEL_ID", "").strip()
+    queue = load_queue()
+    process_telegram_updates(token, chat_id, channel_id, queue)
     state, collected = load_seen_state(), []
     seen, skipped_score = set(), 0
     seen = set(state["seen"])
@@ -550,9 +681,28 @@ def main():
     for item in selected:
         item.pop("_sort", None)
         item.pop("_published_dt", None)
+        key = item_key(item)
+        if key in queue["pending"] or key in queue["published"] or key in queue["rejected"]:
+            state["seen"].append(item["id"])
+            continue
+        review_message = format_draft(item)
+        keyboard = {"inline_keyboard": [[
+            {"text": "✅ Опубликовать", "callback_data": f"approve:{key}"},
+            {"text": "🗑 Отклонить", "callback_data": f"reject:{key}"}
+        ]]}
         try:
-            telegram_send(token, chat_id, format_draft(item))
+            # Persist the editorial queue before sending; pending state is idempotent across runs.
+            queue["pending"][key] = {k: v for k, v in item.items()
+                if not k.startswith("_") and isinstance(v, (str, int, float, bool, list, dict, type(None)))}
+            save_queue(queue)
+            telegram_send(token, chat_id, review_message, keyboard)
         except Exception as exc:
+            # Remove the reservation if Telegram rejected the draft, so a later run can retry it.
+            queue["pending"].pop(key, None)
+            try:
+                save_queue(queue)
+            except OSError:
+                pass
             print(f"ERROR sending item {item.get('id')}: {type(exc).__name__}: {exc}")
             print(f"Stopped after sending {sent} draft(s).")
             return 1
