@@ -942,6 +942,74 @@
       ],
       "virality_score": 18,
       "category": "экономика"
+    },
+    "6087a9913bcc9f81": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/12/mirnyy-zhitel-pogib-pri-atake-bespilotnika-v-dnr/",
+      "source": "Лента.ру",
+      "title": "Мирный житель погиб при атаке беспилотника в ДНР",
+      "link": "https://lenta.ru/news/2026/10/12/mirnyy-zhitel-pogib-pri-atake-bespilotnika-v-dnr/",
+      "description": "",
+      "published": "2026-10-11T21:02:00+00:00",
+      "score": 65,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 6 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "e5759b7012d71c65": {
+      "id": "РИА Новости:https://ria.ru/20261011/dnr-2123845781.html",
+      "source": "РИА Новости",
+      "title": "В ДНР от атаки ВСУ погиб мужчина",
+      "link": "https://ria.ru/20261011/dnr-2123845781.html",
+      "description": "",
+      "published": "2026-10-11T20:14:49+00:00",
+      "score": 63,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 12 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "05e2aab4d32b37ef": {
+      "id": "РИА Новости:https://ria.ru/20261011/ataka-2123842018.html",
+      "source": "РИА Новости",
+      "title": "Мирный житель Белгородской области погиб при атаке украинского дрона",
+      "link": "https://ria.ru/20261011/ataka-2123842018.html",
+      "description": "",
+      "published": "2026-10-11T19:19:55+00:00",
+      "score": 63,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 12 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "2c2c4ff491710bd1": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/12/zelenskiy-vvel-novye-sanktsii-protiv-rossiyskih-fizlits-i-kompaniy/",
+      "source": "Лента.ру",
+      "title": "Зеленский ввел новые санкции против российских физлиц и компаний",
+      "link": "https://lenta.ru/news/2026/10/12/zelenskiy-vvel-novye-sanktsii-protiv-rossiyskih-fizlits-i-kompaniy/",
+      "description": "",
+      "published": "2026-10-12T01:28:07+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: экономика",
+        "сигнал в заголовке: санкции",
+        "дополнительная тема: санкции",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "экономика"
     }
   },
   "update_offset": 0,
