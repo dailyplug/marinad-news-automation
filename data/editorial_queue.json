@@ -1976,6 +1976,108 @@
       ],
       "virality_score": 42,
       "category": "происшествия"
+    },
+    "22efb52052e71da9": {
+      "id": "РИА Новости:https://ria.ru/20261012/nikolaev-2124081646.html",
+      "source": "РИА Новости",
+      "title": "В Николаеве прогремел взрыв",
+      "link": "https://ria.ru/20261012/nikolaev-2124081646.html",
+      "description": "",
+      "published": "2026-10-12T20:46:07+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: происшествия",
+        "сигнал в заголовке: взрыв",
+        "дополнительная тема: взрыв",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "9fc64cc6cb50d595": {
+      "id": "ТАСС:https://tass.ru/ekonomika/28207399",
+      "source": "ТАСС",
+      "title": "Госдума рассмотрит исполнение федерального бюджета за 2025 год",
+      "link": "https://tass.ru/ekonomika/28207399",
+      "description": "В ГД также проголосуют за кандидатуры первых заместителей и заместителей председателей комитетов и постоянных комиссий",
+      "published": "2026-10-12T21:15:07+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: госдума",
+        "дополнительная тема: госдума",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 22,
+      "category": "политика"
+    },
+    "7e52e1d0199c042c": {
+      "id": "РИА Новости:https://ria.ru/20261013/vuchich-2124089961.html",
+      "source": "РИА Новости",
+      "title": "Вучич уверен, что \"Студенческий список\" введет санкции против России",
+      "link": "https://ria.ru/20261013/vuchich-2124089961.html",
+      "description": "",
+      "published": "2026-10-12T22:23:43+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: экономика",
+        "сигнал в заголовке: санкции",
+        "дополнительная тема: санкции",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "экономика"
+    },
+    "a0c8617a098fec1b": {
+      "id": "Москва 24:951730",
+      "source": "Москва 24",
+      "title": "Собянин: отражена атака 15 БПЛА, летевших на Москву",
+      "link": "https://www.m24.ru/news/12102026/951730",
+      "description": "Специалисты экстренных служб работают на месте падения обломков",
+      "published": "2026-10-12T20:43:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: происшествия",
+        "сигнал в заголовке: бпла",
+        "дополнительная тема: атака",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 22,
+      "category": "происшествия"
+    },
+    "f4cf101fcdbeb3fc": {
+      "id": "Пятый канал:https://www.5-tv.ru/news/5091030/novak-rossijskie-kompanii-vedut-peregovory-sssa-opostavkah-dizela/",
+      "source": "Пятый канал",
+      "title": "Новак: российские компании ведут переговоры с США о поставках дизеля",
+      "link": "https://www.5-tv.ru/news/5091030/novak-rossijskie-kompanii-vedut-peregovory-sssa-opostavkah-dizela/",
+      "description": "Дополнительные поставки помогут сбалансировать сложную ситуацию на мировом рынке из-за проблем в Ормузском проливе.",
+      "published": "2026-10-12T22:23:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "30e0492f14f7e787": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/12/long-rossiya-i-ssha-nachali-peregovory-o-postavkah-dizelya-na-mirovye-rynki-kak-eto-skazhetsya-na-vnutrennem-rynke/",
+      "source": "Лента.ру",
+      "title": "Россия и США начали переговоры о поставках дизеля на мировые рынки. Москве пророчат выход из санкционной изоляции",
+      "link": "https://lenta.ru/news/2026/10/12/long-rossiya-i-ssha-nachali-peregovory-o-postavkah-dizelya-na-mirovye-rynki-kak-eto-skazhetsya-na-vnutrennem-rynke/",
+      "description": "",
+      "published": "2026-10-12T22:16:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
     }
   },
   "update_offset": 0,
