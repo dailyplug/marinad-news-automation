@@ -3294,6 +3294,41 @@
       ],
       "virality_score": 18,
       "category": "экономика"
+    },
+    "e186d842af828837": {
+      "id": "Пятый канал:https://www.5-tv.ru/news/5091189/ego-otpravili-otdyhat-novernulsa-vgrobu-vozdorovitelnom-lagere-soci-pogib-podrostok/",
+      "source": "Пятый канал",
+      "title": "Отправили отдыхать, но вернулся он в гробу: в оздоровительном лагере Сочи погиб подросток",
+      "link": "https://www.5-tv.ru/news/5091189/ego-otpravili-otdyhat-novernulsa-vgrobu-vozdorovitelnom-lagere-soci-pogib-podrostok/",
+      "description": "Следователи проверяют обстоятельства смерти подростка из Мурманской области, родители которого заявили о возможном бездействии сотрудников лагеря.",
+      "published": "2026-10-13T23:40:00+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "8286f67379afd536": {
+      "id": "Российская газета:3469678",
+      "source": "Российская газета",
+      "title": "Politico: Трамп вряд ли введет новые санкции против России в ближайшие дни",
+      "link": "https://rg.ru/2026/10/14/politico-tramp-vriad-li-vvedet-novye-sankcii-protiv-rossii-v-blizhajshie-dni.html",
+      "description": "Вашингтон, скорее всего, не станет вводить в ближайшее время новые санкции против России. Об этом со ссылкой на источники пишет газета Politico.",
+      "published": "2026-10-14T00:45:07+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: экономика",
+        "сигнал в заголовке: санкции",
+        "сигнал в описании: санкции",
+        "дополнительная тема: санкции",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "экономика"
     }
   },
   "update_offset": 0,
