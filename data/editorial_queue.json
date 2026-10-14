@@ -3329,6 +3329,59 @@
       ],
       "virality_score": 18,
       "category": "экономика"
+    },
+    "bdbe26b0ba4c80a3": {
+      "id": "Пятый канал:https://www.5-tv.ru/news/5091193/pri-atake-bpla-nabalakovo-vsaratovskoj-oblasti-pogib-celovek/",
+      "source": "Пятый канал",
+      "title": "При атаке БПЛА на Балаково в Саратовской области погиб человек",
+      "link": "https://www.5-tv.ru/news/5091193/pri-atake-bpla-nabalakovo-vsaratovskoj-oblasti-pogib-celovek/",
+      "description": "Повреждены несколько жилых домов.",
+      "published": "2026-10-14T01:39:00+00:00",
+      "score": 77,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "сигнал в заголовке: бпла",
+        "важная тема: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "7da71c5db37e6b26": {
+      "id": "ТАСС:https://tass.ru/proisshestviya/28211395",
+      "source": "ТАСС",
+      "title": "В Балакове из-за атаки БПЛА погиб человек",
+      "link": "https://tass.ru/proisshestviya/28211395",
+      "description": "Повреждения получили нескольких жилых домов",
+      "published": "2026-10-14T01:18:32+00:00",
+      "score": 77,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "сигнал в заголовке: бпла",
+        "важная тема: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "8e247da682851b6e": {
+      "id": "РИА Новости:https://ria.ru/20261014/ukraina-2124357838.html",
+      "source": "РИА Новости",
+      "title": "В Днепропетровске прогремел взрыв",
+      "link": "https://ria.ru/20261014/ukraina-2124357838.html",
+      "description": "",
+      "published": "2026-10-14T02:24:24+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: происшествия",
+        "сигнал в заголовке: взрыв",
+        "дополнительная тема: взрыв",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
     }
   },
   "update_offset": 0,
