@@ -3452,6 +3452,58 @@
       ],
       "virality_score": 18,
       "category": "экономика"
+    },
+    "c8adef124c94cd5e": {
+      "id": "ТАСС:https://tass.ru/proisshestviya/28212013",
+      "source": "ТАСС",
+      "title": "В Белгородской области за сутки при атаках ВСУ погиб человек",
+      "link": "https://tass.ru/proisshestviya/28212013",
+      "description": "Еще 13 пострадали",
+      "published": "2026-10-14T05:51:09+00:00",
+      "score": 71,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "сигнал в описании: пострадали",
+        "важная тема: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "ac4557662ac27003": {
+      "id": "Meduza:https://meduza.io/news/2026/10/14/v-kieve-v-rezultate-rossiyskogo-udara-pogibli-tri-cheloveka-bolee-20-raneny-chast-goroda-ostalas-bez-elektrichestva",
+      "source": "Meduza",
+      "title": "В Киеве в результате российского удара погибли три человека, более 20 ранены. Часть города осталась без электричества",
+      "link": "https://meduza.io/news/2026/10/14/v-kieve-v-rezultate-rossiyskogo-udara-pogibli-tri-cheloveka-bolee-20-raneny-chast-goroda-ostalas-bez-elektrichestva",
+      "description": "Российские войска в ночь на 14 октября нанесли удар по Киеву. По данным Государственной службы по чрезвычайным ситуациям, погибли три человека, 21 получил ранение.",
+      "published": "2026-10-14T05:28:52+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 46,
+      "category": "происшествия"
+    },
+    "72800769192aef19": {
+      "id": "Медиаzona:https://zona.media/107629",
+      "source": "Медиаzona",
+      "title": "Дата‑центр «Сбербанка» и дома в Саратовской области получили повреждения от атаки беспилотников; погиб один человек",
+      "link": "https://zona.media/news/2026/10/14/balakovo",
+      "description": "",
+      "published": "2026-10-14T06:36:26+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
     }
   },
   "update_offset": 0,
