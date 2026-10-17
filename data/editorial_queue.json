@@ -6694,6 +6694,125 @@
       ],
       "virality_score": 18,
       "category": "политика"
+    },
+    "e70a23e314961740": {
+      "id": "ТАСС:https://tass.ru/proisshestviya/28224503",
+      "source": "ТАСС",
+      "title": "Под Новосибирском в ДТП с грузовиком погибли два человека",
+      "link": "https://tass.ru/proisshestviya/28224503",
+      "description": "",
+      "published": "2026-10-17T02:28:19+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "62a63c116b36a95e": {
+      "id": "ТАСС:https://tass.ru/proisshestviya/28224499",
+      "source": "ТАСС",
+      "title": "В Новосибирске в ДТП погиб человек",
+      "link": "https://tass.ru/proisshestviya/28224499",
+      "description": "Еще один пострадал",
+      "published": "2026-10-17T02:06:33+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "8427fe0e6fd37905": {
+      "id": "ТАСС:https://tass.ru/mezhdunarodnaya-panorama/28224515",
+      "source": "ТАСС",
+      "title": "Трамп распорядился не применять санкции против лиц РФ",
+      "link": "https://tass.ru/mezhdunarodnaya-panorama/28224515",
+      "description": "",
+      "published": "2026-10-17T02:30:16+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: экономика",
+        "сигнал в заголовке: санкции",
+        "дополнительная тема: санкции",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "экономика"
+    },
+    "b18eb69051623599": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/17/long-v-kongress-ssha-vnesli-zakonoproekt-o-sryve-dizelnoy-sdelki-chast-ego-sostaviteley-sostoit-v-gruppe-pomoschi-ukraine/",
+      "source": "Лента.ру",
+      "title": "В Конгресс США внесли законопроект о срыве дизельной сделки. Часть его составителей состоит в группе помощи Украине",
+      "link": "https://lenta.ru/news/2026/10/17/long-v-kongress-ssha-vnesli-zakonoproekt-o-sryve-dizelnoy-sdelki-chast-ego-sostaviteley-sostoit-v-gruppe-pomoschi-ukraine/",
+      "description": "",
+      "published": "2026-10-17T02:05:25+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: законопроект",
+        "дополнительная тема: законопроект",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "758194504a980690": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/17/nazvany-otmenennye-ukazom-trampa-adskie-sanktsii-protiv-rossii/",
+      "source": "Лента.ру",
+      "title": "Названы отмененные указом Трампа «адские санкции» против России",
+      "link": "https://lenta.ru/news/2026/10/17/nazvany-otmenennye-ukazom-trampa-adskie-sanktsii-protiv-rossii/",
+      "description": "",
+      "published": "2026-10-17T01:49:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: экономика",
+        "сигнал в заголовке: санкции",
+        "дополнительная тема: санкции",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "экономика"
+    },
+    "b4a70b7ce65f3d3b": {
+      "id": "Российская газета:3472190",
+      "source": "Российская газета",
+      "title": "Супертанкер с 2 млн баррелей нефти подорвался в Ормузском проливе, начался пожар",
+      "link": "https://rg.ru/2026/10/17/supertanker-s-2-mln-barrelej-nefti-podorvalsia-v-ormuzskom-prolive-nachalsia-pozhar.html",
+      "description": "Супертанкер с двумя миллионами баррелей нефти подорвался на мине в Ормузском проливе. Об этом со ссылкой на иранский Корпус стражей исламской революции сообщает агентство Tasnim .",
+      "published": "2026-10-17T02:30:07+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: происшествия",
+        "сигнал в заголовке: пожар",
+        "дополнительная тема: пожар",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 28,
+      "category": "происшествия"
+    },
+    "a80093599058e7e1": {
+      "id": "Интерфакс:https://www.interfax.ru/world/1123126",
+      "source": "Интерфакс",
+      "title": "Трамп пока не будет вводить санкции в отношении покупателей российской нефти",
+      "link": "https://www.interfax.ru/world/1123126",
+      "description": "Президент США Дональд Трамп проинформировал Конгресс о решении пока не вводить ряд масштабных санкций, предусмотренных подписанным им ранее этой осенью \"законом Грэма\", сообщает в ночь на субботу Белый дом.\"Я принял решение приостановить реализацию подобных санкций и пошлин, предусмотренных \"законом Грэма\", - говорится в указе Трампа, текст которого опубликовала его администрация.",
+      "published": "2026-10-17T01:44:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: экономика",
+        "сигнал в заголовке: санкции",
+        "дополнительная тема: санкции",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "экономика"
     }
   },
   "update_offset": 0,
