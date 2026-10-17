@@ -6643,6 +6643,57 @@
       ],
       "virality_score": 42,
       "category": "происшествия"
+    },
+    "add3b759b26906f2": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/17/long-mask-lichno-predlozhil-trampu-zamedlit-starlink-na-ukraine-chto-otvetil-prezident-ssha-i-smozhet-li-evropa-pomoch-vsu/",
+      "source": "Лента.ру",
+      "title": "Маск лично предложил Трампу замедлить Starlink на Украине. Что ответил президент США и сможет ли Европа помочь ВСУ?",
+      "link": "https://lenta.ru/news/2026/10/17/long-mask-lichno-predlozhil-trampu-zamedlit-starlink-na-ukraine-chto-otvetil-prezident-ssha-i-smozhet-li-evropa-pomoch-vsu/",
+      "description": "",
+      "published": "2026-10-17T00:10:14+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: президент сша",
+        "дополнительная тема: президент сша",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 22,
+      "category": "политика"
+    },
+    "3712c142ac06ebb2": {
+      "id": "ТАСС:https://tass.ru/mezhdunarodnaya-panorama/28224423",
+      "source": "ТАСС",
+      "title": "Трамп не намерен вводить санкции на основании закона об ужесточении рестрикций против РФ",
+      "link": "https://tass.ru/mezhdunarodnaya-panorama/28224423",
+      "description": "",
+      "published": "2026-10-17T00:43:55+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: экономика",
+        "сигнал в заголовке: санкции",
+        "дополнительная тема: санкции",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "экономика"
+    },
+    "0f4091db9c54cb40": {
+      "id": "Москва 24:953707",
+      "source": "Москва 24",
+      "title": "В конгресс США внесли законопроект о блокировании сделки с Россией по дизелю",
+      "link": "https://www.m24.ru/news/17102026/953707",
+      "description": "Инициатива предусматривает отмену лицензии, позволяющей поставлять российское дизельное топливо на мировые рынки",
+      "published": "2026-10-16T23:17:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: законопроект",
+        "дополнительная тема: законопроект",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
     }
   },
   "update_offset": 0,
