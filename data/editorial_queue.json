@@ -6864,6 +6864,75 @@
       ],
       "virality_score": 18,
       "category": "экономика"
+    },
+    "975a31d2c7a078af": {
+      "id": "ТАСС:https://tass.ru/proisshestviya/28224833",
+      "source": "ТАСС",
+      "title": "В Карелии в ДТП погибли двое сотрудников скорой помощи",
+      "link": "https://tass.ru/proisshestviya/28224833",
+      "description": "Авария произошла в ночь на 17 октября",
+      "published": "2026-10-17T06:31:24+00:00",
+      "score": 71,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "сигнал в описании: авария",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "140f87b77d2a442b": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/17/futbolist-barnaulskogo-dinamo-vinter-pogib-v-dtp/",
+      "source": "Лента.ру",
+      "title": "Футболист барнаульского «Динамо» Винтер погиб в ДТП",
+      "link": "https://lenta.ru/news/2026/10/17/futbolist-barnaulskogo-dinamo-vinter-pogib-v-dtp/",
+      "description": "",
+      "published": "2026-10-17T06:37:26+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "80bb24e1c42e4c00": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/17/ukrainskiy-futbolist-pogib-na-svo/",
+      "source": "Лента.ру",
+      "title": "Украинский футболист погиб на СВО",
+      "link": "https://lenta.ru/news/2026/10/17/ukrainskiy-futbolist-pogib-na-svo/",
+      "description": "",
+      "published": "2026-10-17T05:35:00+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "03c0fe0e874d8be4": {
+      "id": "Meduza:https://meduza.io/news/2026/10/17/tramp-otkazalsya-primenyat-ryad-ogranichitelnyh-mer-iz-zakona-ob-adskih-sanktsiyah-protiv-rossii",
+      "source": "Meduza",
+      "title": "Трамп не стал вводить «адские санкции» против России",
+      "link": "https://meduza.io/news/2026/10/17/tramp-otkazalsya-primenyat-ryad-ogranichitelnyh-mer-iz-zakona-ob-adskih-sanktsiyah-protiv-rossii",
+      "description": "Президент США Дональд Трамп отказался применять большинство мер, предусмотренных законом об «адских санкциях». Соответствующий указ опубликован Белым домом.",
+      "published": "2026-10-17T06:33:09+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: экономика",
+        "сигнал в заголовке: санкции",
+        "дополнительная тема: санкции",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "экономика"
     }
   },
   "update_offset": 0,
