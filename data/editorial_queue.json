@@ -7678,6 +7678,57 @@
       ],
       "virality_score": 18,
       "category": "происшествия"
+    },
+    "71acdc78f7b402c8": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/18/v-saudovskoy-aravii-pri-krushenii-vertoleta-pogibli-dva-chlena-ekipazha/",
+      "source": "Лента.ру",
+      "title": "В Саудовской Аравии при крушении вертолета погибли два члена экипажа",
+      "link": "https://lenta.ru/news/2026/10/18/v-saudovskoy-aravii-pri-krushenii-vertoleta-pogibli-dva-chlena-ekipazha/",
+      "description": "",
+      "published": "2026-10-18T04:25:00+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "f2ed587937081168": {
+      "id": "ТАСС:https://tass.ru/proisshestviya/28226295",
+      "source": "ТАСС",
+      "title": "В Приморье в ДТП погиб человек",
+      "link": "https://tass.ru/proisshestviya/28226295",
+      "description": "Еще один попал в реанимацию",
+      "published": "2026-10-18T03:07:59+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "4200b9d981e0b1f5": {
+      "id": "Пятый канал:https://www.5-tv.ru/news/5091682/otec-pogibsego-vegipte-malcika-nazval-vozmoznuu-pricinu-smerti-syna-aii/",
+      "source": "Пятый канал",
+      "title": "«Долго был под напряжением»: почему в Шарм-эш-Шейхе погиб ребенок",
+      "link": "https://www.5-tv.ru/news/5091682/otec-pogibsego-vegipte-malcika-nazval-vozmoznuu-pricinu-smerti-syna-aii/",
+      "description": "По мнению мужчины, трагедии можно было избежать, если бы линия электропередачи была оснащена защитным устройством, автоматически отключающим питание при утечке тока.",
+      "published": "2026-10-17T19:00:00+00:00",
+      "score": 63,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 12 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
     }
   },
   "update_offset": 0,
