@@ -7575,6 +7575,57 @@
       ],
       "virality_score": 42,
       "category": "происшествия"
+    },
+    "f3d6cdef33596140": {
+      "id": "ТАСС:https://tass.ru/proisshestviya/28226109",
+      "source": "ТАСС",
+      "title": "NYT: в США при выезде автомобиля на футбольное поле погибли два человека",
+      "link": "https://tass.ru/proisshestviya/28226109",
+      "description": "По данным газеты, есть пострадавшие",
+      "published": "2026-10-17T23:48:39+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "f90745f31d7c993e": {
+      "id": "Пятый канал:https://www.5-tv.ru/news/5091703/avtomobil-vehal-vtolpu-nafutbolnom-matce-vkanzase-dva-celoveka-pogibli/",
+      "source": "Пятый канал",
+      "title": "Автомобиль въехал в толпу на футбольном матче в Канзасе, два человека погибли",
+      "link": "https://www.5-tv.ru/news/5091703/avtomobil-vehal-vtolpu-nafutbolnom-matce-vkanzase-dva-celoveka-pogibli/",
+      "description": "Среди жертв трагедии есть ребенок.",
+      "published": "2026-10-17T23:14:00+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "715a79a9254d5cba": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/18/rossiyskih-shkolnikov-nachnut-uchit-primenyat-iskusstvennyy-intellekt/",
+      "source": "Лента.ру",
+      "title": "Российских школьников начнут учить применять искусственный интеллект",
+      "link": "https://lenta.ru/news/2026/10/18/rossiyskih-shkolnikov-nachnut-uchit-primenyat-iskusstvennyy-intellekt/",
+      "description": "",
+      "published": "2026-10-17T23:31:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: технологии",
+        "сигнал в заголовке: искусственный интеллект",
+        "дополнительная тема: искусственный интеллект",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "технологии"
     }
   },
   "update_offset": 0,
