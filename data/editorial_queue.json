@@ -8172,6 +8172,77 @@
       ],
       "virality_score": 18,
       "category": "экономика"
+    },
+    "7c79071d8736b11b": {
+      "id": "Meduza:https://meduza.io/news/2026/10/18/v-kanade-na-voennoy-baze-proizoshel-vzryv-i-pozhar-pogibli-sem-voennosluzhaschih-desyatki-poluchili-raneniya",
+      "source": "Meduza",
+      "title": "В Канаде на военной базе произошел взрыв и пожар. Погибли семь военнослужащих, десятки получили ранения",
+      "link": "https://meduza.io/news/2026/10/18/v-kanade-na-voennoy-baze-proizoshel-vzryv-i-pozhar-pogibli-sem-voennosluzhaschih-desyatki-poluchili-raneniya",
+      "description": "На военной базе Уэйнрайт в канадской провинции Альберта 17 октября произошел взрыв, после которого начался сильный пожар. Погибли как минимум семь человек, десятки получили ранения, рассказали источники Global News.",
+      "published": "2026-10-18T14:48:05+00:00",
+      "score": 86,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "сигнал в заголовке: пожар, взрыв",
+        "сигнал в описании: пожар, взрыв",
+        "важная тема: погибли",
+        "дополнительная тема: пожар, взрыв",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "d747577d2d25d3a1": {
+      "id": "Российская газета:3472585",
+      "source": "Российская газета",
+      "title": "Три несовершеннолетние пассажирки погибли в ДТП с самосвалом в Подмосковье",
+      "link": "https://rg.ru/2026/10/18/reg-cfo/tri-nesovershennoletnie-passazhirki-pogibli-v-dtp-s-samosvalom-v-podmoskove.html",
+      "description": "В Московской области самосвал смял легковую машину с подростками, погибли три девушки, сообщает ГУ МВД региона.",
+      "published": "2026-10-18T12:48:29+00:00",
+      "score": 65,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 6 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "936d55c15c843a01": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/18/zelenskiy-provel-peregovory-s-predstavitelyami-amerikanskogo-prezidenta/",
+      "source": "Лента.ру",
+      "title": "Зеленский провел переговоры с представителями американского президента",
+      "link": "https://lenta.ru/news/2026/10/18/zelenskiy-provel-peregovory-s-predstavitelyami-amerikanskogo-prezidenta/",
+      "description": "",
+      "published": "2026-10-18T15:48:28+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "b37bd1da985380e6": {
+      "id": "РИА Новости:https://ria.ru/20261018/harkov-2125279208.html",
+      "source": "РИА Новости",
+      "title": "В пригороде Харькова прогремел взрыв",
+      "link": "https://ria.ru/20261018/harkov-2125279208.html",
+      "description": "",
+      "published": "2026-10-18T16:27:50+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: происшествия",
+        "сигнал в заголовке: взрыв",
+        "дополнительная тема: взрыв",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
     }
   },
   "update_offset": 0,
