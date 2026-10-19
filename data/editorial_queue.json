@@ -8674,6 +8674,124 @@
       ],
       "virality_score": 18,
       "category": "происшествия"
+    },
+    "79e73ce94bfd3e6c": {
+      "id": "Российская газета:3472766",
+      "source": "Российская газета",
+      "title": "В Дагестане в массовом ДТП погибли двое и пострадали четверо человек",
+      "link": "https://rg.ru/2026/10/19/reg-skfo/v-dagestane-v-massovom-dtp-pogibli-dvoe-i-postradali-chetvero-chelovek.html",
+      "description": "В Буйнакском районе Дагестана столкнулись три легковых автомобиля. Об этом сообщили в ГУ МЧС России по республике.",
+      "published": "2026-10-19T04:44:10+00:00",
+      "score": 75,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "сигнал в заголовке: пострадали",
+        "важная тема: погибли",
+        "свежесть: до 6 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "eeccff7579afc1ab": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/19/ministr-vnutrennih-del-frantsii-podal-v-otstavku-na-fone-protestov/",
+      "source": "Лента.ру",
+      "title": "Министр внутренних дел Франции подал в отставку на фоне протестов",
+      "link": "https://lenta.ru/news/2026/10/19/ministr-vnutrennih-del-frantsii-podal-v-otstavku-na-fone-protestov/",
+      "description": "",
+      "published": "2026-10-19T06:14:59+00:00",
+      "score": 63,
+      "score_reasons": [
+        "категория: политика",
+        "сильный сигнал: подал в отставку",
+        "сигнал в заголовке: министр",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "64b08dd063c5a609": {
+      "id": "ТАСС:https://tass.ru/proisshestviya/28228507",
+      "source": "ТАСС",
+      "title": "AFP: вблизи греческого острова Лесбос погибли 12 нелегальных мигрантов",
+      "link": "https://tass.ru/proisshestviya/28228507",
+      "description": "Среди погибших есть несовершеннолетние",
+      "published": "2026-10-19T06:52:34+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 46,
+      "category": "происшествия"
+    },
+    "c4913fa1df16aa2a": {
+      "id": "Медиаzona:https://zona.media/107710",
+      "source": "Медиаzona",
+      "title": "Против 24‑летнего жителя Оренбурга возбудили уголовное дело о покушении на теракт из‑за попытки поджечь машину силовиков",
+      "link": "https://zona.media/news/2026/10/19/orenburg",
+      "description": "",
+      "published": "2026-10-19T06:39:41+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: теракт",
+        "важная тема: теракт",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 46,
+      "category": "происшествия"
+    },
+    "bce889756641d96e": {
+      "id": "РИА Новости:https://ria.ru/20261019/rubio-2125323637.html",
+      "source": "РИА Новости",
+      "title": "Рубио рассказал, зачем Трамп приостановил новые антироссийские санкции",
+      "link": "https://ria.ru/20261019/rubio-2125323637.html",
+      "description": "",
+      "published": "2026-10-19T05:15:10+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: экономика",
+        "сигнал в заголовке: санкции",
+        "дополнительная тема: санкции",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "экономика"
+    },
+    "3c77f64d5dace4bc": {
+      "id": "Meduza:https://meduza.io/news/2026/10/19/glava-mvd-frantsii-podal-v-otstavku-na-fone-massovyh-protestov-makron-ee-ne-prinyal",
+      "source": "Meduza",
+      "title": "Глава МВД Франции подал в отставку на фоне массовых протестов. Макрон ее не принял",
+      "link": "https://meduza.io/news/2026/10/19/glava-mvd-frantsii-podal-v-otstavku-na-fone-massovyh-protestov-makron-ee-ne-prinyal",
+      "description": "Глава МВД Франции Лоран Нуньес подал в отставку на фоне массовых протестов, однако президент Эмманюэль Макрон ее не принял, сообщает Reuters со ссылкой на пресс-службу Елисейского дворца.",
+      "published": "2026-10-19T06:36:30+00:00",
+      "score": 53,
+      "score_reasons": [
+        "категория: политика",
+        "сильный сигнал: подал в отставку",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "7b518099a7e40233": {
+      "id": "ТАСС:https://tass.ru/mezhdunarodnaya-panorama/28228261",
+      "source": "ТАСС",
+      "title": "BFMTV: глава МВД Франции подал в отставку из-за протестов",
+      "link": "https://tass.ru/mezhdunarodnaya-panorama/28228261",
+      "description": "Французский президент Эмманюэль Макрон ее не принял",
+      "published": "2026-10-19T05:16:41+00:00",
+      "score": 53,
+      "score_reasons": [
+        "категория: политика",
+        "сильный сигнал: подал в отставку",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
     }
   },
   "update_offset": 0,
