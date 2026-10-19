@@ -9373,6 +9373,74 @@
       ],
       "virality_score": 18,
       "category": "спорт"
+    },
+    "f9a169d49ee50367": {
+      "id": "Meduza:https://meduza.io/news/2026/10/19/rossiyskiy-dron-udaril-po-parku-v-odnom-iz-poselkov-harkovskoy-oblasti-pogibli-shest-chelovek-v-tom-chisle-dvoe-detey",
+      "source": "Meduza",
+      "title": "Российский дрон ударил по парку в одном из поселков Харьковской области. Двое детей погибли, семеро получили ранения",
+      "link": "https://meduza.io/news/2026/10/19/rossiyskiy-dron-udaril-po-parku-v-odnom-iz-poselkov-harkovskoy-oblasti-pogibli-shest-chelovek-v-tom-chisle-dvoe-detey",
+      "description": "Российские войска ударили беспилотником по центральному парку поселка Новая Водолага в Харьковской области, сообщил глава МВД Украины Иван Выговский.",
+      "published": "2026-10-19T17:34:57+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "04c6c012bd297fdb": {
+      "id": "Москва 24:954471",
+      "source": "Москва 24",
+      "title": "Три человека погибли после удара ВСУ по машине ритуальной службы под Луганском",
+      "link": "https://www.m24.ru/news/19102026/954471",
+      "description": "Украинские военные нанесли удар по автомобилю ритуальной службы, который перевозил умершего",
+      "published": "2026-10-19T14:22:00+00:00",
+      "score": 65,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 6 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "335f93c15cfd33c6": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/19/pravitelstvo-frantsii-raskrylo-novyy-silovoy-otvet-na-protesty/",
+      "source": "Лента.ру",
+      "title": "Правительство Франции раскрыло новый силовой ответ на протесты",
+      "link": "https://lenta.ru/news/2026/10/19/pravitelstvo-frantsii-raskrylo-novyy-silovoy-otvet-na-protesty/",
+      "description": "",
+      "published": "2026-10-19T17:12:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: правительство",
+        "дополнительная тема: правительство",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "e5632159c72f9868": {
+      "id": "РИА Новости:https://ria.ru/20261019/rovno-2125495509.html",
+      "source": "РИА Новости",
+      "title": "В Ровно прогремел взрыв",
+      "link": "https://ria.ru/20261019/rovno-2125495509.html",
+      "description": "",
+      "published": "2026-10-19T18:28:23+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: происшествия",
+        "сигнал в заголовке: взрыв",
+        "дополнительная тема: взрыв",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
     }
   },
   "update_offset": 0,
