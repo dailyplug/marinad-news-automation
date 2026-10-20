@@ -9818,6 +9818,111 @@
       ],
       "virality_score": 18,
       "category": "политика"
+    },
+    "386b1267b6399e38": {
+      "id": "ТАСС:https://tass.ru/proisshestviya/28231797",
+      "source": "ТАСС",
+      "title": "На границе между Южным Суданом и Суданом после удара БПЛА погибли 73 человека",
+      "link": "https://tass.ru/proisshestviya/28231797",
+      "description": "Еще 19 получили ранения, сообщил глава департамента информации южносуданской администрации Абьея Йохана Аколь Нгор",
+      "published": "2026-10-20T06:12:45+00:00",
+      "score": 77,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "сигнал в заголовке: бпла",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 46,
+      "category": "происшествия"
+    },
+    "029ef061b1033ece": {
+      "id": "Meduza:https://meduza.io/news/2026/10/20/v-kievskoy-oblasti-v-rezultate-rossiyskogo-udara-pogibli-tri-cheloveka",
+      "source": "Meduza",
+      "title": "В Киевской области в результате российского удара погибли три человека",
+      "link": "https://meduza.io/news/2026/10/20/v-kievskoy-oblasti-v-rezultate-rossiyskogo-udara-pogibli-tri-cheloveka",
+      "description": "Российские войска в ночь на 20 октября нанесли удар по производственно-складскому зданию в Обуховском районе Киевской области. Там произошел пожар, сообщили в Государственной службе по чрезвычайным ситуациям.",
+      "published": "2026-10-20T05:37:43+00:00",
+      "score": 72,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "сигнал в описании: пожар",
+        "важная тема: погибли",
+        "тематическое упоминание в описании",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "433005aee0ae5f42": {
+      "id": "Медиаzona:https://zona.media/107732",
+      "source": "Медиаzona",
+      "title": "На войне погиб сибиряк, осужденный за попытку зарезать беременную сожительницу",
+      "link": "https://zona.media/news/2026/10/20/sotnikov",
+      "description": "",
+      "published": "2026-10-20T05:55:13+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "592afd287ef94374": {
+      "id": "РИА Новости:https://ria.ru/20261020/mid-2125538685.html",
+      "source": "РИА Новости",
+      "title": "В МИД прокомментировали переговоры с Южной Кореей по авиасообщению",
+      "link": "https://ria.ru/20261020/mid-2125538685.html",
+      "description": "",
+      "published": "2026-10-20T06:35:07+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "491985aa0ddcfc49": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/20/kushner-ne-poletit-na-peregovory-po-ukraine/",
+      "source": "Лента.ру",
+      "title": "Кушнер не полетит на переговоры по Украине",
+      "link": "https://lenta.ru/news/2026/10/20/kushner-ne-poletit-na-peregovory-po-ukraine/",
+      "description": "",
+      "published": "2026-10-20T06:25:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "6b1ca511747206a2": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/20/vitse-prezident-ssha-vyskazalsya-ob-udarah-ukrainy-po-energetike-rossii/",
+      "source": "Лента.ру",
+      "title": "Вице-президент США высказался об ударах Украины по энергетике России",
+      "link": "https://lenta.ru/news/2026/10/20/vitse-prezident-ssha-vyskazalsya-ob-udarah-ukrainy-po-energetike-rossii/",
+      "description": "",
+      "published": "2026-10-20T05:49:08+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: президент сша",
+        "дополнительная тема: президент сша",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
     }
   },
   "update_offset": 0,
