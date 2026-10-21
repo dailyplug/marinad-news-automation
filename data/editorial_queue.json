@@ -11887,6 +11887,127 @@
       ],
       "virality_score": 18,
       "category": "спорт"
+    },
+    "8e51e646d865f7d1": {
+      "id": "РИА Новости:https://ria.ru/20261021/ataka-2126081384.html",
+      "source": "РИА Новости",
+      "title": "В Саудовской Аравии два человека погибли при атаке БПЛА на месторождение",
+      "link": "https://ria.ru/20261021/ataka-2126081384.html",
+      "description": "",
+      "published": "2026-10-21T19:32:15+00:00",
+      "score": 77,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "сигнал в заголовке: бпла",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "cb51a99856571b97": {
+      "id": "ТАСС:https://tass.ru/proisshestviya/28239623",
+      "source": "ТАСС",
+      "title": "В ДНР при ударах ВСУ погибли два человека",
+      "link": "https://tass.ru/proisshestviya/28239623",
+      "description": "Еще девять пострадали",
+      "published": "2026-10-21T20:39:19+00:00",
+      "score": 71,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "сигнал в описании: пострадали",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "9e6763bd690180ff": {
+      "id": "Российская газета:3475650",
+      "source": "Российская газета",
+      "title": "Украинский дрон атаковал станционный автобус ЗАЭС, погиб водитель",
+      "link": "https://rg.ru/2026/10/21/ukrainskij-dron-atakoval-stancionnyj-avtobus-zaes-pogib-voditel.html",
+      "description": "Украинский дрон атаковал станционный автобус, который используется для перевозки персонала Запорожской АЭС. Об этом сообщила пресс-служба станции.",
+      "published": "2026-10-21T20:42:15+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "f155793a93fbe032": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/22/tramp-vyskazalsya-o-planah-uzhestochit-sanktsii-protiv-rossii/",
+      "source": "Лента.ру",
+      "title": "Трамп высказался о планах ужесточить санкции против России",
+      "link": "https://lenta.ru/news/2026/10/22/tramp-vyskazalsya-o-planah-uzhestochit-sanktsii-protiv-rossii/",
+      "description": "",
+      "published": "2026-10-21T20:39:07+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: экономика",
+        "сигнал в заголовке: санкции",
+        "дополнительная тема: санкции",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "экономика"
+    },
+    "d9fa16d551cc3bcf": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/21/kievu-prigrozili-slovami-budet-esche-huzhe-posle-popytki-sorvat-peregovory-v-rossii/",
+      "source": "Лента.ру",
+      "title": "Киеву пригрозили словами «будет еще хуже» после попытки сорвать переговоры в России",
+      "link": "https://lenta.ru/news/2026/10/21/kievu-prigrozili-slovami-budet-esche-huzhe-posle-popytki-sorvat-peregovory-v-rossii/",
+      "description": "",
+      "published": "2026-10-21T20:14:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "4c9b43ca170b5c0d": {
+      "id": "РИА Новости:https://ria.ru/20261021/polsha-2126085103.html",
+      "source": "РИА Новости",
+      "title": "В сейм Польши внесут законопроект о криминализации бандеровской идеологии",
+      "link": "https://ria.ru/20261021/polsha-2126085103.html",
+      "description": "",
+      "published": "2026-10-21T20:08:21+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: законопроект",
+        "дополнительная тема: законопроект",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "6762eee47b03bfef": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/21/polsha-vvela-sanktsii-protiv-deputata-iz-lvova/",
+      "source": "Лента.ру",
+      "title": "Польша ввела санкции против депутата из Львова",
+      "link": "https://lenta.ru/news/2026/10/21/polsha-vvela-sanktsii-protiv-deputata-iz-lvova/",
+      "description": "",
+      "published": "2026-10-21T20:06:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: экономика",
+        "сигнал в заголовке: санкции",
+        "дополнительная тема: санкции",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "экономика"
     }
   },
   "update_offset": 0,
