@@ -11440,6 +11440,108 @@
       ],
       "virality_score": 18,
       "category": "политика"
+    },
+    "b68faf3e9e90f1b1": {
+      "id": "ТАСС:https://tass.ru/proisshestviya/28238119",
+      "source": "ТАСС",
+      "title": "В ЛНР при атаке ВСУ погибли два инженера",
+      "link": "https://tass.ru/proisshestviya/28238119",
+      "description": "",
+      "published": "2026-10-21T12:37:50+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "46b5aa84482f4bd1": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/21/glava-natsbanka-ukrainy-podal-v-otstavku-posle-obyskov/",
+      "source": "Лента.ру",
+      "title": "Глава Нацбанка Украины подал в отставку после обысков",
+      "link": "https://lenta.ru/news/2026/10/21/glava-natsbanka-ukrainy-podal-v-otstavku-posle-obyskov/",
+      "description": "",
+      "published": "2026-10-21T12:17:00+00:00",
+      "score": 53,
+      "score_reasons": [
+        "категория: политика",
+        "сильный сигнал: подал в отставку",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "e63a3083a95b756a": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/21/vzryv-v-moment-krusheniya-tyazhelogo-istrebitelya-pod-kaliningradom-snyali-na-video/",
+      "source": "Лента.ру",
+      "title": "Взрыв в момент крушения тяжелого истребителя под Калининградом сняли на видео",
+      "link": "https://lenta.ru/news/2026/10/21/vzryv-v-moment-krusheniya-tyazhelogo-istrebitelya-pod-kaliningradom-snyali-na-video/",
+      "description": "",
+      "published": "2026-10-21T12:26:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: происшествия",
+        "сигнал в заголовке: взрыв",
+        "дополнительная тема: взрыв",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 52,
+      "category": "происшествия"
+    },
+    "59830e09dc90678c": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/21/long-nachalis-peregovory-putina-i-uitkoffa-prezident-rossii-predlozhil-trampu-postavki-esche-odnogo-strategicheskogo-resursa/",
+      "source": "Лента.ру",
+      "title": "Начались переговоры Путина и Уиткоффа. Президент России предложил Трампу поставки еще одного стратегического ресурса",
+      "link": "https://lenta.ru/news/2026/10/21/long-nachalis-peregovory-putina-i-uitkoffa-prezident-rossii-predlozhil-trampu-postavki-esche-odnogo-strategicheskogo-resursa/",
+      "description": "",
+      "published": "2026-10-21T11:09:00+00:00",
+      "score": 44,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры, президент россии",
+        "дополнительная тема: переговоры, президент россии",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "f35b1fabf3cabeb1": {
+      "id": "Российская газета:3475023",
+      "source": "Российская газета",
+      "title": "\"Душа уходит в пятки\": Истории россиян, которые пережили нападение медведя",
+      "link": "https://rg.ru/2026/10/21/reg-szfo/dusha-uhodit-v-piatki-istorii-rossiian-kotorye-perezhili-napadeniia-medvedej.html",
+      "description": "В России, по данным на середину октября, нападения медведей фиксировали более чем в 40 регионах, а число погибших превысило 20 человек. За этими цифрами - судьбы, в которых обычная вылазка в лес, рыбалка или работа на пасеке в считаные секунды превращались в отчаянную схватку за жизнь. О нескольких таких историях рассказывает aif.ru .",
+      "published": "2026-10-21T12:16:20+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: происшествия",
+        "сигнал в заголовке: нападение",
+        "дополнительная тема: нападение",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 28,
+      "category": "происшествия"
+    },
+    "7bbd828b2448ee67": {
+      "id": "ТАСС:https://tass.ru/mezhdunarodnaya-panorama/28238159",
+      "source": "ТАСС",
+      "title": "Законодатель США Луна рекомендовала членам Конгресса не критиковать переговоры с РФ",
+      "link": "https://tass.ru/mezhdunarodnaya-panorama/28238159",
+      "description": "Американский президент Дональд Трамп активно ведет переговоры с целью прекращения конфликта на Украине, отметила Анна Паулина Луна",
+      "published": "2026-10-21T12:48:14+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "сигнал в описании: переговоры",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
     }
   },
   "update_offset": 0,
