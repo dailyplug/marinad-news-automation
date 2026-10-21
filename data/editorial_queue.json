@@ -10872,6 +10872,125 @@
       ],
       "virality_score": 42,
       "category": "происшествия"
+    },
+    "d20eb74ccc792a37": {
+      "id": "Пятый канал:https://www.5-tv.ru/news/5092043/vdtp-sfuroj-pogib-zamministra-zdravoohranenia-razanskoj-oblasti/",
+      "source": "Пятый канал",
+      "title": "В ДТП с фурой погиб замминистра здравоохранения Рязанской области",
+      "link": "https://www.5-tv.ru/news/5092043/vdtp-sfuroj-pogib-zamministra-zdravoohranenia-razanskoj-oblasti/",
+      "description": "Второй водитель остался жив.",
+      "published": "2026-10-20T19:04:00+00:00",
+      "score": 65,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 6 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "fbcee4b9c66e1bf6": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/21/long-predstaviteli-trampa-proveli-peregovory-s-zelenskim-i-evropeytsami-s-chem-uitkoff-i-kushner-poedut-v-rossiyu-i-chego-ozhidayut-v-moskve/",
+      "source": "Лента.ру",
+      "title": "Команда Трампа провела переговоры с Зеленским и европейцами. С чем Уиткофф и Кушнер поедут в Россию и чего ожидают в Москве?",
+      "link": "https://lenta.ru/news/2026/10/21/long-predstaviteli-trampa-proveli-peregovory-s-zelenskim-i-evropeytsami-s-chem-uitkoff-i-kushner-poedut-v-rossiyu-i-chego-ozhidayut-v-moskve/",
+      "description": "",
+      "published": "2026-10-20T23:44:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 22,
+      "category": "политика"
+    },
+    "fac06e5f75bc3381": {
+      "id": "РИА Новости:https://ria.ru/20261021/gumpomosch-2125773557.html",
+      "source": "РИА Новости",
+      "title": "Введенные Берлином санкции ограничивают гумпомощь для Донбасса",
+      "link": "https://ria.ru/20261021/gumpomosch-2125773557.html",
+      "description": "",
+      "published": "2026-10-21T00:20:57+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: экономика",
+        "сигнал в заголовке: санкции",
+        "дополнительная тема: санкции",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "экономика"
+    },
+    "05bf3799de3956c5": {
+      "id": "РИА Новости:https://ria.ru/20261021/kharkov-2125769898.html",
+      "source": "РИА Новости",
+      "title": "В пригороде Харькова прогремел еще один взрыв",
+      "link": "https://ria.ru/20261021/kharkov-2125769898.html",
+      "description": "",
+      "published": "2026-10-20T23:24:07+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: происшествия",
+        "сигнал в заголовке: взрыв",
+        "дополнительная тема: взрыв",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "c317d617be44b566": {
+      "id": "Пятый канал:https://www.5-tv.ru/news/5092061/plakali-iprodolzali-gryzt-zaharova-opisala-sankcii-esposlovicej-pro-mysej-ikaktus/",
+      "source": "Пятый канал",
+      "title": "«Плакали и продолжали грызть»: Захарова описала санкции ЕС пословицей про мышей и кактус",
+      "link": "https://www.5-tv.ru/news/5092061/plakali-iprodolzali-gryzt-zaharova-opisala-sankcii-esposlovicej-pro-mysej-ikaktus/",
+      "description": "Официальный представитель МИД России прокомментировала готовность Брюсселя ужесточать нефтяные рестрикции в ущерб собственным гражданам.",
+      "published": "2026-10-21T00:11:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: экономика",
+        "сигнал в заголовке: санкции",
+        "дополнительная тема: санкции",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "экономика"
+    },
+    "e3e3cbdb60c297ba": {
+      "id": "Москва 24:955021",
+      "source": "Москва 24",
+      "title": "Правительство РФ одобрило ужесточение наказания за езду без прав",
+      "link": "https://www.m24.ru/news/21102026/955021",
+      "description": "Также введут отдельное наказание за повторную езду без прав",
+      "published": "2026-10-20T23:58:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: правительство",
+        "дополнительная тема: правительство",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "286cca288d14990d": {
+      "id": "РИА Новости:https://ria.ru/20261021/ssha-2125769200.html",
+      "source": "РИА Новости",
+      "title": "США провели в Неваде подземный взрыв с использованием обычного заряда",
+      "link": "https://ria.ru/20261021/ssha-2125769200.html",
+      "description": "",
+      "published": "2026-10-20T23:17:42+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: происшествия",
+        "сигнал в заголовке: взрыв",
+        "дополнительная тема: взрыв",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
     }
   },
   "update_offset": 0,
