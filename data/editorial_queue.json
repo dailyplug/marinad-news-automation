@@ -12186,6 +12186,91 @@
       ],
       "virality_score": 42,
       "category": "происшествия"
+    },
+    "9af488a5af15b9d3": {
+      "id": "Российская газета:3475657",
+      "source": "Российская газета",
+      "title": "Появились кадры из Тюменской области, где в ДТП погибли семь человек",
+      "link": "https://rg.ru/2026/10/22/reg-urfo/poiavilis-kadry-s-mesta-dtp-v-tiumenskoj-oblasti-gde-pogibli-sem-chelovek.html",
+      "description": "Появились кадры из Тюменской области, где на трассе в результате ДТП погибли семь человек. Фотографии опубликованы в Мах-канале регионального ГУ МЧС.",
+      "published": "2026-10-21T22:07:02+00:00",
+      "score": 65,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 6 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "35b53b1c0fb89740": {
+      "id": "РИА Новости:https://ria.ru/20261022/vybory-2126111037.html",
+      "source": "РИА Новости",
+      "title": "Досрочные выборы губернатора Приморья пройдут в единый день голосования",
+      "link": "https://ria.ru/20261022/vybory-2126111037.html",
+      "description": "",
+      "published": "2026-10-22T01:42:59+00:00",
+      "score": 63,
+      "score_reasons": [
+        "категория: политика",
+        "сильный сигнал: досрочные выборы",
+        "сигнал в заголовке: выборы",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "9d6b84348bd8e38c": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/22/sem-chelovek-pogibli-v-dtp-s-minivenom-s-gruzovikom-v-rossiyskom-regione/",
+      "source": "Лента.ру",
+      "title": "Семь человек погибли в ДТП с минивэном и грузовиком в российском регионе",
+      "link": "https://lenta.ru/news/2026/10/22/sem-chelovek-pogibli-v-dtp-s-minivenom-s-gruzovikom-v-rossiyskom-regione/",
+      "description": "",
+      "published": "2026-10-21T21:52:00+00:00",
+      "score": 65,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 6 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "4e4c842732f67169": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/22/voditel-avtobusa-zaporozhskoy-aes-pogib-pri-povtornoy-atake-vsu/",
+      "source": "Лента.ру",
+      "title": "Водитель автобуса Запорожской АЭС погиб при повторной атаке ВСУ",
+      "link": "https://lenta.ru/news/2026/10/22/voditel-avtobusa-zaporozhskoy-aes-pogib-pri-povtornoy-atake-vsu/",
+      "description": "",
+      "published": "2026-10-21T21:30:39+00:00",
+      "score": 65,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 6 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "b02951ca3cb519d9": {
+      "id": "Москва 24:955455",
+      "source": "Москва 24",
+      "title": "Турция выразила готовность принять трехсторонние переговоры по Украине",
+      "link": "https://www.m24.ru/news/22102026/955455",
+      "description": "Анкара сохраняет готовность содействовать дипусилиям по урегулированию конфликта",
+      "published": "2026-10-22T01:57:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
     }
   },
   "update_offset": 0,
