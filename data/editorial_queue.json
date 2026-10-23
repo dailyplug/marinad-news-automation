@@ -13406,6 +13406,57 @@
       ],
       "virality_score": 18,
       "category": "политика"
+    },
+    "fd55d5d0a01c07e2": {
+      "id": "BBC News Русская служба:https://www.bbc.com/russian/articles/c6wyvp421q4jo#0",
+      "source": "BBC News Русская служба",
+      "title": "В Тибете произошло землетрясение, погибли 16 человек, сотни домов разрушены",
+      "link": "https://www.bbc.com/russian/articles/c6wyvp421q4jo?at_medium=RSS&at_campaign=rss",
+      "description": "Как сообщают китайские государственные СМИ, в горном районе Тибета произошло землетрясение магнитудой семь, в результате которого погибли по меньшей мере 16 человек.",
+      "published": "2026-10-23T01:44:37+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 46,
+      "category": "происшествия"
+    },
+    "b08cc45019fe8641": {
+      "id": "РИА Новости:https://ria.ru/20261023/kamchatka-2126407591.html",
+      "source": "РИА Новости",
+      "title": "На Камчатке возбудили дело против родителей, чей сын погиб на мотоцикле",
+      "link": "https://ria.ru/20261023/kamchatka-2126407591.html",
+      "description": "",
+      "published": "2026-10-23T00:31:51+00:00",
+      "score": 65,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 6 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "48925d2c210f663c": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/22/rossiyskiy-akter-pogib-v-zone-svo/",
+      "source": "Лента.ру",
+      "title": "Российский актер погиб в зоне СВО",
+      "link": "https://lenta.ru/news/2026/10/22/rossiyskiy-akter-pogib-v-zone-svo/",
+      "description": "",
+      "published": "2026-10-22T20:17:00+00:00",
+      "score": 63,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 12 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
     }
   },
   "update_offset": 0,
