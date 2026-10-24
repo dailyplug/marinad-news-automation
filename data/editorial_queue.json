@@ -15209,6 +15209,108 @@
       ],
       "virality_score": 18,
       "category": "политика"
+    },
+    "db1a0bebcf7dc6bf": {
+      "id": "РИА Новости:https://ria.ru/20261024/ataka-2126774685.html",
+      "source": "РИА Новости",
+      "title": "Житель Брянской области погиб при атаке украинских беспилотников",
+      "link": "https://ria.ru/20261024/ataka-2126774685.html",
+      "description": "",
+      "published": "2026-10-24T16:35:39+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "ae8e0fcc6a9ffa62": {
+      "id": "ТАСС:https://tass.ru/proisshestviya/28250071",
+      "source": "ТАСС",
+      "title": "В Брянской области из-за атак ВСУ погиб человек",
+      "link": "https://tass.ru/proisshestviya/28250071",
+      "description": "",
+      "published": "2026-10-24T16:31:40+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "f31ad64c5c67c246": {
+      "id": "Москва 24:956400",
+      "source": "Москва 24",
+      "title": "Три человека погибли в перевернувшейся лодке в Югре",
+      "link": "https://www.m24.ru/news/24102026/956400",
+      "description": "Проводятся следственные мероприятия",
+      "published": "2026-10-24T15:13:00+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "ef9994fe82b707f4": {
+      "id": "РИА Новости:https://ria.ru/20261024/gandbolistki-2126774045.html",
+      "source": "РИА Новости",
+      "title": "Сборная России по гандболу обыграла Сербию в товарищеском матче",
+      "link": "https://ria.ru/20261024/gandbolistki-2126774045.html",
+      "description": "",
+      "published": "2026-10-24T16:32:13+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: спорт",
+        "сигнал в заголовке: сборная россии",
+        "дополнительная тема: сборная россии",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "спорт"
+    },
+    "ccba7e7fa1e23738": {
+      "id": "РИА Новости:https://ria.ru/20261024/minoborony-2126767490.html",
+      "source": "РИА Новости",
+      "title": "Правительство предоставило Минобороны часть акватории Онежского озера",
+      "link": "https://ria.ru/20261024/minoborony-2126767490.html",
+      "description": "",
+      "published": "2026-10-24T15:35:18+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: правительство",
+        "дополнительная тема: правительство",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "6d169dd14a7bcab7": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/24/v-rossii-nazvali-peregovory-s-ukrainoy-po-obmenu-plennymi-slishkom-slozhnymi/",
+      "source": "Лента.ру",
+      "title": "В России назвали переговоры с Украиной по обмену пленными слишком сложными",
+      "link": "https://lenta.ru/news/2026/10/24/v-rossii-nazvali-peregovory-s-ukrainoy-po-obmenu-plennymi-slishkom-slozhnymi/",
+      "description": "",
+      "published": "2026-10-24T14:44:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
     }
   },
   "update_offset": 0,
