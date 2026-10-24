@@ -14616,6 +14616,77 @@
       ],
       "virality_score": 18,
       "category": "экономика"
+    },
+    "ddf861e41089c1a9": {
+      "id": "Интерфакс:https://www.interfax.ru/russia/1124680",
+      "source": "Интерфакс",
+      "title": "Ликвидирован пожар на предприятии в Иваново, где погиб огнеборец",
+      "link": "https://www.interfax.ru/russia/1124680",
+      "description": "Спасатели полностью ликвидировали пожар в производственном здании в городе Иваново, в ходе тушения которого один пожарный погиб и еще четверо пострадали, сообщает пресс-служба МЧС РФ.\"Пожар полностью ликвидирован\", - говорится в сообщении пресс-службы.",
+      "published": "2026-10-24T04:00:00+00:00",
+      "score": 81,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "сигнал в заголовке: пожар",
+        "сигнал в описании: пожар, пострадали",
+        "важная тема: погиб",
+        "дополнительная тема: пожар",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 47,
+      "category": "происшествия"
+    },
+    "ab61b56bccf135d2": {
+      "id": "ТАСС:https://tass.ru/proisshestviya/28248921",
+      "source": "ТАСС",
+      "title": "В Томской области осудили водителя судна, по вине которого погибли люди",
+      "link": "https://tass.ru/proisshestviya/28248921",
+      "description": "Мужчину приговорили к трем годам и четырем месяцам лишения свободы",
+      "published": "2026-10-24T04:02:56+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "0a665d3c25f5dc11": {
+      "id": "Пятый канал:https://www.5-tv.ru/news/5092478/voditel-pogib-detej-osmatrivaut-mediki-kadry-momenta-avarii-vekaterinburge-aii/",
+      "source": "Пятый канал",
+      "title": "Водитель погиб, детей осматривают медики: кадры момента аварии в Екатеринбурге",
+      "link": "https://www.5-tv.ru/news/5092478/voditel-pogib-detej-osmatrivaut-mediki-kadry-momenta-avarii-vekaterinburge-aii/",
+      "description": "На перекрестке столкнулись легковой автомобиль и пассажирский автобус.",
+      "published": "2026-10-23T11:30:00+00:00",
+      "score": 63,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 24 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "0cb66c4a4261c359": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/24/na-ukraine-prizvali-izmenit-sostav-delegatsii-i-nachat-pryamye-peregovory-s-rossiey/",
+      "source": "Лента.ру",
+      "title": "На Украине призвали изменить состав делегации и начать прямые переговоры с Россией",
+      "link": "https://lenta.ru/news/2026/10/24/na-ukraine-prizvali-izmenit-sostav-delegatsii-i-nachat-pryamye-peregovory-s-rossiey/",
+      "description": "",
+      "published": "2026-10-24T03:00:35+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
     }
   },
   "update_offset": 0,
