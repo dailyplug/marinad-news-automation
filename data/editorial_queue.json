@@ -15747,6 +15747,93 @@
       ],
       "virality_score": 42,
       "category": "происшествия"
+    },
+    "212ab89a4d15f31e": {
+      "id": "ТАСС:https://tass.ru/proisshestviya/28250795",
+      "source": "ТАСС",
+      "title": "В Белгородской области при атаке БПЛА ВСУ на автомобиль погиб человек",
+      "link": "https://tass.ru/proisshestviya/28250795",
+      "description": "Еще один пострадал",
+      "published": "2026-10-25T05:38:46+00:00",
+      "score": 77,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "сигнал в заголовке: бпла",
+        "важная тема: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "51fa26a2f8fec066": {
+      "id": "РИА Новости:https://ria.ru/20261025/uchastki-2126826345.html",
+      "source": "РИА Новости",
+      "title": "В Сербии проходят досрочные выборы в парламент",
+      "link": "https://ria.ru/20261025/uchastki-2126826345.html",
+      "description": "",
+      "published": "2026-10-25T06:05:39+00:00",
+      "score": 63,
+      "score_reasons": [
+        "категория: политика",
+        "сильный сигнал: досрочные выборы",
+        "сигнал в заголовке: выборы",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "9a994ffe5cdb5c9e": {
+      "id": "Meduza:https://meduza.io/news/2026/10/25/ukraina-udarila-po-belgorodu-odin-chelovek-pogib-za-noch-bolee-500-bespilotnikov-atakovali-rossiyskie-regiony",
+      "source": "Meduza",
+      "title": "Украина ударила по Белгороду, один человек погиб. За ночь более 500 беспилотников атаковали российские регионы",
+      "link": "https://meduza.io/news/2026/10/25/ukraina-udarila-po-belgorodu-odin-chelovek-pogib-za-noch-bolee-500-bespilotnikov-atakovali-rossiyskie-regiony",
+      "description": "Украинские беспилотники атаковали Белгород, один человек погиб, сообщил губернатор Александр Шуваев.",
+      "published": "2026-10-25T06:11:38+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 46,
+      "category": "происшествия"
+    },
+    "cef18c5defc55c6a": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/25/rossiyanin-pogib-posle-udara-drona-vsu-po-mashine/",
+      "source": "Лента.ру",
+      "title": "Россиянин погиб после удара дрона ВСУ по машине",
+      "link": "https://lenta.ru/news/2026/10/25/rossiyanin-pogib-posle-udara-drona-vsu-po-mashine/",
+      "description": "",
+      "published": "2026-10-25T06:03:33+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "91cdd1b085d323ad": {
+      "id": "Российская газета:3477628",
+      "source": "Российская газета",
+      "title": "Подготовлен законопроект о новых мерах поддержки учителей",
+      "link": "https://rg.ru/2026/10/25/podgotovlen-zakonoproekt-o-novyh-merah-podderzhki-uchitelej.html",
+      "description": "Министерство просвещения подготовило важный законопроект, который призван повысить престиж профессии школьного учителя. Проект разработан во исполнение Указа президента РФ об особом статусе учителя. Документ опубликован для общественного обсуждения.",
+      "published": "2026-10-25T06:49:41+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: законопроект",
+        "сигнал в описании: законопроект",
+        "дополнительная тема: законопроект",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
     }
   },
   "update_offset": 0,
