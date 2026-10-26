@@ -17095,6 +17095,125 @@
       ],
       "virality_score": 22,
       "category": "экономика"
+    },
+    "82bb45c67cdb81ef": {
+      "id": "Москва 24:956973",
+      "source": "Москва 24",
+      "title": "В Индии с начала муссона от ударов молний погибли 14 человек",
+      "link": "https://www.m24.ru/news/26102026/956973",
+      "description": "Власти приняли решение объявить режим повышенной опасности и ограничить посещение туристами ряда популярных горных курортов",
+      "published": "2026-10-26T14:13:00+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 46,
+      "category": "происшествия"
+    },
+    "b5ebefbd5d363673": {
+      "id": "Пятый канал:https://www.5-tv.ru/news/5092888/massovyj-sboj-vtelegram-26oktabra-polzovateli-zaluutsa-nanepoladki/",
+      "source": "Пятый канал",
+      "title": "Массовый сбой в Telegram 26 октября: пользователи жалуются на неполадки",
+      "link": "https://www.5-tv.ru/news/5092888/massovyj-sboj-vtelegram-26oktabra-polzovateli-zaluutsa-nanepoladki/",
+      "description": "У части пользователей перестали отправляться сообщения и загружаться чаты, а количество обращений в службы мониторинга резко выросло.",
+      "published": "2026-10-26T14:17:00+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: технологии",
+        "сильный сигнал: массовый сбой",
+        "важная тема: массовый сбой",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 22,
+      "category": "технологии"
+    },
+    "012329619518d6fd": {
+      "id": "ТАСС:https://tass.ru/proisshestviya/28254801",
+      "source": "ТАСС",
+      "title": "В Москве рабочий погиб на производстве, упав с высоты",
+      "link": "https://tass.ru/proisshestviya/28254801",
+      "description": "Проводится процессуальная проверка",
+      "published": "2026-10-26T14:35:09+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "f9c6ca2b05e167e4": {
+      "id": "Москва 24:956984",
+      "source": "Москва 24",
+      "title": "Рабочий погиб при падении с высоты на предприятии на северо-востоке Москвы",
+      "link": "https://www.m24.ru/news/26102026/956984",
+      "description": "Организована процессуальная проверка",
+      "published": "2026-10-26T14:35:00+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "9f821f781a7b6cff": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/26/novye-vlasti-serbii-otkazalis-vvodit-sanktsii-protiv-rossii/",
+      "source": "Лента.ру",
+      "title": "Новые власти Сербии отказались вводить санкции против России",
+      "link": "https://lenta.ru/news/2026/10/26/novye-vlasti-serbii-otkazalis-vvodit-sanktsii-protiv-rossii/",
+      "description": "",
+      "published": "2026-10-26T14:39:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: экономика",
+        "сигнал в заголовке: санкции",
+        "дополнительная тема: санкции",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "экономика"
+    },
+    "042aabbb2ed4e245": {
+      "id": "Российская газета:3478543",
+      "source": "Российская газета",
+      "title": "Мендель призвала Зеленского полететь в Москву на переговоры",
+      "link": "https://rg.ru/2026/10/26/mendel-prizvala-zelenskogo-poletet-v-moskvu-na-peregovory.html",
+      "description": "Владимиру Зеленскому необходимо отправиться в Москву ради мирных переговоров, заявила в интервью Fox News его бывшая пресс-секретарь Юлия Мендель.",
+      "published": "2026-10-26T14:26:01+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "49e1e98e501c7b32": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/26/na-zapade-ukazali-na-otchayannoe-polozhenie-zelenskogo-iz-za-predlozheniya-nachat-peregovory/",
+      "source": "Лента.ру",
+      "title": "На Западе указали на отчаянное положение Зеленского из-за предложения начать переговоры",
+      "link": "https://lenta.ru/news/2026/10/26/na-zapade-ukazali-na-otchayannoe-polozhenie-zelenskogo-iz-za-predlozheniya-nachat-peregovory/",
+      "description": "",
+      "published": "2026-10-26T13:58:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
     }
   },
   "update_offset": 0,
