@@ -17944,6 +17944,125 @@
       ],
       "virality_score": 22,
       "category": "спорт"
+    },
+    "aab5eb04ab157fec": {
+      "id": "ТАСС:https://tass.ru/proisshestviya/28257443",
+      "source": "ТАСС",
+      "title": "Мирошник: за неделю от ударов ВСУ погибли 50 мирных жителей",
+      "link": "https://tass.ru/proisshestviya/28257443",
+      "description": "Более 260 человек получили ранения, сообщил посол по особым поручениям МИД России",
+      "published": "2026-10-27T09:44:17+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 46,
+      "category": "происшествия"
+    },
+    "45cef30c3d2ca9dc": {
+      "id": "РИА Новости:https://ria.ru/20261027/miroshnik-2127255061.html",
+      "source": "РИА Новости",
+      "title": "Мирошник рассказал, сколько россиян погибли за неделю от атак ВСУ",
+      "link": "https://ria.ru/20261027/miroshnik-2127255061.html",
+      "description": "",
+      "published": "2026-10-27T09:58:01+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "c5a8a662e6055e85": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/27/pri-atake-bespilotnika-na-avtobus-v-zaporozhskoy-oblasti-pogib-chelovek/",
+      "source": "Лента.ру",
+      "title": "При атаке беспилотника на автобус в Запорожской области погиб человек",
+      "link": "https://lenta.ru/news/2026/10/27/pri-atake-bespilotnika-na-avtobus-v-zaporozhskoy-oblasti-pogib-chelovek/",
+      "description": "",
+      "published": "2026-10-27T04:12:00+00:00",
+      "score": 63,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 12 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "ab9a87c08c076f27": {
+      "id": "РИА Новости:https://ria.ru/20261027/putin-2127264048.html",
+      "source": "РИА Новости",
+      "title": "Путин, Стубб и Стере приветствовали планируемые переговоры по Украине",
+      "link": "https://ria.ru/20261027/putin-2127264048.html",
+      "description": "",
+      "published": "2026-10-27T10:41:10+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "e42792db7b72fe3b": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/27/indeks-mosbirzhi-uskoril-rost-na-novostyah-o-razgovore-putina-s-liderami-skandinavii/",
+      "source": "Лента.ру",
+      "title": "Индекс Мосбиржи ускорил рост на новостях о разговоре Путина с лидерами Скандинавии",
+      "link": "https://lenta.ru/news/2026/10/27/indeks-mosbirzhi-uskoril-rost-na-novostyah-o-razgovore-putina-s-liderami-skandinavii/",
+      "description": "",
+      "published": "2026-10-27T10:39:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: экономика",
+        "сигнал в заголовке: индекс мосбиржи",
+        "дополнительная тема: индекс мосбиржи",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "экономика"
+    },
+    "20001be7c75e5345": {
+      "id": "ТАСС:https://tass.ru/obschestvo/28257585",
+      "source": "ТАСС",
+      "title": "Госдума приняла закон о госконтроле за состоянием аттракционов",
+      "link": "https://tass.ru/obschestvo/28257585",
+      "description": "С 1 марта 2027 года регистрация каруселей будет осуществляться до их ввода в эксплуатацию, следует из документа",
+      "published": "2026-10-27T10:14:05+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: госдума",
+        "дополнительная тема: госдума",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "0532180b285bf7d7": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/27/putin-provel-peregovory-s-evropeyskimi-liderami/",
+      "source": "Лента.ру",
+      "title": "Путин провел переговоры с европейскими лидерами",
+      "link": "https://lenta.ru/news/2026/10/27/putin-provel-peregovory-s-evropeyskimi-liderami/",
+      "description": "",
+      "published": "2026-10-27T09:44:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
     }
   },
   "update_offset": 0,
