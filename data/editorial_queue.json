@@ -19723,6 +19723,126 @@
       ],
       "virality_score": 18,
       "category": "политика"
+    },
+    "fe73e03b936d4556": {
+      "id": "ТАСС:https://tass.ru/proisshestviya/28264137",
+      "source": "ТАСС",
+      "title": "В Запорожье произошел взрыв",
+      "link": "https://tass.ru/proisshestviya/28264137",
+      "description": "В городе объявили воздушную тревогу",
+      "published": "2026-10-28T19:38:19+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: происшествия",
+        "сигнал в заголовке: взрыв",
+        "дополнительная тема: взрыв",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "c74f43aecaf423a6": {
+      "id": "Meduza:https://meduza.io/news/2026/10/28/pravitelstvo-rf-predlozhilo-dobavlyat-ot-500-do-1000-rubley-k-stoimosti-kazhdogo-aviabileta-dlya-podderzhki-otechestvennogo-samoletostroeniya",
+      "source": "Meduza",
+      "title": "Правительство РФ предложило добавлять от 500 до 1000 рублей к стоимости каждого авиабилета для поддержки отечественного самолетостроения",
+      "link": "https://meduza.io/news/2026/10/28/pravitelstvo-rf-predlozhilo-dobavlyat-ot-500-do-1000-rubley-k-stoimosti-kazhdogo-aviabileta-dlya-podderzhki-otechestvennogo-samoletostroeniya",
+      "description": "Новый сбор для авиапассажиров, направленный на поддержку масштабной программы строительства самолетов, может составить до 1000 рублей за билет. Об этом говорится в заключении комитета по бюджету и налогам Госдумы на проект федерального бюджета, пишет «Интерфакс».",
+      "published": "2026-10-28T19:21:29+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: правительство",
+        "дополнительная тема: правительство",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 22,
+      "category": "политика"
+    },
+    "6da200a877729b55": {
+      "id": "ТАСС:https://tass.ru/mezhdunarodnaya-panorama/28264247",
+      "source": "ТАСС",
+      "title": "\"Студенческий список\": санкции против РФ дестабилизировали бы Сербию",
+      "link": "https://tass.ru/mezhdunarodnaya-panorama/28264247",
+      "description": "",
+      "published": "2026-10-28T20:49:39+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: экономика",
+        "сигнал в заголовке: санкции",
+        "дополнительная тема: санкции",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "экономика"
+    },
+    "147c658bb5cf3a0a": {
+      "id": "Интерфакс:https://www.sport-interfax.ru/1125623",
+      "source": "Интерфакс",
+      "title": "Юношеская сборная России обыграла Южную Корею на ЧМ и фестивале ФИФА",
+      "link": "https://www.sport-interfax.ru/1125623",
+      "description": "Юношеская сборная России по футболу (игроки не старше 15 лет) со счетом 4:1 одержала победу над командой Южной Кореи со счетом 4:1 в матче нижней сетки плей-офф на чемпионате мира и фестивале ФИФА в Азербайджане.",
+      "published": "2026-10-28T18:54:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: спорт",
+        "сигнал в заголовке: сборная россии",
+        "сигнал в описании: сборная россии",
+        "дополнительная тема: сборная россии",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "спорт"
+    },
+    "2f9b8d5f783d13c1": {
+      "id": "Пятый канал:https://www.5-tv.ru/news/5093330/usakov-peregovory-poukraine-vozobnovatsa-posle-4noabra/",
+      "source": "Пятый канал",
+      "title": "Ушаков: переговоры по Украине возобновятся после 4 ноября",
+      "link": "https://www.5-tv.ru/news/5093330/usakov-peregovory-poukraine-vozobnovatsa-posle-4noabra/",
+      "description": "Точная дата встречи пока не согласована, а состав российской делегации определят в ближайшее время.",
+      "published": "2026-10-28T20:44:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "e64f6d85cc15577e": {
+      "id": "Интерфакс:https://www.interfax.ru/russia/1125630",
+      "source": "Интерфакс",
+      "title": "Отражена атака восьми БПЛА, летевших на Москву",
+      "link": "https://www.interfax.ru/russia/1125630",
+      "description": "Мэр Москвы Сергей Собянин сообщил, что вечером в среду были сбиты восемь беспилотников, летевших на Москву.",
+      "published": "2026-10-28T19:52:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: происшествия",
+        "сигнал в заголовке: бпла",
+        "дополнительная тема: атака",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "происшествия"
+    },
+    "628ee6d3e645c6ad": {
+      "id": "Пятый канал:https://www.5-tv.ru/news/5093321/lihacev-sankcii-zatormozili-realizaciu-atomnogo-proekta-rossii-vegipte/",
+      "source": "Пятый канал",
+      "title": "Лихачев: санкции затормозили реализацию атомного проекта России в Египте",
+      "link": "https://www.5-tv.ru/news/5093321/lihacev-sankcii-zatormozili-realizaciu-atomnogo-proekta-rossii-vegipte/",
+      "description": "Несмотря на давление, часть западных компаний сохранила участие в проекте.",
+      "published": "2026-10-28T19:45:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: экономика",
+        "сигнал в заголовке: санкции",
+        "дополнительная тема: санкции",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "экономика"
     }
   },
   "update_offset": 0,
