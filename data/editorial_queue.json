@@ -21910,6 +21910,108 @@
       ],
       "virality_score": 18,
       "category": "политика"
+    },
+    "955ec9b41390fa6f": {
+      "id": "РИА Новости:https://ria.ru/20261030/dtp-2128217025.html",
+      "source": "РИА Новости",
+      "title": "В ДТП в Карелии погибли три человека, включая двух полицейских",
+      "link": "https://ria.ru/20261030/dtp-2128217025.html",
+      "description": "",
+      "published": "2026-10-30T17:54:20+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "ca7ff39140ce8ff0": {
+      "id": "Российская газета:3481890",
+      "source": "Российская газета",
+      "title": "В Саратове при пожаре погибли двое мужчин и женщина",
+      "link": "https://rg.ru/2026/10/30/reg-pfo/v-saratove-pri-pozhare-pogibli-dvoe-muzhchin-i-zhenshchina.html",
+      "description": "В Саратове при пожаре в частном доме погибли двое мужчин и женщина, еще одна женщина госпитализирована.",
+      "published": "2026-10-30T16:42:02+00:00",
+      "score": 65,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 6 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "4f6d635cae29d7c7": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/30/gendirektor-donetskoy-zheleznoy-dorogi-pogib-pri-atake-drona-vsu/",
+      "source": "Лента.ру",
+      "title": "Гендиректор Донецкой железной дороги погиб при атаке ВСУ",
+      "link": "https://lenta.ru/news/2026/10/30/gendirektor-donetskoy-zheleznoy-dorogi-pogib-pri-atake-drona-vsu/",
+      "description": "",
+      "published": "2026-10-30T13:42:00+00:00",
+      "score": 65,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 6 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "a1fa2b0fbc469e63": {
+      "id": "ТАСС:https://tass.ru/politika/28273173",
+      "source": "ТАСС",
+      "title": "Путин начал переговоры с президентом Эритреи",
+      "link": "https://tass.ru/politika/28273173",
+      "description": "Общение лидеров проходит по итогам саммита Россия - Африк а",
+      "published": "2026-10-30T18:45:21+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "d7fc5cffa41aa320": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/10/30/putin-provel-peregovory-s-predsedatelem-soveta-ministrov-togo/",
+      "source": "Лента.ру",
+      "title": "Путин провел переговоры с председателем совета министров Того",
+      "link": "https://lenta.ru/news/2026/10/30/putin-provel-peregovory-s-predsedatelem-soveta-ministrov-togo/",
+      "description": "",
+      "published": "2026-10-30T18:31:52+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "f77cd81788c44930": {
+      "id": "ТАСС:https://tass.ru/politika/28273099",
+      "source": "ТАСС",
+      "title": "Путин и глава совета министров Того начали переговоры в Кремле",
+      "link": "https://tass.ru/politika/28273099",
+      "description": "Общение проходит по итогам саммита Россия - Африка",
+      "published": "2026-10-30T17:59:56+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
     }
   },
   "update_offset": 0,
