@@ -22012,6 +22012,74 @@
       ],
       "virality_score": 18,
       "category": "политика"
+    },
+    "01fa53ab0b832393": {
+      "id": "Пятый канал:https://www.5-tv.ru/news/5093634/glava-doneckoj-zeleznoj-dorogi-lebeznev-pogib-vrezultate-ataki-bespilotnika-vsu-aii/",
+      "source": "Пятый канал",
+      "title": "Глава Донецкой железной дороги Лебезнев погиб в результате атаки беспилотника ВСУ",
+      "link": "https://www.5-tv.ru/news/5093634/glava-doneckoj-zeleznoj-dorogi-lebeznev-pogib-vrezultate-ataki-bespilotnika-vsu-aii/",
+      "description": "Руководитель предприятия также был депутатом Харцызского округа.",
+      "published": "2026-10-30T13:29:00+00:00",
+      "score": 63,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 12 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "4b0b21a6178d6d45": {
+      "id": "РИА Новости:https://ria.ru/20261030/sovfed-2128231022.html",
+      "source": "РИА Новости",
+      "title": "В Совфеде оценили возможные переговоры России, США и Китая на АТЭС",
+      "link": "https://ria.ru/20261030/sovfed-2128231022.html",
+      "description": "",
+      "published": "2026-10-30T19:17:28+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "3683ddb6bdbc1d6c": {
+      "id": "РИА Новости:https://ria.ru/20261030/kiev-2128236200.html",
+      "source": "РИА Новости",
+      "title": "В Киеве прогремел взрыв",
+      "link": "https://ria.ru/20261030/kiev-2128236200.html",
+      "description": "",
+      "published": "2026-10-30T20:08:43+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: происшествия",
+        "сигнал в заголовке: взрыв",
+        "дополнительная тема: взрыв",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "537a9e4b7a88cbd3": {
+      "id": "РИА Новости:https://ria.ru/20261030/kharkov-2128233729.html",
+      "source": "РИА Новости",
+      "title": "В Харькове прогремел новый взрыв",
+      "link": "https://ria.ru/20261030/kharkov-2128233729.html",
+      "description": "",
+      "published": "2026-10-30T19:42:33+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: происшествия",
+        "сигнал в заголовке: взрыв",
+        "дополнительная тема: взрыв",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
     }
   },
   "update_offset": 0,
