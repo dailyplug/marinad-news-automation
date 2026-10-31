@@ -23026,6 +23026,74 @@
       ],
       "virality_score": 22,
       "category": "происшествия"
+    },
+    "2044d8bc11feceec": {
+      "id": "РИА Новости:https://ria.ru/20261101/dtp-2128386062.html",
+      "source": "РИА Новости",
+      "title": "В ДТП с грузовиком в Балашихе погиб человек",
+      "link": "https://ria.ru/20261101/dtp-2128386062.html",
+      "description": "",
+      "published": "2026-10-31T21:24:44+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "d0b259a95fa293e9": {
+      "id": "Москва 24:959207",
+      "source": "Москва 24",
+      "title": "Один человек погиб при столкновении легковушки с грузовиком в Подмосковье",
+      "link": "https://www.m24.ru/news/01112026/959207",
+      "description": "Столкновение произошло вечером 31 октября на 27-м километре трассы М-7 &quot;Волга&quot;",
+      "published": "2026-10-31T21:19:00+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "82e521e67861058c": {
+      "id": "ТАСС:https://tass.ru/proisshestviya/28275307",
+      "source": "ТАСС",
+      "title": "Novinky: в Чехии при аварии небольшого самолета погиб летчик",
+      "link": "https://tass.ru/proisshestviya/28275307",
+      "description": "ЧП произошло у села Вранов в районе города Бенешов",
+      "published": "2026-10-31T20:54:03+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "e811731528ae7077": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/11/01/evropeyskiy-politik-predlozhil-zelenskomu-vmeste-poehat-v-rossiyu-na-peregovory/",
+      "source": "Лента.ру",
+      "title": "Европейский политик предложил Зеленскому вместе поехать в Россию на переговоры",
+      "link": "https://lenta.ru/news/2026/11/01/evropeyskiy-politik-predlozhil-zelenskomu-vmeste-poehat-v-rossiyu-na-peregovory/",
+      "description": "",
+      "published": "2026-10-31T21:44:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
     }
   },
   "update_offset": 0,
