@@ -23094,6 +23094,41 @@
       ],
       "virality_score": 18,
       "category": "политика"
+    },
+    "17d7539f86694ae1": {
+      "id": "ТАСС:https://tass.ru/mezhdunarodnaya-panorama/28275505",
+      "source": "ТАСС",
+      "title": "Трамп заявил, что переговоры с Ираном идут хорошо",
+      "link": "https://tass.ru/mezhdunarodnaya-panorama/28275505",
+      "description": "При этом президент США усомнился в благонадежности Тегерана",
+      "published": "2026-11-01T00:21:39+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "сигнал в описании: президент сша",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "14820090cc61a5f8": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/11/01/v-bolshinstve-regionov-upali-tseny-na-benzin/",
+      "source": "Лента.ру",
+      "title": "В большинстве регионов упали цены на бензин",
+      "link": "https://lenta.ru/news/2026/11/01/v-bolshinstve-regionov-upali-tseny-na-benzin/",
+      "description": "",
+      "published": "2026-10-31T23:36:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: экономика",
+        "сигнал в заголовке: цены на бензин",
+        "дополнительная тема: цены на бензин",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "экономика"
     }
   },
   "update_offset": 0,
