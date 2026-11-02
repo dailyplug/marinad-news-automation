@@ -24170,6 +24170,123 @@
       ],
       "virality_score": 18,
       "category": "технологии"
+    },
+    "e88d14af30e85aa7": {
+      "id": "РИА Новости:https://ria.ru/20261102/dnr-2128626113.html",
+      "source": "РИА Новости",
+      "title": "В ДНР при атаках дронов ВСУ погибли два человека",
+      "link": "https://ria.ru/20261102/dnr-2128626113.html",
+      "description": "",
+      "published": "2026-11-02T10:35:49+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "29c45db9232482f7": {
+      "id": "РИА Новости:https://ria.ru/20261102/donetsk-2128621369.html",
+      "source": "РИА Новости",
+      "title": "В Донецке из-за атаки дрона ВСУ погиб подросток",
+      "link": "https://ria.ru/20261102/donetsk-2128621369.html",
+      "description": "",
+      "published": "2026-11-02T10:24:38+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "a69a844c29695de2": {
+      "id": "ТАСС:https://tass.ru/mezhdunarodnaya-panorama/28278663",
+      "source": "ТАСС",
+      "title": "Премьер Бельгии подал в отставку",
+      "link": "https://tass.ru/mezhdunarodnaya-panorama/28278663",
+      "description": "Причиной стал провал коалиционных переговоров о бюджете королевства на 2027 год",
+      "published": "2026-11-02T10:33:58+00:00",
+      "score": 53,
+      "score_reasons": [
+        "категория: политика",
+        "сильный сигнал: подал в отставку",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 23,
+      "category": "политика"
+    },
+    "85fa13f576ee5f7a": {
+      "id": "РИА Новости:https://ria.ru/20261102/vsu-2128615139.html",
+      "source": "РИА Новости",
+      "title": "В ЛНР в результате атаки ВСУ погиб мирный житель, двое получили ранения",
+      "link": "https://ria.ru/20261102/vsu-2128615139.html",
+      "description": "",
+      "published": "2026-11-02T10:06:28+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "b36d5b2bbf3e185b": {
+      "id": "Москва 24:959623",
+      "source": "Москва 24",
+      "title": "ВСУ нанесли массированный удар по ЛНР",
+      "link": "https://www.m24.ru/news/02112026/959623",
+      "description": "В результате один человек погиб, еще двое получили ранения",
+      "published": "2026-11-02T10:02:00+00:00",
+      "score": 40,
+      "score_reasons": [
+        "категория: международные события",
+        "сигнал в заголовке: удар по",
+        "важная тема в описании: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 28,
+      "category": "международные события"
+    },
+    "e26c59035d435183": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/11/02/sbornaya-rossii-smozhet-igrat-na-neytralnyh-polyah-v-sluchae-dopuska-uefa/",
+      "source": "Лента.ру",
+      "title": "Сборная России сможет играть на нейтральных полях в случае допуска УЕФА",
+      "link": "https://lenta.ru/news/2026/11/02/sbornaya-rossii-smozhet-igrat-na-neytralnyh-polyah-v-sluchae-dopuska-uefa/",
+      "description": "",
+      "published": "2026-11-02T10:08:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: спорт",
+        "сигнал в заголовке: сборная россии",
+        "дополнительная тема: сборная россии",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "спорт"
+    },
+    "a4a9912da55f5ef5": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/11/02/glavnyy-protivnik-iz-yatiya-rossiyskih-aktivov-v-es-podal-v-otstavku/",
+      "source": "Лента.ру",
+      "title": "Главный противник изъятия российских активов в ЕС подал в отставку",
+      "link": "https://lenta.ru/news/2026/11/02/glavnyy-protivnik-iz-yatiya-rossiyskih-aktivov-v-es-podal-v-otstavku/",
+      "description": "",
+      "published": "2026-11-02T10:50:00+00:00",
+      "score": 53,
+      "score_reasons": [
+        "категория: политика",
+        "сильный сигнал: подал в отставку",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
     }
   },
   "update_offset": 0,
