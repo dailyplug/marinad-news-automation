@@ -24287,6 +24287,92 @@
       ],
       "virality_score": 18,
       "category": "политика"
+    },
+    "56c62d878bad403c": {
+      "id": "Москва 24:959725",
+      "source": "Москва 24",
+      "title": "ABC7: три человека погибли из-за перестрелок на Хеллоуин в Чикаго",
+      "link": "https://www.m24.ru/news/02112026/959725",
+      "description": "Еще 15 граждан пострадали",
+      "published": "2026-11-02T12:55:00+00:00",
+      "score": 71,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "сигнал в описании: пострадали",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "27aeeda85ab8cdb8": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/11/02/rezultaty-vyborov-v-bolgarii-raskryli-otnoshenie-zhiteley-strany-k-konfrontatsii-s-rossiey/",
+      "source": "Лента.ру",
+      "title": "Результаты выборов в Болгарии раскрыли отношение жителей страны к конфронтации с Россией",
+      "link": "https://lenta.ru/news/2026/11/02/rezultaty-vyborov-v-bolgarii-raskryli-otnoshenie-zhiteley-strany-k-konfrontatsii-s-rossiey/",
+      "description": "",
+      "published": "2026-11-02T13:02:49+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: политика",
+        "сильный сигнал: результаты выборов",
+        "важная тема: результаты выборов",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "d58e758e2369c354": {
+      "id": "Москва 24:959728",
+      "source": "Москва 24",
+      "title": "В Татарстане рабочий случайно поджег автоцистерну и погиб",
+      "link": "https://www.m24.ru/news/02112026/959728",
+      "description": "У цистерны сорвало торцевую часть, а внутри все выгорело",
+      "published": "2026-11-02T13:04:00+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "27220935d6aafcfb": {
+      "id": "Meduza:https://meduza.io/news/2026/11/02/premier-belgii-bart-de-vever-podal-v-otstavku-on-vystupal-protiv-iz-yatiya-zamorozhennyh-rossiyskih-aktivov",
+      "source": "Meduza",
+      "title": "Премьер Бельгии Барт де Вевер подал в отставку. Он выступал против изъятия замороженных российских активов",
+      "link": "https://meduza.io/news/2026/11/02/premier-belgii-bart-de-vever-podal-v-otstavku-on-vystupal-protiv-iz-yatiya-zamorozhennyh-rossiyskih-aktivov",
+      "description": "Премьер-министр Бельгии Барт де Вевер подал королю Филиппу прошение об отставке, сообщают The Brussels Times и Королевский дворец Бельгии.",
+      "published": "2026-11-02T12:54:54+00:00",
+      "score": 57,
+      "score_reasons": [
+        "категория: политика",
+        "сильный сигнал: подал в отставку",
+        "сигнал в описании: министр",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "bb81251dd52949a0": {
+      "id": "ТАСС:https://tass.ru/obschestvo/28279129",
+      "source": "ТАСС",
+      "title": "Рассылка ложных сообщений в 33 региона. Кибератака на приложение МЧС России",
+      "link": "https://tass.ru/obschestvo/28279129",
+      "description": "Специалисты МЧС России провели анализ инцидента, установлена уязвимость, которую эксплуатировал злоумышленник",
+      "published": "2026-11-02T12:34:09+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: технологии",
+        "сигнал в заголовке: кибератака",
+        "дополнительная тема: кибератака",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 22,
+      "category": "технологии"
     }
   },
   "update_offset": 0,
