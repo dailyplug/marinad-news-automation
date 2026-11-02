@@ -23686,6 +23686,92 @@
       ],
       "virality_score": 42,
       "category": "происшествия"
+    },
+    "1f3008688822bf37": {
+      "id": "Интерфакс:https://www.interfax.ru/world/1126439",
+      "source": "Интерфакс",
+      "title": "Девять человек погибли в результате крушения легкого самолета во Флориде",
+      "link": "https://www.interfax.ru/world/1126439",
+      "description": "Самолет Learjet 60, на борту которого находились девять человек, потерпел крушение в жилом районе Крестхейвен в Помпано-Бич, штат Флорида, вызвав сильный пожар, сообщило Федеральное управление гражданской авиации США (FAA).",
+      "published": "2026-11-01T23:17:00+00:00",
+      "score": 72,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "сигнал в описании: пожар",
+        "важная тема: погибли",
+        "тематическое упоминание в описании",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "e4dba11bb619445f": {
+      "id": "Российская газета:3482630",
+      "source": "Российская газета",
+      "title": "В Бурятии при пожаре в многоквартирном доме погибли два человека",
+      "link": "https://rg.ru/2026/11/02/reg-dfo/v-buriatii-pri-pozhare-v-mnogokvartirnom-dome-pogibli-dva-cheloveka.html",
+      "description": "В Северобайкальском районе Бурятии при пожаре в двухэтажном многоквартирном доме погибли два человека, сообщает пресс-служба Агентства ГО и ЧС республики",
+      "published": "2026-11-02T00:41:21+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "e968d2ae812ee113": {
+      "id": "BBC News Русская служба:https://www.bbc.com/russian/articles/cm86z2npevg5o#0",
+      "source": "BBC News Русская служба",
+      "title": "При крушении бизнес-джета неподалеку от резиденции Трампа во Флориде погибли девять человек",
+      "link": "https://www.bbc.com/russian/articles/cm86z2npevg5o?at_medium=RSS&at_campaign=rss",
+      "description": "Министр транспорта США Шон Даффи сообщил, что в воскресенье во Флориде в одном из жилых районов разбился бизнес-джет; все девять человек, находившихся на борту, погибли.",
+      "published": "2026-11-01T22:35:46+00:00",
+      "score": 65,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 6 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "7d185307ab29b3a0": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/11/02/turtsiya-napravila-ssha-signal-o-gotovnosti-prinyat-peregovory-po-ukraine/",
+      "source": "Лента.ру",
+      "title": "Турция направила США сигнал о готовности принять переговоры по Украине",
+      "link": "https://lenta.ru/news/2026/11/02/turtsiya-napravila-ssha-signal-o-gotovnosti-prinyat-peregovory-po-ukraine/",
+      "description": "",
+      "published": "2026-11-02T00:25:06+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "e2faa459ccf970b7": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/11/02/vo-frantsii-nazvali-evrosoyuz-i-nato-vragami-evropeyskoy-identichnosti/",
+      "source": "Лента.ру",
+      "title": "Во Франции назвали Евросоюз и НАТО врагами европейской идентичности",
+      "link": "https://lenta.ru/news/2026/11/02/vo-frantsii-nazvali-evrosoyuz-i-nato-vragami-evropeyskoy-identichnosti/",
+      "description": "",
+      "published": "2026-11-02T00:26:33+00:00",
+      "score": 38,
+      "score_reasons": [
+        "категория: международные события",
+        "сигнал в заголовке: нато, евросоюз",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "международные события"
     }
   },
   "update_offset": 0,
