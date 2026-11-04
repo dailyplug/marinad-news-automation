@@ -26905,6 +26905,74 @@
       ],
       "virality_score": 18,
       "category": "политика"
+    },
+    "709719ea5b188821": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/11/04/chetyre-cheloveka-pogibli-pri-lobovom-stolknovenii-gruzovika-i-legkovushki-v-permskom-krae/",
+      "source": "Лента.ру",
+      "title": "Четыре человека погибли при лобовом столкновении грузовика и легковушки в Пермском крае",
+      "link": "https://lenta.ru/news/2026/11/04/chetyre-cheloveka-pogibli-pri-lobovom-stolknovenii-gruzovika-i-legkovushki-v-permskom-krae/",
+      "description": "",
+      "published": "2026-11-04T12:33:00+00:00",
+      "score": 63,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 12 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "21286bdab5deaa41": {
+      "id": "Медиаzona:https://zona.media/108066",
+      "source": "Медиаzona",
+      "title": "Трое жителей Запорожской области погибли из-за российских атак",
+      "link": "https://zona.media/news/2026/11/04/pogibli",
+      "description": "",
+      "published": "2026-11-04T12:00:08+00:00",
+      "score": 63,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 12 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "40fbbe25f80963c0": {
+      "id": "Москва 24:960467",
+      "source": "Москва 24",
+      "title": "AP: три человека погибли при перестрелке в штате Вашингтон",
+      "link": "https://www.m24.ru/news/04112026/960467",
+      "description": "Двое сотрудников спецподразделения получили тяжелые ранения",
+      "published": "2026-11-04T09:10:00+00:00",
+      "score": 63,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 24 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "61a410d8f1447565": {
+      "id": "РИА Новости:https://ria.ru/20261104/vulin-2129257401.html",
+      "source": "РИА Новости",
+      "title": "Вулин прилетел в Москву на переговоры о поставках газа",
+      "link": "https://ria.ru/20261104/vulin-2129257401.html",
+      "description": "",
+      "published": "2026-11-04T20:59:51+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
     }
   },
   "update_offset": 0,
