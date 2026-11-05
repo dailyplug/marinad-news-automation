@@ -27024,6 +27024,40 @@
       ],
       "virality_score": 18,
       "category": "происшествия"
+    },
+    "e9f509f8ed9d9968": {
+      "id": "ТАСС:https://tass.ru/armiya-i-opk/28287233",
+      "source": "ТАСС",
+      "title": "Командование \"Перекопа\" провело переговоры о сотрудничестве с Камеруном",
+      "link": "https://tass.ru/armiya-i-opk/28287233",
+      "description": "Курсанты экипажа российского корабля также провели товарищеский волейбольный матч с камерунскими моряками, сообщили в Минобороны",
+      "published": "2026-11-05T02:01:07+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "78835117ce799390": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/11/05/sobaka-mogla-sprovotsirovat-napadenie-medvedya-na-propavshuyu-v-tayge-semyu-usoltsevyh/",
+      "source": "Лента.ру",
+      "title": "Собака могла спровоцировать нападение медведя на пропавшую в тайге семью Усольцевых",
+      "link": "https://lenta.ru/news/2026/11/05/sobaka-mogla-sprovotsirovat-napadenie-medvedya-na-propavshuyu-v-tayge-semyu-usoltsevyh/",
+      "description": "",
+      "published": "2026-11-05T01:36:02+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: происшествия",
+        "сигнал в заголовке: нападение",
+        "дополнительная тема: нападение",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "происшествия"
     }
   },
   "update_offset": 0,
