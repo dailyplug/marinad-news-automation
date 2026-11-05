@@ -27780,6 +27780,107 @@
       ],
       "virality_score": 18,
       "category": "политика"
+    },
+    "c2566a9a366f7f85": {
+      "id": "BBC News Русская служба:https://www.bbc.com/russian/articles/ck87zzg0d15wo#0",
+      "source": "BBC News Русская служба",
+      "title": "Президент Парагвая объявил об отставке на фоне протестов и скандала с банком Ueno",
+      "link": "https://www.bbc.com/russian/articles/ck87zzg0d15wo?at_medium=RSS&at_campaign=rss",
+      "description": "Президент Парагвая Сантьяго Пенья выступил с видеообращением, в котором объявил об отставке. Это произошло на фоне кризиса, возникшего после краха местного банка Ueno, который приостановил операции и перешел под внешнее управление Центробанка страны.",
+      "published": "2026-11-05T17:28:18+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: политика",
+        "сильный сигнал: объявил об отставке",
+        "важная тема: объявил об отставке",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 52,
+      "category": "политика"
+    },
+    "c908a3dc0f074b5f": {
+      "id": "Пятый канал:https://www.5-tv.ru/news/5094351/pat-celovek-pogibli-pri-atake-vsu-naavtobus-vlnr/",
+      "source": "Пятый канал",
+      "title": "Пять человек погибли при атаке ВСУ на автобус в ЛНР",
+      "link": "https://www.5-tv.ru/news/5094351/pat-celovek-pogibli-pri-atake-vsu-naavtobus-vlnr/",
+      "description": "Также были нанесены удары по другим гражданским транспортным средствам в разных местах республики.",
+      "published": "2026-11-05T10:21:00+00:00",
+      "score": 63,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 12 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "ee9f02d8e010d17d": {
+      "id": "ТАСС:https://tass.ru/ekonomika/28290369",
+      "source": "ТАСС",
+      "title": "США вводят санкции против связанных с некоторыми секторами экономики Кубы лиц",
+      "link": "https://tass.ru/ekonomika/28290369",
+      "description": "Под ограничения подпали восемь организаций, два физлица и пять судов",
+      "published": "2026-11-05T18:51:16+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: экономика",
+        "сигнал в заголовке: санкции",
+        "дополнительная тема: санкции",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "экономика"
+    },
+    "d4160f5f8fa75771": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/11/05/nato-nanesla-udar-po-latviyskim-korovam/",
+      "source": "Лента.ру",
+      "title": "НАТО нанесла удар по латвийским коровам",
+      "link": "https://lenta.ru/news/2026/11/05/nato-nanesla-udar-po-latviyskim-korovam/",
+      "description": "",
+      "published": "2026-11-05T19:00:38+00:00",
+      "score": 38,
+      "score_reasons": [
+        "категория: международные события",
+        "сигнал в заголовке: нато, удар по",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "международные события"
+    },
+    "790d85f6737b8717": {
+      "id": "Meduza:https://meduza.io/news/2026/11/05/prezident-paragvaya-podal-v-otstavku-posle-kraha-mestnogo-banka",
+      "source": "Meduza",
+      "title": "Президент Парагвая подал в отставку после краха местного банка",
+      "link": "https://meduza.io/news/2026/11/05/prezident-paragvaya-podal-v-otstavku-posle-kraha-mestnogo-banka",
+      "description": "Президент Парагвая Сантьяго Пенья объявил, что подал в отставку после того, как в стране рухнул банк Ueno Bank.",
+      "published": "2026-11-05T17:39:27+00:00",
+      "score": 53,
+      "score_reasons": [
+        "категория: политика",
+        "сильный сигнал: подал в отставку",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "0fae335a04c75ed6": {
+      "id": "ТАСС:https://tass.ru/mezhdunarodnaya-panorama/28290265",
+      "source": "ТАСС",
+      "title": "Фицо: Словакия готова в любой момент принять переговоры по Украине",
+      "link": "https://tass.ru/mezhdunarodnaya-panorama/28290265",
+      "description": "Словацкий премьер-министр считает, что в республике могли бы пройти переговоры российских и украинских экспертов по подготовке соглашения о мире",
+      "published": "2026-11-05T17:58:54+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "сигнал в описании: переговоры, министр",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
     }
   },
   "update_offset": 0,
