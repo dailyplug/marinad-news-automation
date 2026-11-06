@@ -28622,6 +28622,125 @@
       ],
       "virality_score": 18,
       "category": "экономика"
+    },
+    "03e567e84dcbab40": {
+      "id": "Москва 24:961363",
+      "source": "Москва 24",
+      "title": "Двое детей и двое взрослых погибли в ДТП с грузовиком в Татарстане",
+      "link": "https://www.m24.ru/news/06112026/961363",
+      "description": "Авария произошла на 30-м километре автодороги Набережные Челны – Сарманово",
+      "published": "2026-11-06T13:22:00+00:00",
+      "score": 71,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "сигнал в описании: авария",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "848769de9062548b": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/11/06/kitayskiy-elektromobil-ustanovil-mirovoy-rekord-skorosti-dlya-seriynyh-mashin/",
+      "source": "Лента.ру",
+      "title": "Китайский электромобиль установил мировой рекорд скорости для серийных машин",
+      "link": "https://lenta.ru/news/2026/11/06/kitayskiy-elektromobil-ustanovil-mirovoy-rekord-skorosti-dlya-seriynyh-mashin/",
+      "description": "",
+      "published": "2026-11-06T14:17:31+00:00",
+      "score": 53,
+      "score_reasons": [
+        "категория: спорт",
+        "сильный сигнал: установил мировой рекорд",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "спорт"
+    },
+    "b74b14db1c836fc8": {
+      "id": "Российская газета:3485644",
+      "source": "Российская газета",
+      "title": "Два человека погибли при пожаре в Мордовии",
+      "link": "https://rg.ru/2026/11/06/reg-pfo/dva-cheloveka-pogibli-pri-pozhare-v-mordovii.html",
+      "description": "Два человека погибли в ходе пожара, вспыхнувшего в Ичалковском районе Мордовии.",
+      "published": "2026-11-06T12:19:04+00:00",
+      "score": 65,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 6 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "b30165fb970eaa1a": {
+      "id": "РИА Новости:https://ria.ru/20261106/medvedev-2129798804.html",
+      "source": "РИА Новости",
+      "title": "Медведев указал на рекордное падение акций Japan Tobacco",
+      "link": "https://ria.ru/20261106/medvedev-2129798804.html",
+      "description": "",
+      "published": "2026-11-06T14:53:21+00:00",
+      "score": 49,
+      "score_reasons": [
+        "категория: экономика",
+        "сигнал в заголовке: падение акций",
+        "важная тема: рекордное падение",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "экономика"
+    },
+    "421f019d60237857": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/11/06/peregovory-po-ukraine-ispugali-ee-soseda-po-odnoy-prichine/",
+      "source": "Лента.ру",
+      "title": "Переговоры по Украине испугали ее соседа по одной причине",
+      "link": "https://lenta.ru/news/2026/11/06/peregovory-po-ukraine-ispugali-ee-soseda-po-odnoy-prichine/",
+      "description": "",
+      "published": "2026-11-06T13:14:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "153545ca1723575a": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/11/06/molodezhnaya-sbornaya-rossii-vyigrala-kubok-buduschego/",
+      "source": "Лента.ру",
+      "title": "Молодежная сборная России выиграла Кубок будущего",
+      "link": "https://lenta.ru/news/2026/11/06/molodezhnaya-sbornaya-rossii-vyigrala-kubok-buduschego/",
+      "description": "",
+      "published": "2026-11-06T14:06:59+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: спорт",
+        "сигнал в заголовке: сборная россии",
+        "дополнительная тема: сборная россии",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "спорт"
+    },
+    "23cf78871cbfb440": {
+      "id": "РИА Новости:https://ria.ru/20261106/kharkov-2129783036.html",
+      "source": "РИА Новости",
+      "title": "В Харькове прогремел взрыв",
+      "link": "https://ria.ru/20261106/kharkov-2129783036.html",
+      "description": "",
+      "published": "2026-11-06T14:19:43+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: происшествия",
+        "сигнал в заголовке: взрыв",
+        "дополнительная тема: взрыв",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
     }
   },
   "update_offset": 0,
