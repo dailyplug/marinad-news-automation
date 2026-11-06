@@ -28464,6 +28464,58 @@
       ],
       "virality_score": 18,
       "category": "политика"
+    },
+    "0471bdc8d30417d3": {
+      "id": "ТАСС:https://tass.ru/proisshestviya/28292257",
+      "source": "ТАСС",
+      "title": "TF1: во Франции в ДТП с автобусом погибли два человека",
+      "link": "https://tass.ru/proisshestviya/28292257",
+      "description": "Еще 16 пострадали",
+      "published": "2026-11-06T10:31:28+00:00",
+      "score": 71,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "сигнал в описании: пострадали",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "4882f9496d53b73c": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/11/06/agent-sbu-gotovil-terakt-na-territorii-rossiyskogo-regiona/",
+      "source": "Лента.ру",
+      "title": "Агент СБУ готовил теракт на территории российского региона",
+      "link": "https://lenta.ru/news/2026/11/06/agent-sbu-gotovil-terakt-na-territorii-rossiyskogo-regiona/",
+      "description": "",
+      "published": "2026-11-06T10:32:11+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: теракт",
+        "важная тема: теракт",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "736de933c131ee27": {
+      "id": "РИА Новости:https://ria.ru/20261106/fsb-2129660126.html",
+      "source": "РИА Новости",
+      "title": "ФСБ показала схрон агента СБУ, планировавшего теракт в Белгородской области",
+      "link": "https://ria.ru/20261106/fsb-2129660126.html",
+      "description": "",
+      "published": "2026-11-06T09:25:51+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: теракт",
+        "важная тема: теракт",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
     }
   },
   "update_offset": 0,
