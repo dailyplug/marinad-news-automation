@@ -29925,6 +29925,57 @@
       ],
       "virality_score": 18,
       "category": "спорт"
+    },
+    "b8003158ae7f2c3b": {
+      "id": "РИА Новости:https://ria.ru/20261108/pozhar-2130045443.html",
+      "source": "РИА Новости",
+      "title": "При пожаре в жилом доме в Еврейской АО погибли три человека",
+      "link": "https://ria.ru/20261108/pozhar-2130045443.html",
+      "description": "",
+      "published": "2026-11-07T23:13:39+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "b4c10b8c5bbde09b": {
+      "id": "Пятый канал:https://www.5-tv.ru/news/5094633/vooruzen-dozubov-istrelal-nahodu-kak-krakov-perezil-pervyj-vnovejsej-istorii-terakt/",
+      "source": "Пятый канал",
+      "title": "Вооружен до зубов и стрелял на ходу: как Краков пережил первый в новейшей истории теракт",
+      "link": "https://www.5-tv.ru/news/5094633/vooruzen-dozubov-istrelal-nahodu-kak-krakov-perezil-pervyj-vnovejsej-istorii-terakt/",
+      "description": "Нападавший двигался по самым оживленным туристическим улицам города.",
+      "published": "2026-11-07T23:05:00+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: теракт",
+        "важная тема: теракт",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "85259ffb43ef55b8": {
+      "id": "РИА Новости:https://ria.ru/20261107/krakov-2130037965.html",
+      "source": "РИА Новости",
+      "title": "Гражданин Британии погиб при стрельбе в Кракове",
+      "link": "https://ria.ru/20261107/krakov-2130037965.html",
+      "description": "",
+      "published": "2026-11-07T20:57:40+00:00",
+      "score": 65,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 6 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
     }
   },
   "update_offset": 0,
