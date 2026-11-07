@@ -29373,6 +29373,127 @@
       ],
       "virality_score": 18,
       "category": "происшествия"
+    },
+    "8392b53a28fad847": {
+      "id": "Москва 24:961543",
+      "source": "Москва 24",
+      "title": "Несколько жилых домов повреждены в Саратове из-за атаки БПЛА",
+      "link": "https://www.m24.ru/news/07112026/961543",
+      "description": "В результате атаки никто не погиб",
+      "published": "2026-11-07T07:00:00+00:00",
+      "score": 40,
+      "score_reasons": [
+        "категория: происшествия",
+        "сигнал в заголовке: бпла",
+        "важная тема в описании: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 28,
+      "category": "происшествия"
+    },
+    "3245e0f3071cbd5d": {
+      "id": "ТАСС:https://tass.ru/ekonomika/28294303",
+      "source": "ТАСС",
+      "title": "МЭР: годовая инфляция с 27 октября по 2 ноября составила 6,95%",
+      "link": "https://tass.ru/ekonomika/28294303",
+      "description": "На продовольственные товары темпы роста цен снизились до 0,31%",
+      "published": "2026-11-07T06:21:01+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: экономика",
+        "сигнал в заголовке: инфляция",
+        "дополнительная тема: инфляция",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 22,
+      "category": "экономика"
+    },
+    "53ef9ad2c6bf95ef": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/11/07/sbornaya-rossii-po-gandbolu-obygrala-komandu-yaponii/",
+      "source": "Лента.ру",
+      "title": "Сборная России по гандболу обыграла команду Японии",
+      "link": "https://lenta.ru/news/2026/11/07/sbornaya-rossii-po-gandbolu-obygrala-komandu-yaponii/",
+      "description": "",
+      "published": "2026-11-07T06:14:32+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: спорт",
+        "сигнал в заголовке: сборная россии",
+        "дополнительная тема: сборная россии",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "спорт"
+    },
+    "c583455460526690": {
+      "id": "Meduza:https://meduza.io/news/2026/11/07/bolee-400-ukrainskih-bespilotnikov-atakovali-regiony-rossii-v-saratove-pozhar-na-zavode-rosnefti-v-orle-gorit-zavod-proton",
+      "source": "Meduza",
+      "title": "Более 400 украинских беспилотников атаковали регионы России. В Саратове пожар на заводе «Роснефти», в Орле горит завод «Протон»",
+      "link": "https://meduza.io/news/2026/11/07/bolee-400-ukrainskih-bespilotnikov-atakovali-regiony-rossii-v-saratove-pozhar-na-zavode-rosnefti-v-orle-gorit-zavod-proton",
+      "description": "В Орле после атаки Украины произошел пожар на заводе «Протон-Электротекс», которое выпускает компоненты для военной техники, сообщило издание Astra, проанализировав кадры очевидцев.",
+      "published": "2026-11-07T06:35:55+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: происшествия",
+        "сигнал в заголовке: пожар",
+        "сигнал в описании: пожар",
+        "дополнительная тема: пожар",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 22,
+      "category": "происшествия"
+    },
+    "31c157c23177d644": {
+      "id": "Интерфакс:https://www.interfax.ru/russia/1127532",
+      "source": "Интерфакс",
+      "title": "Цены на бензин в РФ с 27 октября по 2 ноября ускорили снижение до 2,04%",
+      "link": "https://www.interfax.ru/russia/1127532",
+      "description": "Потребительские цены на бензин в РФ с 27 октября по 2 ноября снизились относительно предыдущей недели на 2,04% после того, как просели на 1,63% с 20 по 26 октября, понизились на 0,69% с 13 по 19 октября, символически росли на 0,01% с 6 по 12 октября, поднимались на 0,29% с 29 сентября по 5 октября, не менялись с 22 по 28 сентября, сообщил в среду Росстат.",
+      "published": "2026-11-07T05:21:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: экономика",
+        "сигнал в заголовке: цены на бензин",
+        "сигнал в описании: цены на бензин",
+        "дополнительная тема: цены на бензин",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 22,
+      "category": "экономика"
+    },
+    "ac58f974cfa85eaa": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/11/07/sbornaya-rossii-zavoevala-dva-zolota-na-chempionate-mira-po-batutu/",
+      "source": "Лента.ру",
+      "title": "Сборная России завоевала два золота на чемпионате мира по батуту",
+      "link": "https://lenta.ru/news/2026/11/07/sbornaya-rossii-zavoevala-dva-zolota-na-chempionate-mira-po-batutu/",
+      "description": "",
+      "published": "2026-11-07T06:13:49+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: спорт",
+        "сигнал в заголовке: сборная россии",
+        "дополнительная тема: сборная россии",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "спорт"
+    },
+    "c0856a91c57a402b": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/11/07/raskryt-vliyayuschiy-na-kurs-rublya-silnee-vyborov-v-ssha-faktor/",
+      "source": "Лента.ру",
+      "title": "Раскрыт влияющий на курс рубля сильнее выборов в США фактор",
+      "link": "https://lenta.ru/news/2026/11/07/raskryt-vliyayuschiy-na-kurs-rublya-silnee-vyborov-v-ssha-faktor/",
+      "description": "",
+      "published": "2026-11-07T05:54:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: экономика",
+        "сигнал в заголовке: курс рубля",
+        "дополнительная тема: курс рубля",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "экономика"
     }
   },
   "update_offset": 0,
