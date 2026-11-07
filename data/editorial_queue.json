@@ -29735,6 +29735,74 @@
       ],
       "virality_score": 18,
       "category": "происшествия"
+    },
+    "55428bb2a775fac8": {
+      "id": "Москва 24:961572",
+      "source": "Москва 24",
+      "title": "Водитель грузовика погиб в ДТП в городском округе Солнечногорск",
+      "link": "https://www.m24.ru/news/07112026/961572",
+      "description": "Водитель грузового автомобиля Sitrak не справился с управлением",
+      "published": "2026-11-07T08:04:00+00:00",
+      "score": 63,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 12 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "a64fad53e156853d": {
+      "id": "Российская газета:3485915",
+      "source": "Российская газета",
+      "title": "В Белгородской области в результате удара ВСУ погиб мужчина",
+      "link": "https://rg.ru/2026/11/07/reg-cfo/v-belgorodskoj-oblasti-v-rezultate-udara-vsu-pogib-muzhchina.html",
+      "description": "В городе Грайворон Белгородской области в вражеский FPV-дрон атаковал частный дом. Мужчина погиб на месте, сообщили в Оперштабе региона.",
+      "published": "2026-11-07T08:03:59+00:00",
+      "score": 63,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 12 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "350d3c480390b937": {
+      "id": "Meduza:https://meduza.io/feature/2026/11/07/iskusstvennyy-intellekt-menyaet-pismennyy-yazyk-avtoram-prihoditsya-pisat-bolee-po-chelovecheski-chtoby-ne-vyglyadet-kak-chatgpt-vliyayut-i-takie-sistemy-kak-pangram-prizvannye-nahodit-ii-v-tekstah",
+      "source": "Meduza",
+      "title": "Искусственный интеллект меняет письменный язык. Авторам приходится писать «более по-человечески», чтобы не выглядеть как ChatGPT. Влияют и такие системы, как Pangram, призванные находить ИИ в текстах",
+      "link": "https://meduza.io/feature/2026/11/07/iskusstvennyy-intellekt-menyaet-pismennyy-yazyk-avtoram-prihoditsya-pisat-bolee-po-chelovecheski-chtoby-ne-vyglyadet-kak-chatgpt-vliyayut-i-takie-sistemy-kak-pangram-prizvannye-nahodit-ii-v-tekstah",
+      "description": "Писатели и учащиеся стали менять стиль своего письма, чтобы доказать, что они люди. На них в том числе повлияли инструменты, призванные находить контент, сгенерированный искусственным интеллектом, например сервис Pangram, который анализирует текст и оценивает, сколько процентов из написанного создал ИИ, рассказывает Bloomberg в большом материале об этом. Мы его пересказали.",
+      "published": "2026-11-07T14:03:02+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: технологии",
+        "сигнал в заголовке: искусственный интеллект",
+        "дополнительная тема: искусственный интеллект",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "технологии"
+    },
+    "03a9db5586feb4aa": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/11/07/ukrainka-prigrozila-ustroit-vzryv-na-kontserte-lobody/",
+      "source": "Лента.ру",
+      "title": "Украинка пригрозила устроить взрыв на концерте Лободы",
+      "link": "https://lenta.ru/news/2026/11/07/ukrainka-prigrozila-ustroit-vzryv-na-kontserte-lobody/",
+      "description": "",
+      "published": "2026-11-07T13:25:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: происшествия",
+        "сигнал в заголовке: взрыв",
+        "дополнительная тема: взрыв",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
     }
   },
   "update_offset": 0,
