@@ -30783,6 +30783,23 @@
       ],
       "virality_score": 18,
       "category": "политика"
+    },
+    "aae179c6734f3675": {
+      "id": "Пятый канал:https://www.5-tv.ru/news/5095054/proizvoditel-multikana8-soobsil-ogibeli-minimum-128-sobak-posle-vakcinacii-aii/",
+      "source": "Пятый канал",
+      "title": "Почти 130 собак погибли после вакцинации препаратом «Мультикан-8»",
+      "link": "https://www.5-tv.ru/news/5095054/proizvoditel-multikana8-soobsil-ogibeli-minimum-128-sobak-posle-vakcinacii-aii/",
+      "description": "Компания «Ветбиохим» признала ошибку и выплачивает компенсации.",
+      "published": "2026-11-11T00:34:00+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 46,
+      "category": "происшествия"
     }
   },
   "update_offset": 0,
