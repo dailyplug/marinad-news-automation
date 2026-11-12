@@ -31152,6 +31152,127 @@
       ],
       "virality_score": 18,
       "category": "политика"
+    },
+    "3507df668bff71b7": {
+      "id": "Пятый канал:https://www.5-tv.ru/news/5095239/rukhnula-cast-zdania-dva-celoveka-pogibli-ese-19-postradali-vnujorke/",
+      "source": "Пятый канал",
+      "title": "Рухнула часть здания: два человека погибли, еще 19 пострадали в Нью-Йорке",
+      "link": "https://www.5-tv.ru/news/5095239/rukhnula-cast-zdania-dva-celoveka-pogibli-ese-19-postradali-vnujorke/",
+      "description": "Под завалами еще могут оставаться люди.",
+      "published": "2026-11-12T01:42:00+00:00",
+      "score": 73,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "сигнал в заголовке: пострадали",
+        "важная тема: погибли",
+        "свежесть: до 12 часов"
+      ],
+      "virality_score": 46,
+      "category": "происшествия"
+    },
+    "0eda52802cb67885": {
+      "id": "Meduza:https://meduza.io/news/2026/11/12/bloomberg-po-dannym-utechki-rosstata-pogibli-ne-menee-11-tysyach-inostrantsev-voevavshih-na-storone-rossii",
+      "source": "Meduza",
+      "title": "Bloomberg: по данным утечки Росстата, погибли не менее 11 тысяч иностранцев, воевавших на стороне России",
+      "link": "https://meduza.io/news/2026/11/12/bloomberg-po-dannym-utechki-rosstata-pogibli-ne-menee-11-tysyach-inostrantsev-voevavshih-na-storone-rossii",
+      "description": "Данные Росстата, доступ к которым получили хакеры, показывают, что с начала большой войны погибли более 11 тысяч иностранцев, воюющих на стороне России.",
+      "published": "2026-11-12T08:06:16+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "важная тема: погибли",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 46,
+      "category": "происшествия"
+    },
+    "2b19aa134fb37a5f": {
+      "id": "РИА Новости:https://ria.ru/20261112/svyaschennik-2131070972.html",
+      "source": "РИА Новости",
+      "title": "Фронтовой священник Антоний Щербина погиб в зоне СВО",
+      "link": "https://ria.ru/20261112/svyaschennik-2131070972.html",
+      "description": "",
+      "published": "2026-11-12T09:06:52+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "551dcb1e96a98e4b": {
+      "id": "Интерфакс:https://www.interfax.ru/world/1128550",
+      "source": "Интерфакс",
+      "title": "ЕС в понедельник введет санкции против 150 структур и 50 банков, связанных с Россией",
+      "link": "https://www.interfax.ru/world/1128550",
+      "description": "Руководство Евросоюза в понедельник 16 ноября одобрят новые санкции против России, в санкционные списки войдут 50 банков, заявил министр по делам ЕС Франции Бенжамен Хаддад.",
+      "published": "2026-11-12T09:23:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: экономика",
+        "сигнал в заголовке: санкции",
+        "сигнал в описании: санкции",
+        "дополнительная тема: санкции",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 22,
+      "category": "экономика"
+    },
+    "b24b4583a67d61da": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/11/12/molodezhnaya-sbornaya-rossii-priletela-v-turtsiyu-posle-otmeny-reysa/",
+      "source": "Лента.ру",
+      "title": "Молодежная сборная России прилетела в Турцию после отмены рейса",
+      "link": "https://lenta.ru/news/2026/11/12/molodezhnaya-sbornaya-rossii-priletela-v-turtsiyu-posle-otmeny-reysa/",
+      "description": "",
+      "published": "2026-11-12T09:46:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: спорт",
+        "сигнал в заголовке: сборная россии",
+        "дополнительная тема: сборная россии",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "спорт"
+    },
+    "2691940890c83d40": {
+      "id": "Интерфакс:https://www.interfax.ru/russia/1128555",
+      "source": "Интерфакс",
+      "title": "Госдума направила в Национальный финансовый совет Гаврилова и Макарова",
+      "link": "https://www.interfax.ru/russia/1128555",
+      "description": "Третьего представителя депутаты определят позже",
+      "published": "2026-11-12T09:39:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: госдума",
+        "дополнительная тема: госдума",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
+    },
+    "66b829fd217715b8": {
+      "id": "ТАСС:https://tass.ru/mezhdunarodnaya-panorama/28310681",
+      "source": "ТАСС",
+      "title": "ЕС введет новые санкции против России 16 ноября",
+      "link": "https://tass.ru/mezhdunarodnaya-panorama/28310681",
+      "description": "В санкционные списки могут попасть 150 лиц и 50 банков, рассказал министр-делегат по делам Европы при МИД Франции Бенжамен Аддад",
+      "published": "2026-11-12T09:13:44+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: экономика",
+        "сигнал в заголовке: санкции",
+        "дополнительная тема: санкции",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 22,
+      "category": "экономика"
     }
   },
   "update_offset": 0,
