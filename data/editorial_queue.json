@@ -31889,6 +31889,75 @@
       ],
       "virality_score": 42,
       "category": "происшествия"
+    },
+    "3cec2dfcbb2853de": {
+      "id": "Москва 24:964424",
+      "source": "Москва 24",
+      "title": "Три человека погибли при столкновении автомобилей в Марий Эл",
+      "link": "https://www.m24.ru/news/14112026/964424",
+      "description": "Еще пятеро пострадали",
+      "published": "2026-11-14T13:42:00+00:00",
+      "score": 67,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погибли",
+        "сигнал в описании: пострадали",
+        "важная тема: погибли",
+        "свежесть: до 24 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "fcdd39584db3017b": {
+      "id": "Газета.Ru:http://www.gazeta.ru/photo/long-23861233/10_yarkih_foto_nedeli.shtml",
+      "source": "Газета.Ru",
+      "title": "Иранка с пулеметом и теракт в Польше: 10 ярких фото недели",
+      "link": "http://www.gazeta.ru/photo/long-23861233/10_yarkih_foto_nedeli.shtml",
+      "description": "Саммит Европейского политического сообщества в Ирландии, последствия теракта в Польше, визит папы Римского в Южную Америку, протесты в Испании и другие важные события недели — в фотогалерее ...",
+      "published": "2026-11-14T13:06:19+00:00",
+      "score": 63,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: теракт",
+        "важная тема: теракт",
+        "свежесть: до 24 часов"
+      ],
+      "virality_score": 46,
+      "category": "происшествия"
+    },
+    "64a96f5698d6608e": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/11/14/v-regione-rossii-mestnyy-zhitel-pogib-posle-ataki-drona-kamikadze/",
+      "source": "Лента.ру",
+      "title": "В регионе России местный житель погиб после атаки дрона-камикадзе",
+      "link": "https://lenta.ru/news/2026/11/14/v-regione-rossii-mestnyy-zhitel-pogib-posle-ataki-drona-kamikadze/",
+      "description": "",
+      "published": "2026-11-14T10:24:00+00:00",
+      "score": 63,
+      "score_reasons": [
+        "категория: происшествия",
+        "сильный сигнал: погиб",
+        "важная тема: погиб",
+        "свежесть: до 24 часов"
+      ],
+      "virality_score": 42,
+      "category": "происшествия"
+    },
+    "132fb7376ab36a76": {
+      "id": "Лента.ру:https://lenta.ru/news/2026/11/15/zelenskogo-zapodozrili-v-namerenii-sorvat-peregovory-s-rossiey/",
+      "source": "Лента.ру",
+      "title": "Зеленского заподозрили в намерении сорвать переговоры с Россией",
+      "link": "https://lenta.ru/news/2026/11/15/zelenskogo-zapodozrili-v-namerenii-sorvat-peregovory-s-rossiey/",
+      "description": "",
+      "published": "2026-11-15T00:27:00+00:00",
+      "score": 39,
+      "score_reasons": [
+        "категория: политика",
+        "сигнал в заголовке: переговоры",
+        "дополнительная тема: переговоры",
+        "свежесть: до 2 часов"
+      ],
+      "virality_score": 18,
+      "category": "политика"
     }
   },
   "update_offset": 0,
